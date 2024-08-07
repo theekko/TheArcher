@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 771405114923869210}
   - component: {fileID: 5207305356777524914}
   - component: {fileID: 6715599343940068871}
+  - component: {fileID: 5941585187920782006}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -143,7 +144,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -271,6 +272,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 57989a43-1506-45d5-b62e-0500347a53a3
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6715599343940068871}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2a2d033d-2853-46c0-9c64-adbd801852d4
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -288,4 +305,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36187523a2cc1ba4d8aeb739a35d6924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 200
+  moveSpeed: 200
+  jumpImpulse: 5
+  doubleJumpeImpulse: 3.8
+  _isFacingRight: 1
+  doubleJump: 0
+--- !u!114 &5941585187920782006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815208713848111746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48717c6cec6109d4e9bdec3402069adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.05
+  ceilingDistance: 0.05
+  _isGrounded: 0
+  _isOnWall: 0
+  _isOnCeiling: 0
