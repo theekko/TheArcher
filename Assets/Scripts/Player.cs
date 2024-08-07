@@ -5,18 +5,20 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
-    [SerializeField] float moveSpeed = 200f;
-    [SerializeField] float jumpImpulse = 5f;
-    [SerializeField] float doubleJumpeImpulse = 2f;
+    [SerializeField] private float moveSpeed = 200f;
+    [SerializeField] private float jumpImpulse = 5f;
+    [SerializeField] private float doubleJumpeImpulse = 2f;
     [SerializeField] private bool _isFacingRight = true;
+    [SerializeField] private int maxJumps = 2;
+    [SerializeField] private int jumpsRemaining = 2;
+    
 
     private TouchingDirections touchingDirections;
     private InputAction jumpAction;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    [SerializeField] private bool doubleJump;
-
-
+    
+    
 
 
     public float CurrentMoveSpeed {
@@ -44,10 +46,10 @@ public class Player : MonoBehaviour {
 
 
     public void OnJump(InputAction.CallbackContext context) {
-        if (context.started && (touchingDirections.IsGrounded || doubleJump)) {
-            rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpeImpulse : jumpImpulse);
+        if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0)) {
+            rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
 
-            doubleJump = !doubleJump;
+            jumpsRemaining--;
         } 
         if(context.canceled && rb.velocity.y > 0) { 
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
@@ -83,9 +85,11 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        // Check if the jump button is being pressed
         if (touchingDirections.IsGrounded && !(jumpAction.ReadValue<float>() > 0)) {
-            doubleJump = false;
+            jumpsRemaining = maxJumps;
+        }
+        if (!touchingDirections.IsGrounded && jumpsRemaining > (maxJumps - 2)) {
+            jumpsRemaining = maxJumps - 1;
         }
     }
 
