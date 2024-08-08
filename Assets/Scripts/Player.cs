@@ -6,17 +6,31 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
     [SerializeField] private float moveSpeed = 200f;
-    [SerializeField] private float jumpImpulse = 5f;
-    [SerializeField] private float doubleJumpeImpulse = 2f;
+
     [SerializeField] private bool _isFacingRight = true;
+
+    [SerializeField] private bool _isWallSliding;
+    [SerializeField] private float wallSlideSpeed = 2f;
+
+    [SerializeField] private bool _isWallJumping;
+    [SerializeField] private float wallJumpingDirection;
+    [SerializeField] private float wallJumpingTime = 0.2f;
+    [SerializeField] private float wallJumpingCounter;
+    [SerializeField] private float wallJumpingDuration = 0.4f;
+    private Vector2 wallJumpingPower = new Vector2(2f, 5f);
+
+
     [SerializeField] private int maxJumps = 2;
     [SerializeField] private int jumpsRemaining = 2;
-    
+    [SerializeField] private float jumpImpulse = 5f;
+    [SerializeField] private float doubleJumpeImpulse = 2f;
+
 
     private TouchingDirections touchingDirections;
-    private InputAction jumpAction;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private float jumpAction;
+    private float horizontal;
     
     
 
@@ -44,17 +58,23 @@ public class Player : MonoBehaviour {
         }
     }
 
-
-    public void OnJump(InputAction.CallbackContext context) {
-        if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0)) {
-            rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
-
-            jumpsRemaining--;
-        } 
-        if(context.canceled && rb.velocity.y > 0) { 
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+    public bool IsWallSliding {
+        get {
+            return _isWallSliding;
         }
-    } 
+        private set {
+            _isWallSliding = value;
+        }
+    }
+
+    public bool IsWallJumping {
+        get {
+            return _isWallJumping;
+        }
+        private set { 
+            _isWallJumping = value;
+        }
+    }
 
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
@@ -62,7 +82,38 @@ public class Player : MonoBehaviour {
         SetFacingDirection(moveInput);
     }
 
-    public void SetFacingDirection(Vector2 moveInput) {
+    public void OnJump(InputAction.CallbackContext context) {
+        jumpAction = context.ReadValue<float>();
+        if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0 && !IsWallJumping && !IsWallSliding)) {
+            rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
+
+            jumpsRemaining--;
+        }
+        if (context.canceled && rb.velocity.y > 0 && !IsWallJumping && !IsWallSliding) {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+
+        if (IsWallSliding) {
+            IsWallJumping = false;
+            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
+
+            CancelInvoke(nameof(StopWallJumping));
+        } else {
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if (context.started && wallJumpingCounter > 0f && !touchingDirections.IsGrounded) {
+            Debug.Log("wall jump");
+            IsWallJumping = true;
+            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    private void SetFacingDirection(Vector2 moveInput) {
         if (moveInput.x > 0 && !IsFacingRight) {
             // face right
             IsFacingRight = true;
@@ -72,12 +123,42 @@ public class Player : MonoBehaviour {
         }
     }
 
+    private void WallSlide() {
+        if (touchingDirections.IsOnWall && horizontal != 0f && !touchingDirections.IsGrounded) {
+            IsWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        } else {
+            IsWallSliding = false;
+        }
+    }
+
+    //private void WallJump() {
+    //    if (IsWallSliding) {
+    //        IsWallJumping = false;
+    //        wallJumpingDirection = -transform.localScale.x;
+    //        wallJumpingCounter = wallJumpingTime;
+
+    //        CancelInvoke(nameof(StopWallJumping));
+    //    } else { 
+    //        wallJumpingCounter -= Time.deltaTime;
+    //    }
+
+    //    if (jumpButtonDown && wallJumpingCounter > 0f) {
+    //        IsWallJumping = true;
+    //        rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+    //        wallJumpingCounter = 0f;
+
+    //        Invoke(nameof(StopWallJumping), wallJumpingDuration);
+    //    }
+    //}
+
+    private void StopWallJumping() { 
+        IsWallJumping = false;
+    }
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
-
-        var inputActionAsset = GetComponent<PlayerInput>().actions;
-        jumpAction = inputActionAsset["Jump"];
     }
 
     private void FixedUpdate() {
@@ -85,7 +166,11 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        if (touchingDirections.IsGrounded && !(jumpAction.ReadValue<float>() > 0)) {
+        horizontal = moveInput.x;
+
+        WallSlide();
+
+        if (touchingDirections.IsGrounded && !(jumpAction > 0)) {
             jumpsRemaining = maxJumps;
         }
         if (!touchingDirections.IsGrounded && jumpsRemaining > (maxJumps - 2)) {
