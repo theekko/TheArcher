@@ -25,13 +25,18 @@ public class Player : MonoBehaviour {
     [SerializeField] private float jumpImpulse = 5f;
     [SerializeField] private float doubleJumpeImpulse = 2f;
 
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private bool _isDashing;
+    [SerializeField] private float dashingPower = 3f;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
+
 
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private float jumpAction;
     private float horizontal;
-    
     
 
 
@@ -76,6 +81,15 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public bool IsDashing {
+        get {
+            return _isDashing;
+        }
+        private set {
+            _isDashing = value;
+        }
+    }
+
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
 
@@ -101,6 +115,12 @@ public class Player : MonoBehaviour {
             wallJumpingCounter = 0f;
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    public void OnDash(InputAction.CallbackContext context) {
+        if (context.started && canDash) {
+            StartCoroutine(Dash());
         }
     }
 
@@ -140,16 +160,39 @@ public class Player : MonoBehaviour {
         IsWallJumping = false;
     }
 
+
+    private IEnumerator Dash() {
+        canDash = false;
+        IsDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
+        yield return new WaitForSeconds(dashingTime);
+        rb.gravityScale = originalGravity;
+        IsDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+        Debug.Log("dashing");
+    }
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
     }
 
     private void FixedUpdate() {
+        if (IsDashing) {
+            return;
+        }
+
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
     }
 
     private void Update() {
+        if (IsDashing) {
+            return;
+        }
+
         horizontal = moveInput.x;
 
         WallSlide();
