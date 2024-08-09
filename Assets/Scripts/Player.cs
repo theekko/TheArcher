@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float wallJumpingTime = 0.2f;
     [SerializeField] private float wallJumpingCounter;
     [SerializeField] private float wallJumpingDuration = 0.4f;
-    private Vector2 wallJumpingPower = new Vector2(2f, 5f);
+    [SerializeField] private Vector2 wallJumpingPower = new Vector2(1f, 3f);
 
 
     [SerializeField] private int maxJumps = 2;
@@ -84,27 +84,18 @@ public class Player : MonoBehaviour {
 
     public void OnJump(InputAction.CallbackContext context) {
         jumpAction = context.ReadValue<float>();
-        if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0 && !IsWallJumping && !IsWallSliding)) {
+        if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0)) {
             rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
 
             jumpsRemaining--;
         }
-        if (context.canceled && rb.velocity.y > 0 && !IsWallJumping && !IsWallSliding) {
+        if (context.canceled && rb.velocity.y > 0 ) {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-
-        if (IsWallSliding) {
-            IsWallJumping = false;
-            wallJumpingDirection = -transform.localScale.x;
-            wallJumpingCounter = wallJumpingTime;
-
-            CancelInvoke(nameof(StopWallJumping));
-        } else {
-            wallJumpingCounter -= Time.deltaTime;
         }
 
         if (context.started && wallJumpingCounter > 0f && !touchingDirections.IsGrounded) {
             Debug.Log("wall jump");
+            jumpsRemaining++;
             IsWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
@@ -132,25 +123,18 @@ public class Player : MonoBehaviour {
         }
     }
 
-    //private void WallJump() {
-    //    if (IsWallSliding) {
-    //        IsWallJumping = false;
-    //        wallJumpingDirection = -transform.localScale.x;
-    //        wallJumpingCounter = wallJumpingTime;
+    private void WallJump() {
+        if (IsWallSliding) {
+            IsWallJumping = false;
+            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
 
-    //        CancelInvoke(nameof(StopWallJumping));
-    //    } else { 
-    //        wallJumpingCounter -= Time.deltaTime;
-    //    }
+            CancelInvoke(nameof(StopWallJumping));
+        } else {
+            wallJumpingCounter -= Time.deltaTime;
+        }
 
-    //    if (jumpButtonDown && wallJumpingCounter > 0f) {
-    //        IsWallJumping = true;
-    //        rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-    //        wallJumpingCounter = 0f;
-
-    //        Invoke(nameof(StopWallJumping), wallJumpingDuration);
-    //    }
-    //}
+    }
 
     private void StopWallJumping() { 
         IsWallJumping = false;
@@ -169,6 +153,7 @@ public class Player : MonoBehaviour {
         horizontal = moveInput.x;
 
         WallSlide();
+        WallJump();
 
         if (touchingDirections.IsGrounded && !(jumpAction > 0)) {
             jumpsRemaining = maxJumps;
