@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5207305356777524914}
   - component: {fileID: 6715599343940068871}
   - component: {fileID: 5941585187920782006}
+  - component: {fileID: 6163475997813251485}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -372,3 +373,21 @@ MonoBehaviour:
   _isGrounded: 0
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &6163475997813251485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815208713848111746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d36bd341e9afdf4ca07d103c462ca05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  _isHit: 0
+  isInvincible: 0
+  invincibilityTime: 0.25

@@ -12,7 +12,7 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField] private bool _isOnWall;
     [SerializeField] private bool _isOnCeiling;
 
-    private CapsuleCollider2D touchingCol;
+    private Collider2D touchingCol;
 
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
@@ -50,7 +50,7 @@ public class TouchingDirections : MonoBehaviour
 
 
     private void Awake() {
-        touchingCol = GetComponent<CapsuleCollider2D>();
+        touchingCol = GetComponent<Collider2D>();
     }
 
     // Because this is a phyics function you want to use FixedUpdate instead of Update

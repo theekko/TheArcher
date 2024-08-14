@@ -164,6 +164,7 @@ public class Player : MonoBehaviour {
     private IEnumerator Dash() {
         canDash = false;
         IsDashing = true;
+        Debug.Log("dashing");
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
@@ -172,7 +173,6 @@ public class Player : MonoBehaviour {
         IsDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-        Debug.Log("dashing");
     }
 
     private void Awake() {
