@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 5, y: 5}
+  knockback: {x: 20, y: 0}
   attackSource: {fileID: 4000387128829137649}
 --- !u!1 &5388813721707163382
 GameObject:

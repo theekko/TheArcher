@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour {
     private Vector2 moveInput;
     private float jumpAction;
     private float horizontal;
+    private Damageable damageable;
+    private bool isKnockedBack = false;
     
 
 
@@ -108,7 +111,6 @@ public class Player : MonoBehaviour {
         }
 
         if (context.started && wallJumpingCounter > 0f && !touchingDirections.IsGrounded) {
-            Debug.Log("wall jump");
             jumpsRemaining++;
             IsWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
@@ -121,6 +123,13 @@ public class Player : MonoBehaviour {
     public void OnDash(InputAction.CallbackContext context) {
         if (context.started && canDash) {
             StartCoroutine(Dash());
+        }
+    }
+
+    public void OnHit(object sender, Damageable.OnHitEventArgs e) {
+        //rb.velocity = new Vector2(e.knockback.x, rb.velocity.y + e.knockback.y);
+        if (!isKnockedBack) {
+            StartCoroutine(ApplyKnockback(e.knockback));
         }
     }
 
@@ -164,7 +173,6 @@ public class Player : MonoBehaviour {
     private IEnumerator Dash() {
         canDash = false;
         IsDashing = true;
-        Debug.Log("dashing");
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
@@ -175,13 +183,23 @@ public class Player : MonoBehaviour {
         canDash = true;
     }
 
+    private IEnumerator ApplyKnockback(Vector2 knockback) {
+        isKnockedBack = true;
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        yield return new WaitForSeconds(0.2f); // Adjust the duration as needed
+        isKnockedBack = false;
+    }
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
+        damageable.damageableHit += OnHit;
     }
 
+
     private void FixedUpdate() {
-        if (IsDashing) {
+        if (IsDashing || isKnockedBack) {
             return;
         }
 

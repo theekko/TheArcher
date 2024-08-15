@@ -17,7 +17,10 @@ public class Attack : MonoBehaviour {
 
         if (damageable != null & attackSource.IsAlive) {
 
-            Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
+            
+            float direction = Mathf.Sign(collision.transform.position.x - transform.position.x);
+            Vector2 deliveredKnockback = new Vector2(direction * knockback.x, knockback.y);
+
             bool gotHit = damageable.Hit(attackDamage, deliveredKnockback);
 
         }

@@ -14,6 +14,11 @@ public class Damageable : MonoBehaviour {
     private float timeSinceHit = 0;
 
     public event EventHandler damageableDeath;
+    public event EventHandler<OnHitEventArgs> damageableHit;
+    public class OnHitEventArgs : EventArgs {
+        public int damage;
+        public Vector2 knockback;
+    }
 
     public bool IsHit {
         get {
@@ -69,6 +74,10 @@ public class Damageable : MonoBehaviour {
             isInvincible = true;
             timeSinceHit = 0;
             IsHit = true;
+            damageableHit?.Invoke(this, new OnHitEventArgs {
+                damage = damage,
+                knockback = knockback
+            });
             return true;
         }
         return false;
