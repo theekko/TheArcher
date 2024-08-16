@@ -191,7 +191,11 @@ public class Player : MonoBehaviour {
         IsDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
+        if (moveInput.x == 0f) {
+            rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
+        } else {
+            rb.velocity = new Vector2(moveInput.x * dashingPower, 0);
+        }
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         IsDashing = false;
