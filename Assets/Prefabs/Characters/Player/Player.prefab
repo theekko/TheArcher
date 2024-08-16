@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 316281435092961828}
   - component: {fileID: 268488088047796051}
   m_Layer: 0
-  m_Name: LightBow_1_0
+  m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.83756006, y: 0.22785036, z: 5.3944693}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.7000003, y: 2.7000003, z: 2.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 950359216241801046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -490,4 +490,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bow: {fileID: 316281435092961828}
-  bowDistance: 1.5
+  bowDistance: 0.2
+  playerTransform: {fileID: 950359216241801046}

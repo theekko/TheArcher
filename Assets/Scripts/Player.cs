@@ -96,7 +96,7 @@ public class Player : MonoBehaviour {
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
 
-        SetFacingDirection(moveInput);
+        //SetFacingDirection(moveInput);
     }
 
     public void OnJump(InputAction.CallbackContext context) {
@@ -133,15 +133,28 @@ public class Player : MonoBehaviour {
         }
     }
 
-    private void SetFacingDirection(Vector2 moveInput) {
-        if (moveInput.x > 0 && !IsFacingRight) {
+
+    private void SetFacingDirection() {
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePos.x > transform.position.x && !IsFacingRight) {
             // face right
             IsFacingRight = true;
-        } else if (moveInput.x < 0 && IsFacingRight) {
+        } else if (mousePos.x < transform.position.x && IsFacingRight) {
             // face left
             IsFacingRight = false;
         }
     }
+    //    private void SetFacingDirection(Vector2 moveInput) {
+
+    //    if (moveInput.x > 0 && !IsFacingRight) {
+    //        // face right
+    //        IsFacingRight = true;
+    //    } else if (moveInput.x < 0 && IsFacingRight) {
+    //        // face left
+    //        IsFacingRight = false;
+    //    }
+    //}
 
     private void WallSlide() {
         if (touchingDirections.IsOnWall && horizontal != 0f && !touchingDirections.IsGrounded) {
@@ -204,9 +217,11 @@ public class Player : MonoBehaviour {
         }
 
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
+
     }
 
     private void Update() {
+        SetFacingDirection();
         if (IsDashing) {
             return;
         }
