@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
 
     public float CurrentMoveSpeed {
         get {
-            if (!touchingDirections.IsOnWall) {
+            if (!touchingDirections.IsOnWallFront || IsWallSliding || IsWallJumping) {
                 return moveSpeed;
             } else {
                 return 0;
@@ -110,7 +110,9 @@ public class Player : MonoBehaviour {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
+        //Wall jump
         if (context.started && wallJumpingCounter > 0f && !touchingDirections.IsGrounded) {
+
             jumpsRemaining++;
             IsWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
@@ -127,7 +129,6 @@ public class Player : MonoBehaviour {
     }
 
     public void OnHit(object sender, Damageable.OnHitEventArgs e) {
-        //rb.velocity = new Vector2(e.knockback.x, rb.velocity.y + e.knockback.y);
         if (!isKnockedBack) {
             StartCoroutine(ApplyKnockback(e.knockback));
         }
@@ -145,6 +146,7 @@ public class Player : MonoBehaviour {
             IsFacingRight = false;
         }
     }
+
     //    private void SetFacingDirection(Vector2 moveInput) {
 
     //    if (moveInput.x > 0 && !IsFacingRight) {
@@ -159,6 +161,7 @@ public class Player : MonoBehaviour {
     private void WallSlide() {
         if (touchingDirections.IsOnWall && horizontal != 0f && !touchingDirections.IsGrounded) {
             IsWallSliding = true;
+            //Clamp is to keep from wall sliding while going up
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
         } else {
             IsWallSliding = false;
@@ -168,7 +171,7 @@ public class Player : MonoBehaviour {
     private void WallJump() {
         if (IsWallSliding) {
             IsWallJumping = false;
-            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingDirection = -moveInput.x;
             wallJumpingCounter = wallJumpingTime;
 
             CancelInvoke(nameof(StopWallJumping));
@@ -217,7 +220,6 @@ public class Player : MonoBehaviour {
         }
 
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
-
     }
 
     private void Update() {

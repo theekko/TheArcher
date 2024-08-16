@@ -10,6 +10,8 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField] private float ceilingDistance = 0.05f;
     [SerializeField] private bool _isGrounded;
     [SerializeField] private bool _isOnWall;
+    [SerializeField] private bool _isOnWallBack;
+    [SerializeField] private bool _isOnWallFront;
     [SerializeField] private bool _isOnCeiling;
 
     private Collider2D touchingCol;
@@ -39,6 +41,24 @@ public class TouchingDirections : MonoBehaviour
         }
     }
 
+    public bool IsOnWallFront {
+        get {
+            return _isOnWallFront;
+        }
+        private set {
+            _isOnWallFront = value;
+        }
+    }
+
+    public bool IsOnWallBack {
+        get {
+            return _isOnWallBack;
+        }
+        private set {
+            _isOnWallBack = value;
+        }
+    }
+
     public bool IsOnCeiling {
         get {
             return _isOnCeiling;
@@ -56,7 +76,16 @@ public class TouchingDirections : MonoBehaviour
     // Because this is a phyics function you want to use FixedUpdate instead of Update
     private void FixedUpdate() {
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
-        IsOnWall = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance) > 0;
+        if (gameObject.transform.localScale.x > 0) {
+            IsOnWallBack = touchingCol.Cast(Vector2.left, castFilter, wallHits, wallDistance) > 0;
+            IsOnWallFront = touchingCol.Cast(Vector2.right, castFilter, wallHits, wallDistance) > 0;
+        } else {
+            IsOnWallBack = touchingCol.Cast(Vector2.right, castFilter, wallHits, wallDistance) > 0;
+            IsOnWallFront = touchingCol.Cast(Vector2.left, castFilter, wallHits, wallDistance) > 0;
+        }
+        bool wallHitLeft = touchingCol.Cast(Vector2.left, castFilter, wallHits, wallDistance) > 0;
+        bool wallHitRight = touchingCol.Cast(Vector2.right, castFilter, wallHits, wallDistance) > 0;
+        IsOnWall = wallHitLeft || wallHitRight;
         IsOnCeiling = touchingCol.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance) > 0;
     }
 }
