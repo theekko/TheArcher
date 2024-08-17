@@ -411,7 +411,7 @@ MonoBehaviour:
   moveSpeed: 200
   _isFacingRight: 1
   _isWallSliding: 0
-  wallSlideSpeed: 2
+  wallSlideSpeed: 0.8
   _isWallJumping: 0
   wallJumpingDirection: 0
   wallJumpingTime: 0.2
@@ -424,8 +424,8 @@ MonoBehaviour:
   doubleJumpeImpulse: 2
   canDash: 1
   _isDashing: 0
-  dashingPower: 3
-  dashingTime: 0.2
+  dashingPower: 10
+  dashingTime: 0.1
   dashingCooldown: 1
 --- !u!114 &5941585187920782006
 MonoBehaviour:
@@ -458,6 +458,8 @@ MonoBehaviour:
   ceilingDistance: 0.05
   _isGrounded: 0
   _isOnWall: 0
+  _isOnWallBack: 0
+  _isOnWallFront: 0
   _isOnCeiling: 0
 --- !u!114 &6163475997813251485
 MonoBehaviour:

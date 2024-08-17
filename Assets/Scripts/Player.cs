@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
 
-
+    private Vector2 _rightStickInput;
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -93,6 +93,15 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public Vector2 RightStickInput {
+        get {
+            return _rightStickInput;
+        }
+        private set {
+            _rightStickInput = value;
+        }
+    }
+
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
 
@@ -134,17 +143,31 @@ public class Player : MonoBehaviour {
         }
     }
 
+    // Method to capture right stick input
+    public void OnRightStickMove(InputAction.CallbackContext context) {
+        RightStickInput = context.ReadValue<Vector2>();
+    }
 
     private void SetFacingDirection() {
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePos.x > transform.position.x && !IsFacingRight) {
-            // face right
-            IsFacingRight = true;
-        } else if (mousePos.x < transform.position.x && IsFacingRight) {
-            // face left
-            IsFacingRight = false;
+        if (Gamepad.current != null) {
+            if (RightStickInput.x > 0 && !IsFacingRight) {
+                // face right
+                IsFacingRight = true;
+            } else if (RightStickInput.x < 0 && IsFacingRight) {
+                // face left
+                IsFacingRight = false;
+            }
+        } else {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (mousePos.x > transform.position.x && !IsFacingRight) {
+                // face right
+                IsFacingRight = true;
+            } else if (mousePos.x < transform.position.x && IsFacingRight) {
+                // face left
+                IsFacingRight = false;
+            }
         }
+
     }
 
     //    private void SetFacingDirection(Vector2 moveInput) {
