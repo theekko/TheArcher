@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 
@@ -9,12 +11,49 @@ public class BowController : MonoBehaviour {
     [SerializeField] private Transform bow;
     [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private bool _isFiring;
 
 
     private Vector3 lastDirection;
     private Player player;
+    private Rigidbody2D rb;
+    private Vector3 direction;
+
+    public event EventHandler<IsFiringArg> firingBow;
+    public class IsFiringArg : EventArgs { 
+        public bool isFiring;
+    }
+    public bool IsFiring {
+        get {
+            return _isFiring;
+        } private set { 
+            _isFiring = value;  
+        }
+    }
+
+
+    public void OnFire(InputAction.CallbackContext context) {
+        if (context.performed) {
+            IsFiring = true;
+            firingBow?.Invoke(this, new IsFiringArg { 
+                isFiring = IsFiring
+            });
+            rb.velocity = Vector3.zero;
+            Fire();
+        } else if (context.canceled) {
+            IsFiring = false;
+            firingBow?.Invoke(this, new IsFiringArg {
+                isFiring = IsFiring
+            });
+        }
+    }
+
+    public void Fire() {
+        // Implement firing logic here
+    }
+
+
     private void Update() {
-        Vector3 direction;
 
         // Check if a gamepad is connected and the right stick is being used
         if (Gamepad.current != null && player.RightStickInput.sqrMagnitude > 0.1f) {
@@ -48,17 +87,11 @@ public class BowController : MonoBehaviour {
         bow.position = transform.position + Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
     }
 
+
+
     private void Awake() {
-        player = GetComponent<Player>();   
+        player = GetComponent<Player>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void OnFire(InputAction.CallbackContext context) {
-        if (context.performed) {
-            Fire();
-        }
-    }
-
-    public void Fire() {
-        // Implement firing logic here
-    }
 }

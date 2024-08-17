@@ -39,7 +39,9 @@ public class Player : MonoBehaviour {
     private float jumpAction;
     private float horizontal;
     private Damageable damageable;
-    private bool isKnockedBack = false;
+    private BowController bow;
+    private bool _isKnockedBack = false;
+    private bool isFiring;
     
 
 
@@ -93,6 +95,15 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public bool IsKnockedBack {
+        get { 
+            return _isKnockedBack;
+        }
+        private set { 
+            _isKnockedBack = value;
+        }
+    }
+
     public Vector2 RightStickInput {
         get {
             return _rightStickInput;
@@ -132,13 +143,13 @@ public class Player : MonoBehaviour {
     }
 
     public void OnDash(InputAction.CallbackContext context) {
-        if (context.started && canDash) {
+        if (context.started && canDash && !isFiring) {
             StartCoroutine(Dash());
         }
     }
 
     public void OnHit(object sender, Damageable.OnHitEventArgs e) {
-        if (!isKnockedBack) {
+        if (!IsKnockedBack) {
             StartCoroutine(ApplyKnockback(e.knockback));
         }
     }
@@ -227,10 +238,10 @@ public class Player : MonoBehaviour {
     }
 
     private IEnumerator ApplyKnockback(Vector2 knockback) {
-        isKnockedBack = true;
+        IsKnockedBack = true;
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
         yield return new WaitForSeconds(0.2f); // Adjust the duration as needed
-        isKnockedBack = false;
+        IsKnockedBack = false;
     }
 
     private void Awake() {
@@ -238,11 +249,21 @@ public class Player : MonoBehaviour {
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
         damageable.damageableHit += OnHit;
+        bow = GetComponent<BowController>();
+        bow.firingBow += firingBow;
     }
 
+    private void firingBow(object sender, BowController.IsFiringArg e) {
+        isFiring = e.isFiring;
+    }
 
     private void FixedUpdate() {
-        if (IsDashing || isKnockedBack) {
+        if (IsDashing || IsKnockedBack) {
+            return;
+        }
+
+        if (isFiring) {
+            rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }
 
