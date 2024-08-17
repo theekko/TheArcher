@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
     private Damageable damageable;
     private BowController bow;
     private bool _isKnockedBack = false;
-    private bool isFiring;
+
     
 
 
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour {
     }
 
     public void OnDash(InputAction.CallbackContext context) {
-        if (context.started && canDash && !isFiring) {
+        if (context.started && canDash && !bow.IsFiring) {
             StartCoroutine(Dash());
         }
     }
@@ -250,11 +250,6 @@ public class Player : MonoBehaviour {
         damageable = GetComponent<Damageable>();
         damageable.damageableHit += OnHit;
         bow = GetComponent<BowController>();
-        bow.firingBow += firingBow;
-    }
-
-    private void firingBow(object sender, BowController.IsFiringArg e) {
-        isFiring = e.isFiring;
     }
 
     private void FixedUpdate() {
@@ -262,7 +257,7 @@ public class Player : MonoBehaviour {
             return;
         }
 
-        if (isFiring) {
+        if (bow.IsFiring) {
             rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }

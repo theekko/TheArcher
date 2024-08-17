@@ -19,10 +19,7 @@ public class BowController : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector3 direction;
 
-    public event EventHandler<IsFiringArg> firingBow;
-    public class IsFiringArg : EventArgs { 
-        public bool isFiring;
-    }
+
     public bool IsFiring {
         get {
             return _isFiring;
@@ -35,16 +32,11 @@ public class BowController : MonoBehaviour {
     public void OnFire(InputAction.CallbackContext context) {
         if (context.performed) {
             IsFiring = true;
-            firingBow?.Invoke(this, new IsFiringArg { 
-                isFiring = IsFiring
-            });
+
             rb.velocity = Vector3.zero;
             Fire();
         } else if (context.canceled) {
             IsFiring = false;
-            firingBow?.Invoke(this, new IsFiringArg {
-                isFiring = IsFiring
-            });
         }
     }
 
