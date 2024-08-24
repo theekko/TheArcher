@@ -10,15 +10,21 @@ using UnityEngine.InputSystem;
 public class BowController : MonoBehaviour {
     [SerializeField] private Transform bow;
     [SerializeField] private float bowDistance = 1.5f;
+    [SerializeField] private Transform bowEndpointPostion;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private bool _isFiring;
-
+    
 
     private Vector3 lastDirection;
     private Player player;
     private Rigidbody2D rb;
     private Vector3 direction;
 
+    public event EventHandler<OnFireEventArgs> OnFireEvent;
+    public class OnFireEventArgs : EventArgs {
+        public Vector3 bowEndpointPosition;
+        public Vector3 shootPosition;
+    }
 
     public bool IsFiring {
         get {
@@ -33,22 +39,22 @@ public class BowController : MonoBehaviour {
         if (context.performed) {
             IsFiring = true;
 
-            rb.velocity = Vector3.zero;
-            Fire();
         } else if (context.canceled) {
             IsFiring = false;
+
+            OnFireEvent?.Invoke(this, new OnFireEventArgs {
+                bowEndpointPosition = bowEndpointPostion.position,
+                shootPosition = direction
+            });
         }
     }
 
-    public void Fire() {
-        // Implement firing logic here
-    }
 
 
     private void Update() {
 
         // Check if a gamepad is connected and the right stick is being used
-        if (Gamepad.current != null && player.RightStickInput.sqrMagnitude > 0.1f) {
+        if (Gamepad.current != null && player.RightStickInput.sqrMagnitude > 0f) {
             direction = new Vector3(player.RightStickInput.x, player.RightStickInput.y, 0f);
             lastDirection = direction; // Update the last valid direction
         } else if (Gamepad.current != null && lastDirection != Vector3.zero) {
@@ -56,7 +62,9 @@ public class BowController : MonoBehaviour {
         } else {
             // Fallback to mouse input
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = mousePos - transform.position;
+            Vector3 directiontoMouse = mousePos - transform.position;
+            directiontoMouse.z = 0;
+            direction = directiontoMouse.normalized;
             lastDirection = direction; // Update the last valid direction
         }
 
