@@ -2823,6 +2823,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.010319531
       objectReference: {fileID: 0}
+    - target: {fileID: 88505225049188053, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4769547776105269561, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.358
@@ -2863,9 +2867,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388813721707163382, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6705707070689546317, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705707070689546317, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6729365887688997577, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
       propertyPath: knockback.x
@@ -2902,7 +2914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950359216241801046, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3944693
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 950359216241801046, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
       propertyPath: m_LocalRotation.w
