@@ -12,46 +12,55 @@ public class BowController : MonoBehaviour {
     [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private Transform bowEndpointPostion;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private bool _isFiring;
-    
+    [SerializeField] private bool _isDrawing;
+    [SerializeField] private float minDrawTime = 0.5f;
 
     private Vector3 lastDirection;
     private Player player;
     private Rigidbody2D rb;
     private Vector3 direction;
+    private float drawTime = 0f;
 
-    public event EventHandler<OnFireEventArgs> OnFireEvent;
-    public class OnFireEventArgs : EventArgs {
+    public event EventHandler<OnFireSuccessEventArgs> OnFireSuccessEvent;
+    public class OnFireSuccessEventArgs : EventArgs {
         public Vector3 bowEndpointPosition;
         public Vector3 shootPosition;
     }
 
-    public bool IsFiring {
+    public event EventHandler OnFireFailEvent;
+
+
+    public bool IsDrawing {
         get {
-            return _isFiring;
+            return _isDrawing;
         } private set { 
-            _isFiring = value;  
+            _isDrawing = value;  
         }
     }
 
 
     public void OnFire(InputAction.CallbackContext context) {
         if (context.performed) {
-            IsFiring = true;
-
+            IsDrawing = true;
         } else if (context.canceled) {
-            IsFiring = false;
-
-            OnFireEvent?.Invoke(this, new OnFireEventArgs {
-                bowEndpointPosition = bowEndpointPostion.position,
-                shootPosition = direction
-            });
+            IsDrawing = false;
+            OnFireFailEvent?.Invoke(this, EventArgs.Empty);
+            if (drawTime >= minDrawTime) {
+                OnFireSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
+                    bowEndpointPosition = bowEndpointPostion.position,
+                    shootPosition = direction
+                });
+            }
+            drawTime = 0f;
         }
     }
 
 
 
     private void Update() {
+        if (IsDrawing) {
+            drawTime += Time.deltaTime;
+        }
 
         // Check if a gamepad is connected and the right stick is being used
         if (Gamepad.current != null && player.RightStickInput.sqrMagnitude > 0f) {

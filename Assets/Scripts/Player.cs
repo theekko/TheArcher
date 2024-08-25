@@ -41,6 +41,7 @@ public class Player : MonoBehaviour {
     private Damageable damageable;
     private BowController bow;
     private bool _isKnockedBack = false;
+    private bool slowFall = true;
 
     
 
@@ -143,7 +144,7 @@ public class Player : MonoBehaviour {
     }
 
     public void OnDash(InputAction.CallbackContext context) {
-        if (context.started && canDash && !bow.IsFiring) {
+        if (context.started && canDash && !bow.IsDrawing) {
             StartCoroutine(Dash());
         }
     }
@@ -157,6 +158,13 @@ public class Player : MonoBehaviour {
     // Method to capture right stick input
     public void OnRightStickMove(InputAction.CallbackContext context) {
         RightStickInput = context.ReadValue<Vector2>();
+    }
+
+    public void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
+        slowFall = false;
+    }
+    private void Bow_OnFireFailEvent(object sender, EventArgs e) {
+        slowFall = false;
     }
 
     private void SetFacingDirection() {
@@ -250,6 +258,8 @@ public class Player : MonoBehaviour {
         damageable = GetComponent<Damageable>();
         damageable.damageableHit += OnHit;
         bow = GetComponent<BowController>();
+        bow.OnFireSuccessEvent += Bow_OnFireSuccessEvent;
+        bow.OnFireFailEvent += Bow_OnFireFailEvent;
     }
 
     private void FixedUpdate() {
@@ -257,7 +267,7 @@ public class Player : MonoBehaviour {
             return;
         }
 
-        if (bow.IsFiring) {
+        if (bow.IsDrawing && slowFall) {
             rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }
@@ -269,6 +279,10 @@ public class Player : MonoBehaviour {
         SetFacingDirection();
         if (IsDashing) {
             return;
+        }
+
+        if (touchingDirections.IsGrounded) {
+            slowFall = true;
         }
 
         horizontal = moveInput.x;
