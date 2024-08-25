@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float teleportFallReduction;
     [SerializeField] private float maxTeleportFallReduction = 1f;
 
-    private Vector2 _rightStickInput;
+    private Vector2 _leftStickInput;
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -108,12 +108,12 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public Vector2 RightStickInput {
+    public Vector2 LeftStickInput {
         get {
-            return _rightStickInput;
+            return _leftStickInput;
         }
         private set {
-            _rightStickInput = value;
+            _leftStickInput = value;
         }
     }
 
@@ -168,8 +168,8 @@ public class Player : MonoBehaviour {
     }
 
     // Method to capture right stick input
-    public void OnRightStickMove(InputAction.CallbackContext context) {
-        RightStickInput = context.ReadValue<Vector2>();
+    public void OnLeftStickMove(InputAction.CallbackContext context) {
+        LeftStickInput = context.ReadValue<Vector2>();
     }
 
     public void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
@@ -181,10 +181,10 @@ public class Player : MonoBehaviour {
 
     private void SetFacingDirection() {
         if (Gamepad.current != null) {
-            if (RightStickInput.x > 0 && !IsFacingRight) {
+            if (LeftStickInput.x > 0 && !IsFacingRight) {
                 // face right
                 IsFacingRight = true;
-            } else if (RightStickInput.x < 0 && IsFacingRight) {
+            } else if (LeftStickInput.x < 0 && IsFacingRight) {
                 // face left
                 IsFacingRight = false;
             }

@@ -86,8 +86,8 @@ public class BowController : MonoBehaviour {
         }
 
         // Check if a gamepad is connected and the right stick is being used
-        if (Gamepad.current != null && player.RightStickInput.sqrMagnitude > 0f) {
-            direction = new Vector3(player.RightStickInput.x, player.RightStickInput.y, 0f);
+        if (Gamepad.current != null && player.LeftStickInput.sqrMagnitude > 0f) {
+            direction = new Vector3(player.LeftStickInput.x, player.LeftStickInput.y, 0f).normalized;
             lastDirection = direction; // Update the last valid direction
         } else if (Gamepad.current != null && lastDirection != Vector3.zero) {
             direction = lastDirection; // Use the last valid direction
