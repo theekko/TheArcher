@@ -548,8 +548,7 @@ MonoBehaviour:
   dashingPower: 10
   dashingTime: 0.1
   dashingCooldown: 1
-  teleportFallReduction: 0
-  maxTeleportFallReduction: 1
+  maxTeleportFallReduction: 0.15
 --- !u!114 &5941585187920782006
 MonoBehaviour:
   m_ObjectHideFlags: 0

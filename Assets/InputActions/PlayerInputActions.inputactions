@@ -270,17 +270,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d6c81731-1de3-43f7-9b55-05072c3d7f1e",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4deb2bb3-92ee-406c-9c09-58fba318f722",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
@@ -337,7 +326,7 @@
                 {
                     "name": "",
                     "id": "945bfa24-a9a2-4024-8d17-a2aa49f785e8",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -349,6 +338,17 @@
                     "name": "",
                     "id": "f552b78d-2dd1-4aa6-a897-d4e58ecdeaa9",
                     "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ef17e7a-ad46-44c6-b047-1d7731c46b1e",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

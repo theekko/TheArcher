@@ -32,7 +32,6 @@ public class Player : MonoBehaviour {
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
 
-    [SerializeField] private float teleportFallReduction;
     [SerializeField] private float maxTeleportFallReduction = 1f;
 
     private Vector2 _leftStickInput;
@@ -45,8 +44,10 @@ public class Player : MonoBehaviour {
     private BowController bow;
     private bool _isKnockedBack = false;
     private bool slowFall = true;
+    private float teleportFallReductionTimer = 0f;
+    private float originalGravityScale;
 
-    
+
 
 
     public float CurrentMoveSpeed {
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour {
         get {
             return _isWallJumping;
         }
-        private set { 
+        private set {
             _isWallJumping = value;
         }
     }
@@ -100,10 +101,10 @@ public class Player : MonoBehaviour {
     }
 
     public bool IsKnockedBack {
-        get { 
+        get {
             return _isKnockedBack;
         }
-        private set { 
+        private set {
             _isKnockedBack = value;
         }
     }
@@ -130,7 +131,7 @@ public class Player : MonoBehaviour {
 
             jumpsRemaining--;
         }
-        if (context.canceled && rb.velocity.y > 0 ) {
+        if (context.canceled && rb.velocity.y > 0) {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
@@ -158,18 +159,18 @@ public class Player : MonoBehaviour {
             transform.position = existingTeleportPoint.transform.position;
             existingTeleportPoint.gameObject.SetActive(false);
             Destroy(existingTeleportPoint.gameObject);
+            teleportFallReductionTimer = maxTeleportFallReduction;
         }
+    }
+
+    public void OnLeftStickMove(InputAction.CallbackContext context) {
+        LeftStickInput = context.ReadValue<Vector2>();
     }
 
     public void OnHit(object sender, Damageable.OnHitEventArgs e) {
         if (!IsKnockedBack) {
             StartCoroutine(ApplyKnockback(e.knockback));
         }
-    }
-
-    // Method to capture right stick input
-    public void OnLeftStickMove(InputAction.CallbackContext context) {
-        LeftStickInput = context.ReadValue<Vector2>();
     }
 
     public void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
@@ -201,17 +202,6 @@ public class Player : MonoBehaviour {
 
     }
 
-    //    private void SetFacingDirection(Vector2 moveInput) {
-
-    //    if (moveInput.x > 0 && !IsFacingRight) {
-    //        // face right
-    //        IsFacingRight = true;
-    //    } else if (moveInput.x < 0 && IsFacingRight) {
-    //        // face left
-    //        IsFacingRight = false;
-    //    }
-    //}
-
     private void WallSlide() {
         if (touchingDirections.IsOnWall && horizontal != 0f && !touchingDirections.IsGrounded) {
             IsWallSliding = true;
@@ -230,12 +220,14 @@ public class Player : MonoBehaviour {
 
             CancelInvoke(nameof(StopWallJumping));
         } else {
-            wallJumpingCounter -= Time.deltaTime;
+            if (wallJumpingCounter > 0) {
+                wallJumpingCounter -= Time.deltaTime;
+            }
         }
 
     }
 
-    private void StopWallJumping() { 
+    private void StopWallJumping() {
         IsWallJumping = false;
     }
 
@@ -264,6 +256,10 @@ public class Player : MonoBehaviour {
         IsKnockedBack = false;
     }
 
+    private void Start() {
+        originalGravityScale = rb.gravityScale;
+    }
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
@@ -279,11 +275,24 @@ public class Player : MonoBehaviour {
             return;
         }
 
+
+        if ( teleportFallReductionTimer > 0) {
+            //rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y / 2);
+            rb.velocity = Vector2.zero;
+            rb.gravityScale = 0;
+            teleportFallReductionTimer -= Time.deltaTime;
+            return;
+        } else {
+            rb.gravityScale = originalGravityScale;
+            teleportFallReductionTimer = 0;
+        }
+
         if (bow.IsDrawing && slowFall) {
             rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }
 
+        Debug.Log(teleportFallReductionTimer);
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
     }
 
@@ -293,7 +302,7 @@ public class Player : MonoBehaviour {
             return;
         }
 
-        if (touchingDirections.IsGrounded) {
+        if (touchingDirections.IsGrounded || touchingDirections.IsOnWall) {
             slowFall = true;
         }
 
