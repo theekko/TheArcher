@@ -27,6 +27,12 @@ public class BowController : MonoBehaviour {
         public Vector3 shootPosition;
     }
 
+    public event EventHandler<OnFireTeleportSuccessEventArgs> OnFireTeleportSuccessEvent;
+    public class OnFireTeleportSuccessEventArgs : EventArgs {
+        public Vector3 bowEndpointPosition;
+        public Vector3 shootPosition;
+    }
+
     public event EventHandler OnFireFailEvent;
 
 
@@ -39,7 +45,7 @@ public class BowController : MonoBehaviour {
     }
 
 
-    public void OnFire(InputAction.CallbackContext context) {
+    public void OnFireArrow(InputAction.CallbackContext context) {
         if (context.performed) {
             IsDrawing = true;
         } else if (context.canceled) {
@@ -47,6 +53,23 @@ public class BowController : MonoBehaviour {
             OnFireFailEvent?.Invoke(this, EventArgs.Empty);
             if (drawTime >= minDrawTime) {
                 OnFireSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
+                    bowEndpointPosition = bowEndpointPostion.position,
+                    shootPosition = direction
+                });
+            }
+            drawTime = 0f;
+        }
+    }
+
+
+    public void OnFireTeleportArrow(InputAction.CallbackContext context) {
+        if (context.performed) {
+            IsDrawing = true;
+        } else if (context.canceled) {
+            IsDrawing = false;
+            OnFireFailEvent?.Invoke(this, EventArgs.Empty);
+            if (drawTime >= minDrawTime) {
+                OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
                     shootPosition = direction
                 });

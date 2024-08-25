@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299334238944032229}
   - component: {fileID: 3567378216996408856}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: ArrowVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,11 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343836065563387753}
-  - component: {fileID: -1089750934462299826}
   - component: {fileID: 7758728873550834140}
   - component: {fileID: -5448070191908156435}
-  m_Layer: 9
-  m_Name: Arrow
+  - component: {fileID: -1497586502567309151}
+  m_Layer: 17
+  m_Name: ArrowTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,22 +119,6 @@ Transform:
   - {fileID: 299334238944032229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1089750934462299826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6807685213273652547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f215b42b29c6ad41840fcbe964bad1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  knockback: {x: 0, y: 0}
-  destroyTimer: 0.3
-  moveSpeed: 8
 --- !u!61 &7758728873550834140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +191,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-1497586502567309151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6807685213273652547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f215b42b29c6ad41840fcbe964bad1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  knockback: {x: 0, y: 0}
+  destroyTimer: 2
+  moveSpeed: 1

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299334238944032229}
   - component: {fileID: 3567378216996408856}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: ArrowVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 565ca438b9cf11d4a8361689e6b6850a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e62c1d818ce29484ab6a410f5f1324b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 1343836065563387753}
   - component: {fileID: 7758728873550834140}
   - component: {fileID: -5448070191908156435}
-  - component: {fileID: -3943564927637831869}
-  m_Layer: 9
-  m_Name: ArrowPhysics
+  - component: {fileID: -6555333750326497580}
+  m_Layer: 17
+  m_Name: TeleportArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-3943564927637831869
+--- !u!114 &-6555333750326497580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,11 +200,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6807685213273652547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9a7a1147f01094baec8fdc61238181, type: 3}
+  m_Script: {fileID: 11500000, guid: ae4588cd004d5b542b74faa64096a1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   knockback: {x: 0, y: 0}
   destroyTimer: 2
-  moveSpeed: 10
+  moveSpeed: 1
   hitDestroyTimer: 0
+  TeleportPoint: {fileID: 6428584340728623360, guid: 15409d375b0195c43b4698bfc624ab20, type: 3}

@@ -377,11 +377,35 @@ MonoBehaviour:
     m_ActionId: 37454031-e6d0-401a-b39c-cefc699f8be0
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6715599343940068871}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnRightStickMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b2ed1538-5cc7-4b04-a44d-99c36dfc8c7c
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1364892073248799429}
+        m_TargetAssemblyTypeName: BowController, Assembly-CSharp
+        m_MethodName: OnFireArrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6aba9fdf-6a58-4740-97dc-2ee8dee54b60
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -456,6 +480,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9e3812e3-c18d-481f-8474-62d9f8935cad
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1364892073248799429}
+        m_TargetAssemblyTypeName: BowController, Assembly-CSharp
+        m_MethodName: OnFireTeleportArrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80fd31ea-b89e-4e2d-9d29-d65b659b59de
+    m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6715599343940068871}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnTeleport
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6a7104b-bfea-4094-9e58-fe242d99bf61
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -492,6 +548,8 @@ MonoBehaviour:
   dashingPower: 10
   dashingTime: 0.1
   dashingCooldown: 1
+  teleportFallReduction: 0
+  maxTeleportFallReduction: 1
 --- !u!114 &5941585187920782006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +619,7 @@ MonoBehaviour:
   bowEndpointPostion: {fileID: 7070214671564519453}
   playerTransform: {fileID: 950359216241801046}
   _isDrawing: 0
-  minDrawTime: 0.3
+  minDrawTime: 0.1
 --- !u!114 &2912268224767837332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,5 +632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f4b61a2c178ca4a8ccde7a7773e686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 1343836065563387753, guid: 55338a6fd1eaf464c91c06c411c089d5, type: 3}
-  arrowPhysics: {fileID: 1343836065563387753, guid: 1812dcd7f63a61d408e493c34d85aeb9, type: 3}
+  arrowTransform: {fileID: 1343836065563387753, guid: 55338a6fd1eaf464c91c06c411c089d5, type: 3}
+  arrow: {fileID: 1343836065563387753, guid: 1812dcd7f63a61d408e493c34d85aeb9, type: 3}
+  teleportArrow: {fileID: 1343836065563387753, guid: dc1b06f77e9e9d34d876bb76ed859dbd, type: 3}

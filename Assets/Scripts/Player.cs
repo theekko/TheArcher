@@ -32,6 +32,9 @@ public class Player : MonoBehaviour {
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
 
+    [SerializeField] private float teleportFallReduction;
+    [SerializeField] private float maxTeleportFallReduction = 1f;
+
     private Vector2 _rightStickInput;
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
@@ -146,6 +149,15 @@ public class Player : MonoBehaviour {
     public void OnDash(InputAction.CallbackContext context) {
         if (context.started && canDash && !bow.IsDrawing) {
             StartCoroutine(Dash());
+        }
+    }
+
+    public void OnTeleport(InputAction.CallbackContext context) {
+        TeleportPoint existingTeleportPoint = FindObjectOfType<TeleportPoint>();
+        if (existingTeleportPoint != null) {
+            transform.position = existingTeleportPoint.transform.position;
+            existingTeleportPoint.gameObject.SetActive(false);
+            Destroy(existingTeleportPoint.gameObject);
         }
     }
 
