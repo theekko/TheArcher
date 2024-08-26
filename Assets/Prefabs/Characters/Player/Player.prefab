@@ -549,6 +549,7 @@ MonoBehaviour:
   dashingTime: 0.1
   dashingCooldown: 1
   maxTeleportFallReduction: 0.15
+  teleportOverlapOffset: 0.05
 --- !u!114 &5941585187920782006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +620,14 @@ MonoBehaviour:
   playerTransform: {fileID: 950359216241801046}
   _isDrawing: 0
   minDrawTime: 0.1
+  maxDrawTime: 1
+  minDestroyTimer: 0.1
+  maxDestroyTimer: 0.3
+  raycastDistance: 0.05
+  checkRadius: 0.05
+  gamepadConeAngle: 30
+  mouseConeAngle: 15
+  maxDistance: 10
 --- !u!114 &2912268224767837332
 MonoBehaviour:
   m_ObjectHideFlags: 0

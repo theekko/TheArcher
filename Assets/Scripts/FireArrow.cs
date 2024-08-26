@@ -35,6 +35,6 @@ public class FireArrow : MonoBehaviour {
     private void FireArrow_OnFireTeleportSuccessEvent(object sender, BowController.OnFireTeleportSuccessEventArgs e) {
         Transform arrowTransform = Instantiate(teleportArrow, e.bowEndpointPosition, Quaternion.identity);
         Vector3 shootDir = e.shootPosition;
-        arrowTransform.GetComponent<TeleportArrow>().Setup(shootDir);
+        arrowTransform.GetComponent<TeleportArrow>().Setup(shootDir, e.destroyTimer);
     }
 }

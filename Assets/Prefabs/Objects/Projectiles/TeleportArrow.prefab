@@ -205,7 +205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockback: {x: 0, y: 0}
-  destroyTimer: 0.3
+  destroyTimer: 0.2
   moveSpeed: 10
   hitDestroyTimer: 0
   TeleportPoint: {fileID: 6428584340728623360, guid: 15409d375b0195c43b4698bfc624ab20, type: 3}
+  arrowCollisionOffset: 0.05

@@ -33,6 +33,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float dashingCooldown = 1f;
 
     [SerializeField] private float maxTeleportFallReduction = 1f;
+    [SerializeField] private float teleportOverlapOffset = 0.1f;
 
     private Vector2 _leftStickInput;
     private TouchingDirections touchingDirections;
@@ -156,12 +157,53 @@ public class Player : MonoBehaviour {
     public void OnTeleport(InputAction.CallbackContext context) {
         TeleportPoint existingTeleportPoint = FindObjectOfType<TeleportPoint>();
         if (existingTeleportPoint != null) {
+            Vector3 initialPosition = transform.position; // Save the initial position before teleporting
             transform.position = existingTeleportPoint.transform.position;
             existingTeleportPoint.gameObject.SetActive(false);
             Destroy(existingTeleportPoint.gameObject);
             teleportFallReductionTimer = maxTeleportFallReduction;
+
+            // Check if the player is inside a collider after teleporting
+            Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+            if (overlapCollider != null) {
+                Vector2 directionToMove = Vector2.zero;
+                Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+
+                foreach (var direction in directions) {
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+                    if (hit.collider != null && hit.collider == overlapCollider) {
+                        directionToMove = hit.normal;
+                        break;
+                    }
+                }
+
+                if (directionToMove == Vector2.zero) {
+                    directionToMove = Vector2.up;
+                }
+
+                // Move the player out of the collider
+                transform.position += (Vector3)directionToMove.normalized * teleportOverlapOffset;
+
+                // Additional check to ensure correct side
+                if (IsOnWrongSideOfWall(initialPosition, transform.position, overlapCollider)) {
+                    // Reverse the direction to move the player to the correct side
+                    transform.position -= (Vector3)directionToMove.normalized * 1.0f;
+                }
+            }
         }
     }
+
+    private bool IsOnWrongSideOfWall(Vector3 initialPosition, Vector3 currentPosition, Collider2D wallCollider) {
+        // Perform a small raycast back towards the initial position to check if there's a wall between the player and the initial position
+        Vector2 directionToCheck = (initialPosition - currentPosition).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(currentPosition, directionToCheck, 0.5f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+
+        // If the raycast hits the same wall collider, the player is on the wrong side
+        return hit.collider != null && hit.collider == wallCollider;
+    }
+
+
+
 
     public void OnLeftStickMove(InputAction.CallbackContext context) {
         LeftStickInput = context.ReadValue<Vector2>();
@@ -292,7 +334,7 @@ public class Player : MonoBehaviour {
             return;
         }
 
-        Debug.Log(teleportFallReductionTimer);
+        
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
     }
 
