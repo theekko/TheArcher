@@ -6,11 +6,14 @@ public class FireArrow : MonoBehaviour {
     [SerializeField] private Transform arrowTransform;
     [SerializeField] private Transform arrow;
     [SerializeField] private Transform teleportArrow;
+    [SerializeField] private Transform empoweredArrow;
 
     private void Awake() {
         GetComponent<BowController>().OnFireSuccessEvent += FireArrow_OnFireEvent;
+        GetComponent<BowController>().OnFireEmpoweredSuccessEvent += FireArrow_OnFireEmpoweredSuccessEvent;
         GetComponent<BowController>().OnFireTeleportSuccessEvent += FireArrow_OnFireTeleportSuccessEvent;
     }
+
 
 
     private void FireArrow_OnFireEvent(object sender, BowController.OnFireSuccessEventArgs e) {
@@ -31,6 +34,13 @@ public class FireArrow : MonoBehaviour {
         //Vector3 shootDir = e.shootPosition;
         //ArrowRaycast.Fire(e.bowEndpointPosition, shootDir);
     }
+
+    private void FireArrow_OnFireEmpoweredSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
+        Transform arrowTransform = Instantiate(empoweredArrow, e.bowEndpointPosition, Quaternion.identity);
+        Vector3 shootDir = e.shootPosition;
+        arrowTransform.GetComponent<EmpoweredArrow>().Setup(shootDir);
+    }
+
 
     private void FireArrow_OnFireTeleportSuccessEvent(object sender, BowController.OnFireTeleportSuccessEventArgs e) {
         Transform arrowTransform = Instantiate(teleportArrow, e.bowEndpointPosition, Quaternion.identity);

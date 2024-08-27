@@ -43,12 +43,12 @@ public class Player : MonoBehaviour {
     private float horizontal;
     private Damageable damageable;
     private BowController bow;
-    private bool _isKnockedBack = false;
-    private bool slowFall = true;
     private float teleportFallReductionTimer = 0f;
     private float originalGravityScale;
+    private bool _isKnockedBack = false;
+    private bool _isSlowFall = true;
 
-
+    public event EventHandler teleportEvent;
 
 
     public float CurrentMoveSpeed {
@@ -119,6 +119,18 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public bool IsSlowFall {
+        get {
+            return _isSlowFall;
+        }
+        private set {
+            _isSlowFall = value;
+        }
+    }
+
+
+    
+
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
 
@@ -162,6 +174,7 @@ public class Player : MonoBehaviour {
             existingTeleportPoint.gameObject.SetActive(false);
             Destroy(existingTeleportPoint.gameObject);
             teleportFallReductionTimer = maxTeleportFallReduction;
+            teleportEvent?.Invoke(this, EventArgs.Empty);
 
             // Check if the player is inside a collider after teleporting
             Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
@@ -215,11 +228,11 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
-        slowFall = false;
+    private void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
+        IsSlowFall = false;
     }
     private void Bow_OnFireFailEvent(object sender, EventArgs e) {
-        slowFall = false;
+        IsSlowFall = false;
     }
 
     private void SetFacingDirection() {
@@ -329,7 +342,7 @@ public class Player : MonoBehaviour {
             teleportFallReductionTimer = 0;
         }
 
-        if (bow.IsDrawing && slowFall) {
+        if (bow.IsDrawing && IsSlowFall) {
             rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }
@@ -345,7 +358,7 @@ public class Player : MonoBehaviour {
         }
 
         if (touchingDirections.IsGrounded || touchingDirections.IsOnWall) {
-            slowFall = true;
+            IsSlowFall = true;
         }
 
         horizontal = moveInput.x;

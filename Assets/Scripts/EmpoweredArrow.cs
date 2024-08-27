@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour {
-    [SerializeField] private int damage = 1;
+public class EmpoweredArrow : MonoBehaviour {
+    [SerializeField] private int damage = 3;
     [SerializeField] private Vector2 knockback = Vector2.zero;
     [SerializeField] private float destroyTimer = 2f;
     [SerializeField] private float moveSpeed = 1f;
@@ -74,4 +73,3 @@ public class Arrow : MonoBehaviour {
         }
     }
 }
-

@@ -628,6 +628,7 @@ MonoBehaviour:
   gamepadConeAngle: 30
   mouseConeAngle: 15
   maxDistance: 10
+  _isEmpoweredShot: 0
 --- !u!114 &2912268224767837332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,3 +644,4 @@ MonoBehaviour:
   arrowTransform: {fileID: 1343836065563387753, guid: 55338a6fd1eaf464c91c06c411c089d5, type: 3}
   arrow: {fileID: 1343836065563387753, guid: 1812dcd7f63a61d408e493c34d85aeb9, type: 3}
   teleportArrow: {fileID: 1343836065563387753, guid: dc1b06f77e9e9d34d876bb76ed859dbd, type: 3}
+  empoweredArrow: {fileID: 1343836065563387753, guid: 24ee85b8d4022484f92378f64ef91ab3, type: 3}

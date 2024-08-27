@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d1818c3222d95a4793fa89ea3f51536, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1d16086d3b492d4bbed72d492f944da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 1343836065563387753}
   - component: {fileID: 7758728873550834140}
   - component: {fileID: -5448070191908156435}
-  - component: {fileID: -1937930320022947768}
+  - component: {fileID: 1710204473968502426}
   m_Layer: 17
-  m_Name: Arrow
+  m_Name: EmpoweredArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-1937930320022947768
+--- !u!114 &1710204473968502426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,10 +200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6807685213273652547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9a7a1147f01094baec8fdc61238181, type: 3}
+  m_Script: {fileID: 11500000, guid: f970aa046cd4d3c43a9931de9ccfbd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   knockback: {x: 0, y: 0}
   destroyTimer: 0.3
   moveSpeed: 10

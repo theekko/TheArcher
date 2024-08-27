@@ -23,6 +23,8 @@ public class BowController : MonoBehaviour {
     [SerializeField] private float mouseConeAngle = 15f; // Separate cone angle for mouse
     [SerializeField] private float maxDistance = 10f;
 
+    [SerializeField] private bool _isEmpoweredShot = false;
+
     private Vector3 lastDirection;
     private Player player;
     private Rigidbody2D rb;
@@ -32,10 +34,12 @@ public class BowController : MonoBehaviour {
     private float buttonPressStartTime = 0f;
 
     public event EventHandler<OnFireSuccessEventArgs> OnFireSuccessEvent;
+    public event EventHandler<OnFireSuccessEventArgs> OnFireEmpoweredSuccessEvent;
     public class OnFireSuccessEventArgs : EventArgs {
         public Vector3 bowEndpointPosition;
         public Vector3 shootPosition;
     }
+
 
     public event EventHandler<OnFireTeleportSuccessEventArgs> OnFireTeleportSuccessEvent;
     public class OnFireTeleportSuccessEventArgs : EventArgs {
@@ -55,6 +59,15 @@ public class BowController : MonoBehaviour {
         }
     }
 
+    public bool IsEmpoweredShot {
+        get {
+            return _isEmpoweredShot;
+        }
+        private set { 
+            _isEmpoweredShot = value;
+        }
+    }
+
     public void OnFireArrow(InputAction.CallbackContext context) {
         if (context.performed) {
             IsDrawing = true;
@@ -64,10 +77,19 @@ public class BowController : MonoBehaviour {
 
             // Perform raycast and overlap checks before triggering the event
             if (drawTime >= minDrawTime && !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
-                OnFireSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
-                    bowEndpointPosition = bowEndpointPostion.position,
-                    shootPosition = direction
-                });
+                if (IsEmpoweredShot) {
+                    OnFireEmpoweredSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
+                        bowEndpointPosition = bowEndpointPostion.position,
+                        shootPosition = direction
+                    });
+                    IsEmpoweredShot = false;
+                } else {
+                    OnFireSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
+                        bowEndpointPosition = bowEndpointPostion.position,
+                        shootPosition = direction
+                    });
+                }
+
             }
             drawTime = 0f;
         }
@@ -115,6 +137,34 @@ public class BowController : MonoBehaviour {
         Collider2D overlapHit = Physics2D.OverlapCircle(bow.position, checkRadius, LayerMask.GetMask(LayerStrings.Ground));
         return overlapHit != null;
     }
+
+    private Collider2D FindClosestEnemyInCone(Vector3 aimDirection, float coneAngle) {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, maxDistance, LayerMask.GetMask(LayerStrings.Enemies));
+
+        Collider2D closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider2D enemy in enemies) {
+            Vector3 directionToEnemy = (enemy.transform.position - transform.position).normalized;
+            float angleToEnemy = Vector3.Angle(aimDirection, directionToEnemy);
+
+            // Check if the enemy is within the cone and line of sight
+            if (angleToEnemy < coneAngle / 2f && !IsObstacleBetweenPlayerAndEnemy(enemy)) {
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distanceToEnemy < closestDistance) {
+                    closestDistance = distanceToEnemy;
+                    closestEnemy = enemy;
+                }
+            }
+        }
+
+        return closestEnemy;
+    }
+
+    private void Player_teleportEvent(object sender, EventArgs e) {
+        IsEmpoweredShot = true;
+    }
+
 
     private void Update() {
         if (IsDrawing) {
@@ -164,28 +214,6 @@ public class BowController : MonoBehaviour {
         bow.position = transform.position + Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
     }
 
-    private Collider2D FindClosestEnemyInCone(Vector3 aimDirection, float coneAngle) {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, maxDistance, LayerMask.GetMask(LayerStrings.Enemies));
-
-        Collider2D closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (Collider2D enemy in enemies) {
-            Vector3 directionToEnemy = (enemy.transform.position - transform.position).normalized;
-            float angleToEnemy = Vector3.Angle(aimDirection, directionToEnemy);
-
-            // Check if the enemy is within the cone and line of sight
-            if (angleToEnemy < coneAngle / 2f && !IsObstacleBetweenPlayerAndEnemy(enemy)) {
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-                if (distanceToEnemy < closestDistance) {
-                    closestDistance = distanceToEnemy;
-                    closestEnemy = enemy;
-                }
-            }
-        }
-
-        return closestEnemy;
-    }
 
     private bool IsObstacleBetweenPlayerAndEnemy(Collider2D enemy) {
         Vector3 directionToEnemy = enemy.transform.position - transform.position;
@@ -195,6 +223,10 @@ public class BowController : MonoBehaviour {
 
     private void Awake() {
         player = GetComponent<Player>();
+        player.teleportEvent += Player_teleportEvent;
         rb = GetComponent<Rigidbody2D>();
+
     }
+
+
 }
