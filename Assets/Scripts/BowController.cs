@@ -89,9 +89,8 @@ public class BowController : MonoBehaviour {
                 float heldTime = Time.time - buttonPressStartTime;
 
                 // Scale the destroy timer linearly between minDrawTime and maxDrawTime
-                float t = Mathf.Clamp01((drawTime - minDrawTime) / (maxDrawTime - minDrawTime)); // Use drawTime directly for scaling
-                float destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, t);
-                Debug.Log($"Held Time: {heldTime}, Destroy Timer: {destroyTimer}");
+                float linearTime = Mathf.Clamp01((drawTime - minDrawTime) / (maxDrawTime - minDrawTime)); // Use drawTime directly for scaling
+                float destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, linearTime);
 
                 OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
