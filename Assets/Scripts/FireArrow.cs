@@ -19,7 +19,7 @@ public class FireArrow : MonoBehaviour {
     private void FireArrow_OnFireEvent(object sender, BowController.OnFireSuccessEventArgs e) {
 
         // Phyics shot
-        Transform arrowTransform = Instantiate(arrow, e.bowEndpointPosition, Quaternion.identity);
+        Transform arrowTransform = Instantiate(arrow, new Vector3(e.bowEndpointPosition.x, e.bowEndpointPosition.y, 0), Quaternion.identity);
         Vector3 shootDir = e.shootPosition;
         arrowTransform.GetComponent<Arrow>().Setup(shootDir);
 
@@ -36,14 +36,14 @@ public class FireArrow : MonoBehaviour {
     }
 
     private void FireArrow_OnFireEmpoweredSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
-        Transform arrowTransform = Instantiate(empoweredArrow, e.bowEndpointPosition, Quaternion.identity);
+        Transform arrowTransform = Instantiate(empoweredArrow, new Vector3(e.bowEndpointPosition.x, e.bowEndpointPosition.y, 0), Quaternion.identity);
         Vector3 shootDir = e.shootPosition;
         arrowTransform.GetComponent<EmpoweredArrow>().Setup(shootDir);
     }
 
 
     private void FireArrow_OnFireTeleportSuccessEvent(object sender, BowController.OnFireTeleportSuccessEventArgs e) {
-        Transform arrowTransform = Instantiate(teleportArrow, e.bowEndpointPosition, Quaternion.identity);
+        Transform arrowTransform = Instantiate(teleportArrow, new Vector3(e.bowEndpointPosition.x, e.bowEndpointPosition.y, 0), Quaternion.identity);
         Vector3 shootDir = e.shootPosition;
         arrowTransform.GetComponent<TeleportArrow>().Setup(shootDir, e.destroyTimer);
     }

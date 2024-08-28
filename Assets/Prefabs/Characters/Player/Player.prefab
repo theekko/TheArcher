@@ -625,8 +625,8 @@ MonoBehaviour:
   maxDestroyTimer: 0.3
   raycastDistance: 0.05
   checkRadius: 0.05
-  gamepadConeAngle: 30
-  mouseConeAngle: 15
+  gamepadConeAngle: 40
+  mouseConeAngle: 25
   maxDistance: 10
   _isEmpoweredShot: 0
 --- !u!114 &2912268224767837332

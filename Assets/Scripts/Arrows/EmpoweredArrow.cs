@@ -16,9 +16,10 @@ public class EmpoweredArrow : MonoBehaviour {
 
     public void Setup(Vector3 shootDir) {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(shootDir * moveSpeed, ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(shootDir.x, shootDir.y) * moveSpeed, ForceMode2D.Impulse);
 
         this.shootDir = shootDir;
+        this.shootDir.z = 0;
         previousPosition = transform.position;
 
         // Calculate the angle in degrees for the rotation
