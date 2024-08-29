@@ -6,6 +6,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
+    private static Player instance;
+    public static Player Instance {
+        get {
+            return instance;
+        }
+    }
+
     [SerializeField] private float moveSpeed = 200f;
 
     [SerializeField] private bool _isFacingRight = true;
@@ -175,15 +182,16 @@ public class Player : MonoBehaviour {
             Destroy(existingTeleportPoint.gameObject);
             teleportFallReductionTimer = maxTeleportFallReduction;
             teleportEvent?.Invoke(this, EventArgs.Empty);
+            IsSlowFall = true;
 
             // Check if the player is inside a collider after teleporting
-            Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+            Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground));
             if (overlapCollider != null) {
                 Vector2 directionToMove = Vector2.zero;
                 Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
 
                 foreach (var direction in directions) {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground));
                     if (hit.collider != null && hit.collider == overlapCollider) {
                         directionToMove = hit.normal;
                         break;
@@ -209,7 +217,7 @@ public class Player : MonoBehaviour {
     private bool IsOnWrongSideOfWall(Vector3 initialPosition, Vector3 currentPosition, Collider2D wallCollider) {
         // Perform a small raycast back towards the initial position to check if there's a wall between the player and the initial position
         Vector2 directionToCheck = (initialPosition - currentPosition).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(currentPosition, directionToCheck, 0.5f, LayerMask.GetMask(LayerStrings.Ground, LayerStrings.Enemies));
+        RaycastHit2D hit = Physics2D.Raycast(currentPosition, directionToCheck, 0.5f, LayerMask.GetMask(LayerStrings.Ground));
 
         // If the raycast hits the same wall collider, the player is on the wrong side
         return hit.collider != null && hit.collider == wallCollider;
@@ -223,9 +231,9 @@ public class Player : MonoBehaviour {
     }
 
     public void OnHit(object sender, Damageable.OnHitEventArgs e) {
-        if (!IsKnockedBack) {
-            StartCoroutine(ApplyKnockback(e.knockback));
-        }
+        //if (!IsKnockedBack) {
+        //    StartCoroutine(ApplyKnockback(e.knockback));
+        //}
     }
 
     private void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
@@ -316,6 +324,13 @@ public class Player : MonoBehaviour {
     }
 
     private void Awake() {
+        // Ensure that there is only one Player instance in the game
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);  // Destroy extra instance
+        } else {
+            instance = this;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();

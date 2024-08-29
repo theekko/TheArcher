@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36187523a2cc1ba4d8aeb739a35d6924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 200
+  moveSpeed: 300
   _isFacingRight: 1
   _isWallSliding: 0
   wallSlideSpeed: 0.8
@@ -547,7 +547,7 @@ MonoBehaviour:
   _isDashing: 0
   dashingPower: 10
   dashingTime: 0.1
-  dashingCooldown: 1
+  dashingCooldown: 0.5
   maxTeleportFallReduction: 0.15
   teleportOverlapOffset: 0.05
 --- !u!114 &5941585187920782006
