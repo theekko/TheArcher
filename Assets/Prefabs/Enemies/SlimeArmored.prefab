@@ -393,11 +393,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d36bd341e9afdf4ca07d103c462ca05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 3
+  _health: 3
   _isAlive: 1
   _isHit: 0
-  isInvincible: 0
+  isInvincible: 1
   invincibilityTime: 0.25
 --- !u!114 &861866875137439248
 MonoBehaviour:
@@ -413,14 +413,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 128
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -449,3 +449,6 @@ MonoBehaviour:
   jumpMaxTime: 2.5
   speed: 0.5
   approachDistance: 3
+  returnTolerance: 0.05
+  returnSpeed: 0.5
+  initialJumpDelayRange: 2
