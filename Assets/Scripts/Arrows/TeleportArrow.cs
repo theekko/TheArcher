@@ -18,6 +18,12 @@ public class TeleportArrow : MonoBehaviour {
     private bool hitWall = false;
     private Vector3 collisionNormal3D;
 
+    public float MoveSpeed {
+        get {
+            return moveSpeed;
+        }
+    }
+
     public void Setup(Vector3 shootDir, float destroyTimer) {
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(shootDir.x, shootDir.y) * moveSpeed, ForceMode2D.Impulse);

@@ -13,6 +13,7 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField] private bool _isOnWallBack;
     [SerializeField] private bool _isOnWallFront;
     [SerializeField] private bool _isOnCeiling;
+    [SerializeField] SpriteRenderer objectSprite;
 
     private Collider2D touchingCol;
 
@@ -20,7 +21,6 @@ public class TouchingDirections : MonoBehaviour
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
     RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
 
-    private Vector2 wallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
 
 
     public bool IsGrounded {
@@ -76,7 +76,7 @@ public class TouchingDirections : MonoBehaviour
     // Because this is a phyics function you want to use FixedUpdate instead of Update
     private void FixedUpdate() {
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
-        if (gameObject.transform.localScale.x > 0) {
+        if (!objectSprite.flipX) {
             IsOnWallBack = touchingCol.Cast(Vector2.left, castFilter, wallHits, wallDistance) > 0;
             IsOnWallFront = touchingCol.Cast(Vector2.right, castFilter, wallHits, wallDistance) > 0;
         } else {

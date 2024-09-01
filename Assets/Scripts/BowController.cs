@@ -31,7 +31,14 @@ public class BowController : MonoBehaviour {
     private Vector3 direction;
     private float drawTime = 0f;
     private float currentConeAngle; // Variable to store the current cone angle
-    private float buttonPressStartTime = 0f;
+    private bool _isDrawingArrow;
+    private bool _isDrawingTeleportArrow;
+    private bool _drawSucceedArrow;
+    private bool _drawSucceedTeleportArrow;
+    private float linearTime;
+    private float destroyTimer;
+
+
 
     public event EventHandler<OnFireSuccessEventArgs> OnFireSuccessEvent;
     public event EventHandler<OnFireSuccessEventArgs> OnFireEmpoweredSuccessEvent;
@@ -49,13 +56,29 @@ public class BowController : MonoBehaviour {
     }
 
     public event EventHandler OnFireFailEvent;
-
+    
     public bool IsDrawing {
         get {
             return _isDrawing;
         }
         private set {
             _isDrawing = value;
+        }
+    }
+    public bool IsDrawingTeleportArrow {
+        get {
+            return _isDrawingTeleportArrow;
+        }
+        private set {
+            _isDrawingTeleportArrow = value;
+        }
+    }
+    public bool IsDrawingArrow {
+        get {
+            return _isDrawingArrow;
+        }
+        private set {
+            _isDrawingArrow = value;
         }
     }
 
@@ -68,11 +91,68 @@ public class BowController : MonoBehaviour {
         }
     }
 
+    public bool DrawSucceedArrow {
+        get {
+            return _drawSucceedArrow;
+        }
+        private set {
+            _drawSucceedArrow = value;
+        }
+    }
+
+    public bool DrawSucceedTeleportArrow {
+        get {
+            return _drawSucceedTeleportArrow;
+        }
+        private set { 
+            _drawSucceedTeleportArrow = value;
+        }
+    }
+
+    public float MinDrawTime {
+        get {
+            return minDrawTime;
+        }
+    }
+
+    public float MaxDrawTime {
+        get {
+            return maxDrawTime;
+        }
+    }
+
+    public float MinDestroyTimer {
+        get {
+            return minDestroyTimer;
+        }
+    }
+
+    public float MaxDestroyTimer {
+        get {
+            return maxDestroyTimer;
+        }
+    }
+
+    public float DestroyTimer {
+        get { 
+            return destroyTimer;
+        }
+    }
+
+    public Vector3 Direction {
+        get {
+            return direction;
+        }
+    }
+
     public void OnFireArrow(InputAction.CallbackContext context) {
         if (context.performed) {
             IsDrawing = true;
+            IsDrawingArrow = true;
         } else if (context.canceled) {
             IsDrawing = false;
+            IsDrawingArrow = false;
+            DrawSucceedArrow = false;
             OnFireFailEvent?.Invoke(this, EventArgs.Empty);
 
             // Perform raycast and overlap checks before triggering the event
@@ -98,21 +178,17 @@ public class BowController : MonoBehaviour {
     public void OnFireTeleportArrow(InputAction.CallbackContext context) {
         if (context.performed) {
             IsDrawing = true;
+            IsDrawingTeleportArrow = true;
             drawTime = 0f; // Reset draw time when starting to draw
-            buttonPressStartTime = Time.time; // Start tracking the button press time immediately
 
         } else if (context.canceled) {
             IsDrawing = false;
+            IsDrawingTeleportArrow = false;
+            DrawSucceedTeleportArrow = false;
             OnFireFailEvent?.Invoke(this, EventArgs.Empty);
 
             // Perform raycast and overlap checks before triggering the event
             if (drawTime >= minDrawTime && !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
-                // Calculate the time the button was held down after minDrawTime was surpassed
-                float heldTime = Time.time - buttonPressStartTime;
-
-                // Scale the destroy timer linearly between minDrawTime and maxDrawTime
-                float linearTime = Mathf.Clamp01((drawTime - minDrawTime) / (maxDrawTime - minDrawTime)); // Use drawTime directly for scaling
-                float destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, linearTime);
 
                 OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
@@ -121,7 +197,6 @@ public class BowController : MonoBehaviour {
                 });
             }
             drawTime = 0f;
-            buttonPressStartTime = 0f; // Reset button press start time
         }
     }
 
@@ -169,6 +244,17 @@ public class BowController : MonoBehaviour {
     private void Update() {
         if (IsDrawing) {
             drawTime += Time.deltaTime;
+            if (drawTime >= minDrawTime && IsDrawingTeleportArrow) {
+                DrawSucceedTeleportArrow = true;
+            } else if (drawTime >= minDrawTime && IsDrawingArrow) {
+                DrawSucceedArrow = true;
+            }
+        }
+
+        if (IsDrawingTeleportArrow) {
+            // Calculate linear time for scaling destroyTimer
+            linearTime = Mathf.Clamp01((drawTime - minDrawTime) / (maxDrawTime - minDrawTime));
+            destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, linearTime);
         }
 
         // Check if a gamepad is connected and the right stick is being used
@@ -190,24 +276,24 @@ public class BowController : MonoBehaviour {
         }
 
         // Check for aim assist
-        Collider2D closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
-        if (closestEnemy != null) {
-            // Adjust the direction to point at the closest enemy
-            direction = (closestEnemy.transform.position - transform.position).normalized;
+        if (!IsDrawingTeleportArrow) {
+            Collider2D closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
+            if (closestEnemy != null) {
+                // Adjust the direction to point at the closest enemy
+                direction = (closestEnemy.transform.position - transform.position).normalized;
+            }
         }
+
 
         // Calculate the angle from the player to the input direction for the bow's rotation
         float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Determine if the player is facing right or left
-        bool isFacingRight = playerTransform.localScale.x > 0;
+       
 
         // Apply the adjusted rotation angle to the bow with an offset of -133 degrees
-        if (isFacingRight) {
-            bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - 133f));
-        } else {
-            bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - 40));
-        }
+        
+        bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - 133f));
+        
 
         // Calculate the bow's position separately without modifying the angle
         float positionAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -225,7 +311,6 @@ public class BowController : MonoBehaviour {
         player = GetComponent<Player>();
         player.teleportEvent += Player_teleportEvent;
         rb = GetComponent<Rigidbody2D>();
-
     }
 
 

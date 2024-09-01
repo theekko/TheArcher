@@ -42,6 +42,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private float maxTeleportFallReduction = 1f;
     [SerializeField] private float teleportOverlapOffset = 0.1f;
 
+    [SerializeField] private SpriteRenderer playerSprite;
+
     private Vector2 _leftStickInput;
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
@@ -60,11 +62,12 @@ public class Player : MonoBehaviour {
 
     public float CurrentMoveSpeed {
         get {
-            if (!touchingDirections.IsOnWallFront || IsWallSliding || IsWallJumping) {
-                return moveSpeed;
-            } else {
-                return 0;
-            }
+            return moveSpeed;
+            //if (!touchingDirections.IsOnWallFront || IsWallSliding || IsWallJumping) {
+            //    return moveSpeed;
+            //} else {
+            //    return 0;
+            //}
         }
     }
 
@@ -75,7 +78,8 @@ public class Player : MonoBehaviour {
         private set {
             if (_isFacingRight != value) {
                 // flip the local scale to make the player face the opposite direction
-                transform.localScale *= new Vector2(-1, 1);
+                //transform.localScale *= new Vector2(-1, 1);
+                playerSprite.flipX = !value;
             }
             _isFacingRight = value;
         }
@@ -301,7 +305,11 @@ public class Player : MonoBehaviour {
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         if (moveInput.x == 0f) {
-            rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
+            if (IsFacingRight) {
+                rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0);
+            } else {
+                rb.velocity = new Vector2(-transform.localScale.x * dashingPower, 0);
+            }
         } else {
             rb.velocity = new Vector2(moveInput.x * dashingPower, 0);
         }

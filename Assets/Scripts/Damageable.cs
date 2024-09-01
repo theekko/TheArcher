@@ -19,6 +19,15 @@ public class Damageable : MonoBehaviour {
         public int damage;
         public Vector2 knockback;
     }
+    public event EventHandler<OnHealthChangedEventArgs> healthChanged;
+    public class OnHealthChangedEventArgs : EventArgs {
+        public int health;
+        public int maxHealth;
+    }
+    public event EventHandler<OnMaxHealthChangedEventArgs> maxHealthChanged;
+    public class OnMaxHealthChangedEventArgs : EventArgs {
+        public int maxHealth;
+    }
 
     public bool IsHit {
         get {
@@ -35,6 +44,9 @@ public class Damageable : MonoBehaviour {
         }
         set {
             _maxHealth = value;
+            maxHealthChanged?.Invoke(this, new OnMaxHealthChangedEventArgs {
+                maxHealth = _maxHealth
+            });
         }
     }
 
@@ -45,6 +57,10 @@ public class Damageable : MonoBehaviour {
         }
         set {
             _health = value;
+            healthChanged?.Invoke(this, new OnHealthChangedEventArgs {
+                health = _health,
+                maxHealth = _maxHealth
+            });
 
             // If health drops below 0, the character is no longer alive 
             if (_health <= 0) {
@@ -59,7 +75,7 @@ public class Damageable : MonoBehaviour {
         }
         set {
             _isAlive = value;
-            //animator.SetBool(AnimationStrings.isAlive, value);
+
 
             if (value == false) {
                 damageableDeath?.Invoke(this, EventArgs.Empty);
@@ -97,6 +113,9 @@ public class Damageable : MonoBehaviour {
     }
 
     private void Awake() {
+        maxHealthChanged?.Invoke(this, new OnMaxHealthChangedEventArgs {
+            maxHealth = _maxHealth
+        });
     }
 
     public void Update() {
