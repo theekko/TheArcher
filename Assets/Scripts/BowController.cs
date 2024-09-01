@@ -37,6 +37,7 @@ public class BowController : MonoBehaviour {
     private bool _drawSucceedTeleportArrow;
     private float linearTime;
     private float destroyTimer;
+    private Collider2D closestEnemy;
 
 
 
@@ -142,6 +143,12 @@ public class BowController : MonoBehaviour {
     public Vector3 Direction {
         get {
             return direction;
+        }
+    }
+
+    public Collider2D ClosestEnemy {
+        get {
+            return closestEnemy;
         }
     }
 
@@ -276,8 +283,8 @@ public class BowController : MonoBehaviour {
         }
 
         // Check for aim assist
-        if (!IsDrawingTeleportArrow) {
-            Collider2D closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
+        if (IsDrawingArrow) {
+            closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
             if (closestEnemy != null) {
                 // Adjust the direction to point at the closest enemy
                 direction = (closestEnemy.transform.position - transform.position).normalized;

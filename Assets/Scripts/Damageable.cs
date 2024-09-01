@@ -79,7 +79,6 @@ public class Damageable : MonoBehaviour {
 
             if (value == false) {
                 damageableDeath?.Invoke(this, EventArgs.Empty);
-                Destroy(gameObject);
             }
         }
     }

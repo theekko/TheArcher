@@ -4,16 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour {
-    [SerializeField] private Damageable damageable;
+     
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
+    private Damageable damageable;
 
 
+    private void Start() {
+        if (damageable == null) {
+            // Assuming Player is a singleton
+            if (Player.Instance != null) {
+                damageable = Player.Instance.GetComponent<Damageable>();
+            }
+        }
 
-    private void Awake() {
-        damageable.healthChanged += Damageable_healthChanged;
-        damageable.maxHealthChanged += Damageable_maxHealthChanged;
+        if (damageable != null) {
+            damageable.healthChanged += Damageable_healthChanged;
+        } else {
+            Debug.LogWarning("Damageable component not found on Player.");
+        }
+        MaxHealth(damageable);
     }
 
     private void Damageable_healthChanged(object sender, Damageable.OnHealthChangedEventArgs e) {
@@ -26,9 +37,9 @@ public class PlayerHealthBar : MonoBehaviour {
         }
     }
 
-    private void Damageable_maxHealthChanged(object sender, Damageable.OnMaxHealthChangedEventArgs e) {
+    private void MaxHealth(Damageable damageable) {
         for (int i = 0; i < hearts.Length; i++) {
-            if (i < e.maxHealth) {
+            if (i < damageable.MaxHealth) {
                 hearts[i].enabled = true;
             } else {
                 hearts[i].enabled = false;

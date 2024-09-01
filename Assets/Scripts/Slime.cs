@@ -18,6 +18,7 @@ public class Slime : MonoBehaviour {
     private Vector3 startingPosition;
     private float distance;
     private TouchingDirections touchingDirections;
+    private Damageable damageable;
 
 
 
@@ -33,6 +34,7 @@ public class Slime : MonoBehaviour {
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>(); 
 
         // Use the slime's position and time since level load to generate a unique seed
         float uniqueSeed = transform.position.x + transform.position.y + Time.timeSinceLevelLoad;
@@ -42,12 +44,18 @@ public class Slime : MonoBehaviour {
         jumpTimer = Random.Range(0, initialJumpDelayRange);
     }
 
+    private void OnDeath() {
+        Destroy(gameObject);
+    }
 
     void Update()
     {
         jumpTimer += Time.deltaTime;
         if (jumpTimer >= jumpMaxTime) {
             Jump();
+        }
+        if (!damageable.IsAlive) {
+            OnDeath();
         }
         distance = Vector2.Distance(transform.position, Player.Instance.transform.position);
         Vector2 startingDirection = startingPosition - transform.position;

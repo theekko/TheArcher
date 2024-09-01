@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     private static Player instance;
@@ -240,6 +242,10 @@ public class Player : MonoBehaviour {
         //}
     }
 
+    public void OnDeath() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
         IsSlowFall = false;
     }
@@ -376,6 +382,9 @@ public class Player : MonoBehaviour {
 
     private void Update() {
         SetFacingDirection();
+        if (!damageable.IsAlive) {
+            OnDeath();
+        }
         if (IsDashing) {
             return;
         }
