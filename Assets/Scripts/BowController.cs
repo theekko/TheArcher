@@ -15,12 +15,12 @@ public class BowController : MonoBehaviour {
     [SerializeField] private bool _isDrawing;
     [SerializeField] private float minDrawTime = 0.5f;
     [SerializeField] private float maxDrawTime = 3f;
-    [SerializeField] private float minDestroyTimer = 0.1f; // Destroy timer at minDrawTime
-    [SerializeField] private float maxDestroyTimer = 0.3f; // Destroy timer at maxDrawTime
+    [SerializeField] private float minDestroyTimer = 0.1f; 
+    [SerializeField] private float maxDestroyTimer = 0.3f; 
     [SerializeField] private float raycastDistance = 0.05f;
     [SerializeField] private float checkRadius = 0.05f;
     [SerializeField] private float gamepadConeAngle = 30f;
-    [SerializeField] private float mouseConeAngle = 15f; // Separate cone angle for mouse
+    [SerializeField] private float mouseConeAngle = 15f; 
     [SerializeField] private float maxDistance = 10f;
 
     [SerializeField] private bool _isEmpoweredShot = false;
@@ -195,7 +195,7 @@ public class BowController : MonoBehaviour {
             OnFireFailEvent?.Invoke(this, EventArgs.Empty);
 
             // Perform raycast and overlap checks before triggering the event
-            if (drawTime >= minDrawTime && !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
+            if ( !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
 
                 OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
