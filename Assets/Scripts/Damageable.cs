@@ -9,9 +9,13 @@ public class Damageable : MonoBehaviour {
     [SerializeField] private int _health = 100;
     [SerializeField] private bool _isAlive = true;
     [SerializeField] private bool _isHit = false;
-    [SerializeField] private bool isInvincible = false;
-    [SerializeField] private float invincibilityTime = 0.25f;
+    [SerializeField] private bool _isInvincible = false;
+    [SerializeField] private float hitInvincibilityTime = 0.25f;
+    [SerializeField] private bool _isShielded = false;
     private float timeSinceHit = 0;
+    private float timeSinceShield = 0;
+    private float shieldInvincibilityTime;
+    
 
     public event EventHandler damageableDeath;
     public event EventHandler<OnHitEventArgs> damageableHit;
@@ -35,6 +39,24 @@ public class Damageable : MonoBehaviour {
         }
         private set {
             _isHit = value;
+        }
+    }
+
+    public bool IsShielded {
+        get {
+            return _isShielded;
+        }
+        private set {
+            _isShielded = value;
+        }
+    }
+
+    public bool IsInvincible {
+        get {
+            return _isInvincible;
+        }
+        private set {
+            _isInvincible = value;
         }
     }
 
@@ -85,9 +107,9 @@ public class Damageable : MonoBehaviour {
 
 
     public bool Hit(int damage, Vector2 knockback) {
-        if (IsAlive && !isInvincible) {
+        if (IsAlive && !IsInvincible) {
             Health -= damage;
-            isInvincible = true;
+            IsInvincible = true;
             timeSinceHit = 0;
             IsHit = true;
             damageableHit?.Invoke(this, new OnHitEventArgs {
@@ -108,30 +130,48 @@ public class Damageable : MonoBehaviour {
         } else {
             return false;
         }
-
+    }
+    private void Damageable_OnShieldEvent(object sender, Shield.OnShieldEventArgs e) {
+        Debug.Log("Shield_Start");
+        IsShielded = true;
+        IsInvincible = true;
+        timeSinceShield = 0;
+        shieldInvincibilityTime = e.shieldInvincibilityTime;
     }
 
     private void Awake() {
         maxHealthChanged?.Invoke(this, new OnMaxHealthChangedEventArgs {
             maxHealth = _maxHealth
         });
+        if (gameObject.layer == LayerMask.NameToLayer(LayerStrings.Player)) {
+            FindObjectOfType<Shield>().OnShieldEvent += Damageable_OnShieldEvent;
+        }
     }
 
-    public void Update() {
-        if (isInvincible) {
 
-            if (timeSinceHit > invincibilityTime) {
+    public void Update() {
+        if (IsInvincible && IsHit) {
+            if (timeSinceHit > hitInvincibilityTime) {
                 // remove invincibility
-                isInvincible = false;
+                IsInvincible = false;
                 IsHit = false;
                 timeSinceHit = 0;
             }
 
             timeSinceHit += Time.deltaTime;
         }
-    }
+        if (IsInvincible && IsShielded) {
+            if (timeSinceShield > shieldInvincibilityTime) {
+                Debug.Log("Shield_End");
+                // remove invincibility
+                IsInvincible = false;
+                IsShielded = false;
+                timeSinceShield = 0;
+            }
 
-
+            timeSinceShield += Time.deltaTime;
+        }
+    } 
 }
 
 

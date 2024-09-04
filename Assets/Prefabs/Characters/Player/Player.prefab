@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 6163475997813251485}
   - component: {fileID: 1364892073248799429}
   - component: {fileID: 2912268224767837332}
+  - component: {fileID: 2949373193880622500}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -468,9 +469,9 @@ MonoBehaviour:
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6715599343940068871}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnDash
+      - m_Target: {fileID: 2949373193880622500}
+        m_TargetAssemblyTypeName: Shield, Assembly-CSharp
+        m_MethodName: OnShield
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -620,8 +621,9 @@ MonoBehaviour:
   _health: 5
   _isAlive: 1
   _isHit: 0
-  isInvincible: 0
-  invincibilityTime: 0.5
+  _isInvincible: 0
+  hitInvincibilityTime: 0.25
+  _isShielded: 0
 --- !u!114 &1364892073248799429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,6 +667,19 @@ MonoBehaviour:
   arrow: {fileID: 1343836065563387753, guid: 1812dcd7f63a61d408e493c34d85aeb9, type: 3}
   teleportArrow: {fileID: 1343836065563387753, guid: dc1b06f77e9e9d34d876bb76ed859dbd, type: 3}
   empoweredArrow: {fileID: 1343836065563387753, guid: 24ee85b8d4022484f92378f64ef91ab3, type: 3}
+--- !u!114 &2949373193880622500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815208713848111746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e05e6c8c67b4e341a42d14f1827a0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldInvincibilityTime: 1
 --- !u!1 &4003730102649406806
 GameObject:
   m_ObjectHideFlags: 0
