@@ -305,8 +305,9 @@ MonoBehaviour:
   _health: 3
   _isAlive: 1
   _isHit: 0
-  isInvincible: 0
-  invincibilityTime: 0.05
+  _isInvincible: 0
+  hitInvincibilityTime: 0.1
+  _isShielded: 0
 --- !u!114 &861866875137439248
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -251,7 +251,7 @@ public class BowController : MonoBehaviour {
     private void Update() {
         if (IsDrawing) {
             drawTime += Time.deltaTime;
-            if (drawTime >= minDrawTime && IsDrawingTeleportArrow) {
+            if (IsDrawingTeleportArrow) {
                 DrawSucceedTeleportArrow = true;
             } else if (drawTime >= minDrawTime && IsDrawingArrow) {
                 DrawSucceedArrow = true;
@@ -260,7 +260,7 @@ public class BowController : MonoBehaviour {
 
         if (IsDrawingTeleportArrow) {
             // Calculate linear time for scaling destroyTimer
-            linearTime = Mathf.Clamp01((drawTime - minDrawTime) / (maxDrawTime - minDrawTime));
+            linearTime = Mathf.Clamp01((drawTime) / (maxDrawTime));
             destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, linearTime);
         }
 

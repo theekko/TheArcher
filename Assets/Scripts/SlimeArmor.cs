@@ -13,6 +13,7 @@ public class SlimeArmor : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         EmpoweredArrow empoweredArrow = collision.gameObject.GetComponent<EmpoweredArrow>();
         if (empoweredArrow != null) {
+            Destroy(empoweredArrow);
             damageable.enabled = true;
             spriteRenderer.sprite = slime;
             armor.enabled = false;
