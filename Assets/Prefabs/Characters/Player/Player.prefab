@@ -641,7 +641,8 @@ MonoBehaviour:
   bowEndpointPostion: {fileID: 7070214671564519453}
   playerTransform: {fileID: 950359216241801046}
   _isDrawing: 0
-  minDrawTime: 0.15
+  minDrawTime: 0.1
+  minDrawTimeTeleportArrow: 0
   maxDrawTime: 0.6
   minDestroyTimer: 0.1
   maxDestroyTimer: 0.3
@@ -680,6 +681,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldInvincibilityTime: 1
+  maxNumShields: 3
+  numShields: 3
+  shieldCooldownMax: 10
+  _canShield: 1
+  timeUntilCanShield: 5
 --- !u!1 &4003730102649406806
 GameObject:
   m_ObjectHideFlags: 0

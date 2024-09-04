@@ -14,6 +14,7 @@ public class BowController : MonoBehaviour {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private bool _isDrawing;
     [SerializeField] private float minDrawTime = 0.5f;
+    [SerializeField] private float minDrawTimeTeleportArrow = 0f;
     [SerializeField] private float maxDrawTime = 3f;
     [SerializeField] private float minDestroyTimer = 0.1f; 
     [SerializeField] private float maxDestroyTimer = 0.3f; 
@@ -116,6 +117,12 @@ public class BowController : MonoBehaviour {
         }
     }
 
+    public float MinDrawTimeTeleportArrow { 
+        get {
+            return minDrawTimeTeleportArrow;
+        }
+    }
+
     public float MaxDrawTime {
         get {
             return maxDrawTime;
@@ -195,7 +202,7 @@ public class BowController : MonoBehaviour {
             OnFireFailEvent?.Invoke(this, EventArgs.Empty);
 
             // Perform raycast and overlap checks before triggering the event
-            if ( !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
+            if (drawTime >= minDrawTimeTeleportArrow && !IsObstacleInTheWay() && !IsBowInsideObstacle()) {
 
                 OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
@@ -251,7 +258,7 @@ public class BowController : MonoBehaviour {
     private void Update() {
         if (IsDrawing) {
             drawTime += Time.deltaTime;
-            if (IsDrawingTeleportArrow) {
+            if (drawTime >= minDrawTimeTeleportArrow && IsDrawingTeleportArrow) {
                 DrawSucceedTeleportArrow = true;
             } else if (drawTime >= minDrawTime && IsDrawingArrow) {
                 DrawSucceedArrow = true;
@@ -260,7 +267,7 @@ public class BowController : MonoBehaviour {
 
         if (IsDrawingTeleportArrow) {
             // Calculate linear time for scaling destroyTimer
-            linearTime = Mathf.Clamp01((drawTime) / (maxDrawTime));
+            linearTime = Mathf.Clamp01((drawTime - minDrawTimeTeleportArrow) / (maxDrawTime - minDrawTimeTeleportArrow));
             destroyTimer = Mathf.Lerp(minDestroyTimer, maxDestroyTimer, linearTime);
         }
 
