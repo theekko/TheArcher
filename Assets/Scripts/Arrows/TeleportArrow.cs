@@ -51,17 +51,12 @@ public class TeleportArrow : MonoBehaviour {
         float distance = direction.magnitude;
 
         // Create a LayerMask that matches the collision matrix
-        int layerMask = LayerMask.GetMask(LayerStrings.Enemies, LayerStrings.Ground);
+        int layerMask = LayerMask.GetMask(LayerStrings.Ground);
 
         // Use CircleCast for better surface detection
         RaycastHit2D hit = Physics2D.CircleCast(previousPosition, arrowCollisionOffset, direction, distance, layerMask);
         if (hit.collider != null) {
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer(LayerStrings.Enemies)) {
-                HandleEnemyCollision(hit);
-
-                // After handling the enemy collision, perform a ground check
-                HandleGroundAfterEnemyHit();
-            } else if (hit.collider.gameObject.layer == LayerMask.NameToLayer(LayerStrings.Ground)) {
+             if (hit.collider.gameObject.layer == LayerMask.NameToLayer(LayerStrings.Ground)) {
                 HandleGroundCollision(hit, previousPosition);
             }
         }
@@ -101,29 +96,29 @@ public class TeleportArrow : MonoBehaviour {
         ArrowHit(hit.collider);
     }
 
-    private void HandleEnemyCollision(RaycastHit2D hit) {
-        // Ensure hitWall is false when hitting an enemy
-        hitWall = false;
+    //private void HandleEnemyCollision(RaycastHit2D hit) {
+    //    // Ensure hitWall is false when hitting an enemy
+    //    hitWall = false;
 
-        // Handle the enemy hit
-        ArrowHit(hit.collider);
-    }
+    //    // Handle the enemy hit
+    //    ArrowHit(hit.collider);
+    //}
 
-    private void HandleGroundAfterEnemyHit() {
-        Vector3 direction = transform.position - previousPosition;
-        float remainingDistance = direction.magnitude;
+    //private void HandleGroundAfterEnemyHit() {
+    //    Vector3 direction = transform.position - previousPosition;
+    //    float remainingDistance = direction.magnitude;
 
-        // Check for ground collision along the arrow's path after the enemy hit
-        RaycastHit2D groundHit = Physics2D.CircleCast(transform.position, arrowCollisionOffset, direction, Mathf.Infinity, LayerMask.GetMask(LayerStrings.Ground));
+    //    // Check for ground collision along the arrow's path after the enemy hit
+    //    RaycastHit2D groundHit = Physics2D.CircleCast(transform.position, arrowCollisionOffset, direction, Mathf.Infinity, LayerMask.GetMask(LayerStrings.Ground));
 
-        if (groundHit.collider != null) {
-            // Move the arrow directly to the future ground impact point
-            transform.position = groundHit.point;
+    //    if (groundHit.collider != null) {
+    //        // Move the arrow directly to the future ground impact point
+    //        transform.position = groundHit.point;
 
-            // Call HandleGroundCollision to handle the normal alignment and further processing
-            HandleGroundCollision(groundHit, previousPosition);
-        }
-    }
+    //        // Call HandleGroundCollision to handle the normal alignment and further processing
+    //        HandleGroundCollision(groundHit, previousPosition);
+    //    }
+    //}
 
 
     public void ArrowHit(Collider2D collision) {
