@@ -29,6 +29,7 @@ public class Shield : MonoBehaviour {
 
 
     public void OnShield(InputAction.CallbackContext context) {
+
         if (context.performed && numShields > 0 && CanShield) {
             numShields -= 1;
             CanShield = false;

@@ -10397,6 +10397,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559042741}
   m_CullTransparentMesh: 1
+--- !u!114 &1580160804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2949373193880622500, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+  m_PrefabInstance: {fileID: 1887692033756670036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e05e6c8c67b4e341a42d14f1827a0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1625553809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4769547776105269561, guid: f2657d9965bb13747a99b88244a235a3, type: 3}
@@ -11220,12 +11231,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1580160804}
     - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 538865164}
+    - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnShield
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shield, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207305356777524914, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5977812554344966478, guid: b87d2e32b709de447853df3bafa48f06, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
