@@ -51,6 +51,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private SpriteRenderer bowSprite;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private BowController bow;
 
     private Vector2 _leftStickInput;
     private TouchingDirections touchingDirections;
@@ -59,7 +60,6 @@ public class Player : MonoBehaviour {
     private float jumpAction;
     private float horizontal;
     private Damageable damageable;
-    private BowController bow;
     private float teleportFallReductionTimer = 0f;
     private float originalGravityScale;
     private bool _isKnockedBack = false;
@@ -374,7 +374,6 @@ public class Player : MonoBehaviour {
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
         damageable.damageableHit += OnHit;
-        bow = GetComponent<BowController>();
         bow.OnFireSuccessEvent += Bow_OnFireSuccessEvent;
         bow.OnFireFailEvent += Bow_OnFireFailEvent;
     }
@@ -400,12 +399,12 @@ public class Player : MonoBehaviour {
             teleportFallReductionTimer = 0;
         }
 
-        //if (bow.IsDrawing && IsSlowFall) {
-        //    rb.velocity = new Vector2(0, rb.velocity.y / 2);
-        //    return;
-        //}
+        if (bow.IsDrawing && IsSlowFall) {
+            rb.velocity = new Vector2(0, rb.velocity.y / 2);
+            return;
+        }
 
-        
+
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
         
     }

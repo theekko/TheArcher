@@ -229,19 +229,20 @@ public class BowController : MonoBehaviour {
     }
 
     private Collider2D FindClosestEnemyInCone(Vector3 aimDirection, float coneAngle) {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, maxDistance, LayerMask.GetMask(LayerStrings.Enemies));
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(playerTransform.position, maxDistance, LayerMask.GetMask(LayerStrings.Enemies));
 
         Collider2D closestEnemy = null;
         float closestDistance = Mathf.Infinity;
 
         foreach (Collider2D enemy in enemies) {
-            Vector3 directionToEnemy = (enemy.transform.position - transform.position).normalized;
+            Debug.Log(enemy);
+            Vector3 directionToEnemy = (enemy.transform.position - playerTransform.position).normalized;
             float angleToEnemy = Vector3.Angle(aimDirection, directionToEnemy);
-
             // Check if the enemy is within the cone and line of sight
             if (angleToEnemy < coneAngle / 2f && !IsObstacleBetweenPlayerAndEnemy(enemy)) {
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+                float distanceToEnemy = Vector3.Distance(playerTransform.position, enemy.transform.position);
                 if (distanceToEnemy < closestDistance) {
+                    
                     closestDistance = distanceToEnemy;
                     closestEnemy = enemy;
                 }
@@ -283,7 +284,7 @@ public class BowController : MonoBehaviour {
         } else {
             // Fallback to mouse input
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 directiontoMouse = mousePos - transform.position;
+            Vector3 directiontoMouse = mousePos - playerTransform.position;
             directiontoMouse.z = 0;
             direction = directiontoMouse.normalized;
             lastDirection = direction; // Update the last valid direction
@@ -294,8 +295,9 @@ public class BowController : MonoBehaviour {
         if (IsDrawingArrow) {
             closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
             if (closestEnemy != null) {
+                Debug.Log("Enemy Lock On");
                 // Adjust the direction to point at the closest enemy
-                direction = (closestEnemy.transform.position - transform.position).normalized;
+                direction = (closestEnemy.transform.position - playerTransform.position).normalized;
             }
         }
 
@@ -312,21 +314,21 @@ public class BowController : MonoBehaviour {
 
         // Calculate the bow's position separately without modifying the angle
         float positionAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bow.position = transform.position + Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
+        bow.position = playerTransform.position + Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
     }
 
 
     private bool IsObstacleBetweenPlayerAndEnemy(Collider2D enemy) {
-        Vector3 directionToEnemy = enemy.transform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToEnemy, directionToEnemy.magnitude, LayerMask.GetMask(LayerStrings.Ground));
+        Vector3 directionToEnemy = enemy.transform.position - playerTransform.position;
+        RaycastHit2D hit = Physics2D.Raycast(playerTransform.position, directionToEnemy, directionToEnemy.magnitude, LayerMask.GetMask(LayerStrings.Ground));
         return hit.collider != null; // Returns true if there's an obstacle in the way
     }
 
     private void Awake() {
-        player = GetComponent<Player>();
+        player = GetComponentInParent<Player>();
         player.teleportEvent += Player_teleportEvent;
-        rb = GetComponent<Rigidbody2D>();
-        damageable = GetComponent<Damageable>();   
+        rb = GetComponentInParent<Rigidbody2D>();
+        damageable = GetComponentInParent<Damageable>();   
     }
 
 

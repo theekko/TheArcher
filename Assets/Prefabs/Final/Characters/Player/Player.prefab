@@ -207,7 +207,6 @@ MonoBehaviour:
   touchingDirections: {fileID: 5941585187920782006}
   rb: {fileID: 2560574912592759792}
   damageable: {fileID: 6163475997813251485}
-  shield: {fileID: 3417893380766952455}
 --- !u!1 &666521285514532128
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +298,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4261036566403045211}
+  - component: {fileID: 3861547070025646025}
+  - component: {fileID: 8849178023925385944}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -323,6 +324,50 @@ Transform:
   - {fileID: 7070214671564519453}
   m_Father: {fileID: 950359216241801046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3861547070025646025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409586697402800052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab09653b5cb3554fb04a2c6298ce713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bow: {fileID: 4261036566403045211}
+  bowDistance: 0.7
+  bowEndpointPostion: {fileID: 7070214671564519453}
+  playerTransform: {fileID: 950359216241801046}
+  _isDrawing: 0
+  minDrawTime: 0.1
+  minDrawTimeTeleportArrow: 0
+  maxDrawTime: 0.6
+  minDestroyTimer: 0.1
+  maxDestroyTimer: 0.3
+  raycastDistance: 0.05
+  checkRadius: 0.05
+  gamepadConeAngle: 60
+  mouseConeAngle: 35
+  maxDistance: 8
+  _isEmpoweredShot: 0
+--- !u!114 &8849178023925385944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409586697402800052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4b61a2c178ca4a8ccde7a7773e686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowTransform: {fileID: 1343836065563387753, guid: 1dad32916d79cbf458d6506e86ad092a, type: 3}
+  arrow: {fileID: 1343836065563387753, guid: aaf1fe2bbff1afe4a8d706cb7b1315d5, type: 3}
+  teleportArrow: {fileID: 1343836065563387753, guid: 5f98f35a9913c1d42a4612eb321700df, type: 3}
+  empoweredArrow: {fileID: 1343836065563387753, guid: 861ff236e8ebf8d42aa9a87e1471dd8f, type: 3}
 --- !u!1 &3510676498222287752
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +504,6 @@ GameObject:
   - component: {fileID: 5941585187920782006}
   - component: {fileID: 6163475997813251485}
   - component: {fileID: 1364892073248799429}
-  - component: {fileID: 2912268224767837332}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -608,7 +652,7 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1364892073248799429}
+      - m_Target: {fileID: 3861547070025646025}
         m_TargetAssemblyTypeName: BowController, Assembly-CSharp
         m_MethodName: OnFireArrow
         m_Mode: 0
@@ -696,7 +740,7 @@ MonoBehaviour:
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1364892073248799429}
+      - m_Target: {fileID: 3861547070025646025}
         m_TargetAssemblyTypeName: BowController, Assembly-CSharp
         m_MethodName: OnFireTeleportArrow
         m_Mode: 0
@@ -766,9 +810,9 @@ MonoBehaviour:
   wallSlideSpeed: 0.8
   _isWallJumping: 0
   wallJumpingDirection: 0
-  wallJumpingTime: 0.2
+  wallJumpingTime: 0.4
   wallJumpingCounter: 0
-  wallJumpingDuration: 0.4
+  wallJumpingDuration: 0.6
   wallJumpingPower: {x: 3, y: 10}
   maxJumps: 2
   jumpsRemaining: 2
@@ -846,7 +890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3815208713848111746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab09653b5cb3554fb04a2c6298ce713, type: 3}
   m_Name: 
@@ -865,24 +909,8 @@ MonoBehaviour:
   checkRadius: 0.05
   gamepadConeAngle: 60
   mouseConeAngle: 35
-  maxDistance: 15
+  maxDistance: 8
   _isEmpoweredShot: 0
---- !u!114 &2912268224767837332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815208713848111746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f4b61a2c178ca4a8ccde7a7773e686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowTransform: {fileID: 1343836065563387753, guid: 1dad32916d79cbf458d6506e86ad092a, type: 3}
-  arrow: {fileID: 1343836065563387753, guid: aaf1fe2bbff1afe4a8d706cb7b1315d5, type: 3}
-  teleportArrow: {fileID: 1343836065563387753, guid: 5f98f35a9913c1d42a4612eb321700df, type: 3}
-  empoweredArrow: {fileID: 1343836065563387753, guid: 861ff236e8ebf8d42aa9a87e1471dd8f, type: 3}
 --- !u!1 &4003730102649406806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db67037c77dd02246b59398841dcf740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowController: {fileID: 1364892073248799429}
+  bowController: {fileID: 3861547070025646025}
   empoweredArrowIndicator: {fileID: 3398487047564018441}
 --- !u!114 &7374028677206712967
 MonoBehaviour:
@@ -1245,7 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c48ab3eb67cc0428400f768bc5f01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowcontroller: {fileID: 1364892073248799429}
+  bowcontroller: {fileID: 3861547070025646025}
   bowReadinessBarPostion: {fileID: 5595648867320855269}
   image: {fileID: 3340191104689513152}
   sliderGameObject: {fileID: 4003730102649406806}

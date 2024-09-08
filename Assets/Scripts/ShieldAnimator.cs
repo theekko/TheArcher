@@ -20,9 +20,9 @@ public class ShieldAnimator : MonoBehaviour {
 
     private void Update() {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("(Empty)")) {
-            spriteRenderer.enabled = false;  // Hide the sprite
+            spriteRenderer.enabled = false;  
         } else {
-            spriteRenderer.enabled = true;   // Show the sprite
+            spriteRenderer.enabled = true;   
         }
         animator.SetBool(AnimatorStrings.isShielded, shield.IsShielded);
     }
