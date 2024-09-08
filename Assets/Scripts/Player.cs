@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private bool _isFacingRight = true;
 
+    [SerializeField] private bool _isRunning = false;
+
     [SerializeField] private bool _isWallSliding;
     [SerializeField] private float wallSlideSpeed = 2f;
 
@@ -44,6 +46,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private float maxTeleportFallReduction = 1f;
     [SerializeField] private float teleportOverlapOffset = 0.1f;
 
+    [SerializeField] private float delayBeforeReset = 3f;
+
     [SerializeField] private SpriteRenderer playerSprite;
 
     private Vector2 _leftStickInput;
@@ -60,7 +64,8 @@ public class Player : MonoBehaviour {
     private bool _isSlowFall = true;
 
     public event EventHandler teleportEvent;
-
+    public event EventHandler jumpEvent;
+    public event EventHandler wallJump;
 
     public float CurrentMoveSpeed {
         get {
@@ -84,6 +89,15 @@ public class Player : MonoBehaviour {
                 playerSprite.flipX = !value;
             }
             _isFacingRight = value;
+        }
+    }
+
+    public bool isRunning {
+        get {
+            return _isRunning;
+        }
+        private set { 
+            _isRunning = value;
         }
     }
 
@@ -146,13 +160,16 @@ public class Player : MonoBehaviour {
 
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
-
+        isRunning = moveInput != Vector2.zero;
         //SetFacingDirection(moveInput);
     }
 
     public void OnJump(InputAction.CallbackContext context) {
         jumpAction = context.ReadValue<float>();
         if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0)) {
+            
+            jumpEvent?.Invoke(this, EventArgs.Empty);
+            
             rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
 
             jumpsRemaining--;
@@ -242,7 +259,13 @@ public class Player : MonoBehaviour {
         //}
     }
 
+
     public void OnDeath() {
+        StartCoroutine(ResetSceneAfterDelay());
+    }
+
+    private IEnumerator ResetSceneAfterDelay() {
+        yield return new WaitForSeconds(delayBeforeReset);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -360,7 +383,7 @@ public class Player : MonoBehaviour {
         }
 
 
-        if ( teleportFallReductionTimer > 0) {
+        if (teleportFallReductionTimer > 0) {
             //rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y / 2);
             rb.velocity = Vector2.zero;
             rb.gravityScale = 0;
@@ -376,8 +399,9 @@ public class Player : MonoBehaviour {
             return;
         }
 
-        
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
+        if (damageable.IsAlive) {
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
+        }
     }
 
     private void Update() {
