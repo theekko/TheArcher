@@ -572,6 +572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   _isFacingRight: 1
+  _isRunning: 0
   _isWallSliding: 0
   wallSlideSpeed: 0.8
   _isWallJumping: 0
@@ -591,7 +592,10 @@ MonoBehaviour:
   dashingCooldown: 0.5
   maxTeleportFallReduction: 0.15
   teleportOverlapOffset: 0.05
+  delayBeforeReset: 3
   playerSprite: {fileID: 414125315985338856}
+  bowSprite: {fileID: 268488088047796051}
+  playerInput: {fileID: 5207305356777524914}
 --- !u!114 &5941585187920782006
 MonoBehaviour:
   m_ObjectHideFlags: 0

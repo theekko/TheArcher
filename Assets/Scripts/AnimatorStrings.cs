@@ -6,7 +6,10 @@ internal class AnimatorStrings {
     internal static string isGrounded = "isGrounded";
     internal static string isRunning = "isRunning";
     internal static string isOnWall = "isOnWall";
+    internal static string isAlive = "isAlive";
+    internal static string isShielded = "isShielded";
     internal static string yVelocity = "yVelocity";
     internal static string jump = "jump";
     internal static string hit = "hit";
+    internal static string shield = "shield";
 }

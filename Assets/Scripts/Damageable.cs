@@ -132,7 +132,6 @@ public class Damageable : MonoBehaviour {
         }
     }
     private void Damageable_OnShieldEvent(object sender, Shield.OnShieldEventArgs e) {
-        Debug.Log("Shield_Start");
         IsShielded = true;
         IsInvincible = true;
         timeSinceShield = 0;
@@ -150,6 +149,7 @@ public class Damageable : MonoBehaviour {
 
 
     public void Update() {
+        // Invincible due to damage
         if (IsInvincible && IsHit) {
             if (timeSinceHit > hitInvincibilityTime) {
                 // remove invincibility
@@ -160,9 +160,10 @@ public class Damageable : MonoBehaviour {
 
             timeSinceHit += Time.deltaTime;
         }
+
+        // Invincible due to shield
         if (IsInvincible && IsShielded) {
             if (timeSinceShield > shieldInvincibilityTime) {
-                Debug.Log("Shield_End");
                 // remove invincibility
                 IsInvincible = false;
                 IsShielded = false;

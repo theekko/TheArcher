@@ -28,6 +28,7 @@ public class BowController : MonoBehaviour {
 
     private Vector3 lastDirection;
     private Player player;
+    private Damageable damageable;
     private Rigidbody2D rb;
     private Vector3 direction;
     private float drawTime = 0f;
@@ -302,12 +303,12 @@ public class BowController : MonoBehaviour {
         // Calculate the angle from the player to the input direction for the bow's rotation
         float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-       
+
 
         // Apply the adjusted rotation angle to the bow with an offset of -133 degrees
-        
+
         bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - 133f));
-        
+
 
         // Calculate the bow's position separately without modifying the angle
         float positionAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -325,6 +326,7 @@ public class BowController : MonoBehaviour {
         player = GetComponent<Player>();
         player.teleportEvent += Player_teleportEvent;
         rb = GetComponent<Rigidbody2D>();
+        damageable = GetComponent<Damageable>();   
     }
 
 

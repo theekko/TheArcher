@@ -49,6 +49,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private float delayBeforeReset = 3f;
 
     [SerializeField] private SpriteRenderer playerSprite;
+    [SerializeField] private SpriteRenderer bowSprite;
+    [SerializeField] private PlayerInput playerInput;
 
     private Vector2 _leftStickInput;
     private TouchingDirections touchingDirections;
@@ -62,10 +64,10 @@ public class Player : MonoBehaviour {
     private float originalGravityScale;
     private bool _isKnockedBack = false;
     private bool _isSlowFall = true;
+    
 
     public event EventHandler teleportEvent;
     public event EventHandler jumpEvent;
-    public event EventHandler wallJump;
 
     public float CurrentMoveSpeed {
         get {
@@ -167,9 +169,9 @@ public class Player : MonoBehaviour {
     public void OnJump(InputAction.CallbackContext context) {
         jumpAction = context.ReadValue<float>();
         if (context.started && (touchingDirections.IsGrounded || jumpsRemaining != 0)) {
-            
+
             jumpEvent?.Invoke(this, EventArgs.Empty);
-            
+
             rb.velocity = new Vector2(rb.velocity.x, jumpsRemaining != maxJumps ? doubleJumpeImpulse : jumpImpulse);
 
             jumpsRemaining--;
@@ -378,6 +380,10 @@ public class Player : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        if (!damageable.IsAlive) { 
+            rb.velocity = Vector2.zero;
+            return;
+        }
         if (IsDashing || IsKnockedBack) {
             return;
         }
@@ -394,20 +400,25 @@ public class Player : MonoBehaviour {
             teleportFallReductionTimer = 0;
         }
 
-        if (bow.IsDrawing && IsSlowFall) {
-            rb.velocity = new Vector2(0, rb.velocity.y / 2);
-            return;
-        }
+        //if (bow.IsDrawing && IsSlowFall) {
+        //    rb.velocity = new Vector2(0, rb.velocity.y / 2);
+        //    return;
+        //}
 
-        if (damageable.IsAlive) {
-            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
-        }
+        
+        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y);
+        
     }
 
     private void Update() {
         SetFacingDirection();
         if (!damageable.IsAlive) {
             OnDeath();
+            playerInput.enabled = false;
+            bowSprite.enabled = false;
+        } else { 
+            playerInput.enabled = true;
+            bowSprite.enabled = true;
         }
         if (IsDashing) {
             return;

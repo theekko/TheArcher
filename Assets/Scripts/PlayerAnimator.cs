@@ -15,6 +15,8 @@ public class PlayerAnimator : MonoBehaviour {
         damageable.damageableHit += Damageable_damageableHit;
     }
 
+    
+
     private void Damageable_damageableHit(object sender, Damageable.OnHitEventArgs e) {
         animator.SetTrigger(AnimatorStrings.hit);
     }
@@ -23,10 +25,12 @@ public class PlayerAnimator : MonoBehaviour {
         animator.SetTrigger(AnimatorStrings.jump);
     }
 
+
     private void Update() {
         animator.SetBool(AnimatorStrings.isGrounded, touchingDirections.IsGrounded);
         animator.SetBool(AnimatorStrings.isRunning, player.isRunning);
         animator.SetBool(AnimatorStrings.isOnWall, touchingDirections.IsOnWall);
+        animator.SetBool(AnimatorStrings.isAlive, damageable.IsAlive);
         animator.SetFloat(AnimatorStrings.yVelocity, rb.velocity.y);
     }
 }
