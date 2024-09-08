@@ -12,6 +12,7 @@ public class BowController : MonoBehaviour {
     [SerializeField] private Transform bowEndpointPostion;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private bool _isDrawing;
+    [SerializeField] private float bowRotationOffset = 133f;
     [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private float minDrawTime = 0.5f;
     [SerializeField] private float minDrawTimeTeleportArrow = 0f;
@@ -26,7 +27,6 @@ public class BowController : MonoBehaviour {
 
 
     [SerializeField] private bool _isEmpoweredShot = false;
-    [SerializeField] private SpriteRenderer bowSprite;
 
     private Vector3 lastDirection;
     private Player player;
@@ -164,11 +164,9 @@ public class BowController : MonoBehaviour {
 
     public void OnFireArrow(InputAction.CallbackContext context) {
         if (context.performed) {
-            bowSprite.enabled = true;
             IsDrawing = true;
             IsDrawingArrow = true;
         } else if (context.canceled) {
-            bowSprite.enabled = false;
             IsDrawing = false;
             IsDrawingArrow = false;
             DrawSucceedArrow = false;
@@ -196,13 +194,11 @@ public class BowController : MonoBehaviour {
 
     public void OnFireTeleportArrow(InputAction.CallbackContext context) {
         if (context.performed) {
-            bowSprite.enabled = true;
             IsDrawing = true;
             IsDrawingTeleportArrow = true;
             drawTime = 0f; // Reset draw time when starting to draw
 
         } else if (context.canceled) {
-            bowSprite.enabled = false;
             IsDrawing = false;
             IsDrawingTeleportArrow = false;
             DrawSucceedTeleportArrow = false;
@@ -312,9 +308,9 @@ public class BowController : MonoBehaviour {
 
 
 
-        // Apply the adjusted rotation angle to the bow with an offset of -133 degrees
+        // Apply the adjusted rotation angle to the bow with an offset of -133 degrees 
 
-        bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - 133f));
+        bow.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAngle - bowRotationOffset));
 
 
         // Calculate the bow's position separately without modifying the angle
@@ -338,9 +334,7 @@ public class BowController : MonoBehaviour {
         damageable = GetComponentInParent<Damageable>();   
     }
 
-    private void Start() {
-        bowSprite.enabled = false;
-    }
+
 
 
 

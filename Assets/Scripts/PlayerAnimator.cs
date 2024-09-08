@@ -7,6 +7,7 @@ public class PlayerAnimator : MonoBehaviour {
     [SerializeField] TouchingDirections touchingDirections;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Damageable damageable;
+    [SerializeField] BowController bow;
     private Animator animator;
 
     private void Awake() {
@@ -31,6 +32,7 @@ public class PlayerAnimator : MonoBehaviour {
         animator.SetBool(AnimatorStrings.isRunning, player.isRunning);
         animator.SetBool(AnimatorStrings.isOnWall, touchingDirections.IsOnWall);
         animator.SetBool(AnimatorStrings.isAlive, damageable.IsAlive);
+        animator.SetBool(AnimatorStrings.isDrawing, bow.IsDrawing);
         animator.SetFloat(AnimatorStrings.yVelocity, rb.velocity.y);
     }
 }

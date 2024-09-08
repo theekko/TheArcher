@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 316281435092961828}
   - component: {fileID: 5576468732549002068}
+  - component: {fileID: 7538447446012845209}
+  - component: {fileID: 4355937177333526045}
   m_Layer: 0
   m_Name: BowVisual
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4261036566403045211}
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1217946862, guid: b3cd0b3f5fd51a84d909f7102e48b0e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aab3d8ebe77f0e649b8b5ce5ac2b02af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7538447446012845209
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244145261811945690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef6512f7e29624045b2764a3cac0ccc9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4355937177333526045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244145261811945690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae87fa9bc4328b419e74ec72f9f49e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bow: {fileID: 3861547070025646025}
 --- !u!1 &608828864927671701
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +243,7 @@ MonoBehaviour:
   touchingDirections: {fileID: 5941585187920782006}
   rb: {fileID: 2560574912592759792}
   damageable: {fileID: 6163475997813251485}
+  bow: {fileID: 3861547070025646025}
 --- !u!1 &666521285514532128
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +354,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.8375601, y: 0.2278504, z: 0}
-  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 1.9607844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 316281435092961828}
@@ -340,6 +377,7 @@ MonoBehaviour:
   bowEndpointPostion: {fileID: 7070214671564519453}
   playerTransform: {fileID: 950359216241801046}
   _isDrawing: 0
+  bowRotationOffset: 0
   bowDistance: 0
   minDrawTime: 0.1
   minDrawTimeTeleportArrow: 0
@@ -351,9 +389,7 @@ MonoBehaviour:
   gamepadConeAngle: 60
   mouseConeAngle: 35
   maxDistance: 8
-  bowPosition: {fileID: 6138251712192458880}
   _isEmpoweredShot: 0
-  bowSprite: {fileID: 5576468732549002068}
 --- !u!114 &8849178023925385944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +563,6 @@ Transform:
   m_Children:
   - {fileID: 4992064072608151409}
   - {fileID: 4261036566403045211}
-  - {fileID: 6138251712192458880}
   - {fileID: 5852644133166329565}
   - {fileID: 2330305475326307257}
   - {fileID: 5595648867320855269}
@@ -974,37 +1009,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &4285566441071135483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6138251712192458880}
-  m_Layer: 0
-  m_Name: BowPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6138251712192458880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4285566441071135483}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.054502487, z: 0}
-  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 1.9607844}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 950359216241801046}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4744227682232187123
 GameObject:
   m_ObjectHideFlags: 0
