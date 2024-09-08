@@ -8742,17 +8742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &820130274 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3861547070025646025, guid: c022193671f79b9489dda75597c491ca, type: 3}
-  m_PrefabInstance: {fileID: 1525945440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab09653b5cb3554fb04a2c6298ce713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1127273375
 GameObject:
   m_ObjectHideFlags: 0
@@ -12244,10 +12233,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 558824256195324560, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 950359216241801046, guid: c022193671f79b9489dda75597c491ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.38
@@ -12288,21 +12273,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3417893380766952455, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: shieldInvincibilityTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3815208713848111746, guid: c022193671f79b9489dda75597c491ca, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5595648867320855269, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5595648867320855269, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+    - target: {fileID: 3861547070025646025, guid: c022193671f79b9489dda75597c491ca, type: 3}
+      propertyPath: bowDistance
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5977812554344966478, guid: c022193671f79b9489dda75597c491ca, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12312,24 +12289,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6715599343940068871, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: bow
-      value: 
-      objectReference: {fileID: 820130274}
-    - target: {fileID: 7070214671564519453, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884162742555793968, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 9220363338788516630, guid: c022193671f79b9489dda75597c491ca, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1364892073248799429, guid: c022193671f79b9489dda75597c491ca, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

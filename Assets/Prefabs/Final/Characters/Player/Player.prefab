@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1217946862, guid: b3cd0b3f5fd51a84d909f7102e48b0e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e05e6c8c67b4e341a42d14f1827a0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldInvincibilityTime: 10
+  shieldInvincibilityTime: 1
   maxNumShields: 3
   numShields: 3
   shieldRefreshCooldownMax: 10
@@ -284,7 +284,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.89348894, w: 0.44908518}
   m_LocalPosition: {x: -0.022, y: 0.021, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4261036566403045211}
@@ -337,10 +337,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bow: {fileID: 4261036566403045211}
-  bowDistance: 0.7
   bowEndpointPostion: {fileID: 7070214671564519453}
   playerTransform: {fileID: 950359216241801046}
   _isDrawing: 0
+  bowDistance: 0
   minDrawTime: 0.1
   minDrawTimeTeleportArrow: 0
   maxDrawTime: 0.6
@@ -351,7 +351,9 @@ MonoBehaviour:
   gamepadConeAngle: 60
   mouseConeAngle: 35
   maxDistance: 8
+  bowPosition: {fileID: 6138251712192458880}
   _isEmpoweredShot: 0
+  bowSprite: {fileID: 5576468732549002068}
 --- !u!114 &8849178023925385944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 3510676498222287752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -463,7 +465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 682030762, guid: 5506abdaaf23a004cbf3cf5230a4ad58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -503,7 +505,6 @@ GameObject:
   - component: {fileID: 6715599343940068871}
   - component: {fileID: 5941585187920782006}
   - component: {fileID: 6163475997813251485}
-  - component: {fileID: 1364892073248799429}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -525,8 +526,9 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4992064072608151409}
-  - {fileID: 5852644133166329565}
   - {fileID: 4261036566403045211}
+  - {fileID: 6138251712192458880}
+  - {fileID: 5852644133166329565}
   - {fileID: 2330305475326307257}
   - {fileID: 5595648867320855269}
   m_Father: {fileID: 0}
@@ -827,8 +829,8 @@ MonoBehaviour:
   teleportOverlapOffset: 0.05
   delayBeforeReset: 3
   playerSprite: {fileID: 9220363338788516630}
-  bowSprite: {fileID: 5576468732549002068}
   playerInput: {fileID: 5207305356777524914}
+  bow: {fileID: 3861547070025646025}
 --- !u!114 &5941585187920782006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,34 +885,6 @@ MonoBehaviour:
   _isInvincible: 0
   hitInvincibilityTime: 0.25
   _isShielded: 0
---- !u!114 &1364892073248799429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815208713848111746}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab09653b5cb3554fb04a2c6298ce713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bow: {fileID: 4261036566403045211}
-  bowDistance: 0.7
-  bowEndpointPostion: {fileID: 7070214671564519453}
-  playerTransform: {fileID: 950359216241801046}
-  _isDrawing: 0
-  minDrawTime: 0.1
-  minDrawTimeTeleportArrow: 0
-  maxDrawTime: 0.6
-  minDestroyTimer: 0.1
-  maxDestroyTimer: 0.3
-  raycastDistance: 0.05
-  checkRadius: 0.05
-  gamepadConeAngle: 60
-  mouseConeAngle: 35
-  maxDistance: 8
-  _isEmpoweredShot: 0
 --- !u!1 &4003730102649406806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +974,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &4285566441071135483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6138251712192458880}
+  m_Layer: 0
+  m_Name: BowPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6138251712192458880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4285566441071135483}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17, y: -0.054502487, z: 0}
+  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 1.9607844}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 950359216241801046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4744227682232187123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,8 +1030,8 @@ Transform:
   m_GameObject: {fileID: 4744227682232187123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023, y: 0.682, z: 0.04944889}
-  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 1.9607844}
+  m_LocalPosition: {x: -0.023, y: 0.682, z: 0}
+  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 950359216241801046}

@@ -9,10 +9,10 @@ using UnityEngine.InputSystem;
 
 public class BowController : MonoBehaviour {
     [SerializeField] private Transform bow;
-    [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private Transform bowEndpointPostion;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private bool _isDrawing;
+    [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private float minDrawTime = 0.5f;
     [SerializeField] private float minDrawTimeTeleportArrow = 0f;
     [SerializeField] private float maxDrawTime = 3f;
@@ -24,7 +24,9 @@ public class BowController : MonoBehaviour {
     [SerializeField] private float mouseConeAngle = 15f; 
     [SerializeField] private float maxDistance = 10f;
 
+
     [SerializeField] private bool _isEmpoweredShot = false;
+    [SerializeField] private SpriteRenderer bowSprite;
 
     private Vector3 lastDirection;
     private Player player;
@@ -162,9 +164,11 @@ public class BowController : MonoBehaviour {
 
     public void OnFireArrow(InputAction.CallbackContext context) {
         if (context.performed) {
+            bowSprite.enabled = true;
             IsDrawing = true;
             IsDrawingArrow = true;
         } else if (context.canceled) {
+            bowSprite.enabled = false;
             IsDrawing = false;
             IsDrawingArrow = false;
             DrawSucceedArrow = false;
@@ -192,11 +196,13 @@ public class BowController : MonoBehaviour {
 
     public void OnFireTeleportArrow(InputAction.CallbackContext context) {
         if (context.performed) {
+            bowSprite.enabled = true;
             IsDrawing = true;
             IsDrawingTeleportArrow = true;
             drawTime = 0f; // Reset draw time when starting to draw
 
         } else if (context.canceled) {
+            bowSprite.enabled = false;
             IsDrawing = false;
             IsDrawingTeleportArrow = false;
             DrawSucceedTeleportArrow = false;
@@ -295,7 +301,6 @@ public class BowController : MonoBehaviour {
         if (IsDrawingArrow) {
             closestEnemy = FindClosestEnemyInCone(direction, currentConeAngle);
             if (closestEnemy != null) {
-                Debug.Log("Enemy Lock On");
                 // Adjust the direction to point at the closest enemy
                 direction = (closestEnemy.transform.position - playerTransform.position).normalized;
             }
@@ -314,7 +319,9 @@ public class BowController : MonoBehaviour {
 
         // Calculate the bow's position separately without modifying the angle
         float positionAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bow.position = playerTransform.position + Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
+        bow.position = playerTransform.position +  Quaternion.Euler(0, 0, positionAngle) * new Vector3(bowDistance, 0, 0);
+         
+       
     }
 
 
@@ -330,6 +337,11 @@ public class BowController : MonoBehaviour {
         rb = GetComponentInParent<Rigidbody2D>();
         damageable = GetComponentInParent<Damageable>();   
     }
+
+    private void Start() {
+        bowSprite.enabled = false;
+    }
+
 
 
 }

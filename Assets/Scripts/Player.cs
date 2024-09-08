@@ -49,7 +49,6 @@ public class Player : MonoBehaviour {
     [SerializeField] private float delayBeforeReset = 3f;
 
     [SerializeField] private SpriteRenderer playerSprite;
-    [SerializeField] private SpriteRenderer bowSprite;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private BowController bow;
 
@@ -414,10 +413,8 @@ public class Player : MonoBehaviour {
         if (!damageable.IsAlive) {
             OnDeath();
             playerInput.enabled = false;
-            bowSprite.enabled = false;
         } else { 
             playerInput.enabled = true;
-            bowSprite.enabled = true;
         }
         if (IsDashing) {
             return;
