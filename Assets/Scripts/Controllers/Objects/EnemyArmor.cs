@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeArmor : MonoBehaviour {
+public class EnemyArmor : MonoBehaviour {
     private Damageable damageable;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite slimeArmored;
