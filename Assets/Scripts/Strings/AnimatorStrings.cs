@@ -9,6 +9,7 @@ internal class AnimatorStrings {
     internal static string isAlive = "isAlive";
     internal static string isShielded = "isShielded";
     internal static string isDrawing = "isDrawing";
+    internal static string isArmored = "isArmored";
     internal static string playerDetected = "playerDetected";
     internal static string fastFall = "fastFall";
     internal static string yVelocity = "yVelocity";

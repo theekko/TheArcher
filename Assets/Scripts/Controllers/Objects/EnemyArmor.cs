@@ -1,37 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyArmor : MonoBehaviour {
-    private Damageable damageable;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite slimeArmored;
-    [SerializeField] private Sprite slime;
+    [SerializeField] private bool _isArmored = true;
 
     private Collider2D armor;
+    private Damageable damageable;
+
+    public event EventHandler armorHitEvent;
+
+    public bool IsArmored {
+        get {
+            return _isArmored;
+        }
+        private set { 
+            _isArmored = value;
+        }
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision) {
         EmpoweredArrow empoweredArrow = collision.gameObject.GetComponent<EmpoweredArrow>();
+        Arrow arrow = collision.gameObject.GetComponent<Arrow>();
         if (empoweredArrow != null) {
-            Destroy(empoweredArrow);
+            // Look i know this isnt great but it works for stopping the arrow
+            Destroy(empoweredArrow.gameObject);
             damageable.enabled = true;
-            spriteRenderer.sprite = slime;
             armor.enabled = false;
+            IsArmored = false;
+        }
+        if (arrow != null) {
+            // Look i know this isnt great but it works for stopping the arrow
+            Destroy(arrow.gameObject);
+            armorHitEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 
     private void Awake() {
-        // Initialize the SpriteRenderer on the current object
-        if (spriteRenderer == null) {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-        spriteRenderer.sprite = slimeArmored;
-
-
-        // Initialize the Damageable component on the parent object
-        if (damageable == null) {
-            damageable = GetComponentInParent<Damageable>();
-            armor = GetComponent<Collider2D>();
-        }
+        damageable = GetComponentInParent<Damageable>();
+        armor = GetComponent<Collider2D>();
     }
 }
