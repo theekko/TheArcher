@@ -84,11 +84,6 @@ public class Player : MonoBehaviour {
             return _isFacingRight;
         }
         private set {
-            if (_isFacingRight != value) {
-                // flip the local scale to make the player face the opposite direction
-                //transform.localScale *= new Vector2(-1, 1);
-                playerSprite.flipX = !value;
-            }
             _isFacingRight = value;
         }
     }

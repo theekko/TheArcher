@@ -852,8 +852,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7071313}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -870,11 +870,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 216
+        y: 217
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7899837}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -894,8 +894,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8106969}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -915,8 +915,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8314101}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -936,8 +936,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8003402}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -957,8 +957,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7796273}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -978,8 +978,8 @@ TextureImporter:
         y: 216
         width: 80
         height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.665705}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

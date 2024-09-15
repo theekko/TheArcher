@@ -1,0 +1,1328 @@
+fileFormatVersion: 2
+guid: 5ea28d497ebe52249ba272a9ee60c66f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: yeti_Frame_0
+    originalName: 
+    pivot: {x: 0.2125, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 110
+      width: 40
+      height: 44
+    spriteID: 9f621a32e0a121d42bac6f46b5f5d960
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 110}
+  - name: yeti_Frame_1
+    originalName: 
+    pivot: {x: 0.2125, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 162
+      width: 40
+      height: 44
+    spriteID: 074e9386fb691cc4d8c0dd1d92ec6a04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 162}
+  - name: yeti_Frame_2
+    originalName: 
+    pivot: {x: 0.23170733, y: -0.022222223}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 4
+      width: 41
+      height: 45
+    spriteID: 9a9e5159fbefacc44ac3ce5c2e3423dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 4}
+  - name: yeti_Frame_3
+    originalName: 
+    pivot: {x: 0.23170733, y: -0.022222223}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 57
+      width: 41
+      height: 45
+    spriteID: cfb04efcc9fb5534487cfad6c38fb5e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 57}
+  - name: yeti_Frame_4
+    originalName: 
+    pivot: {x: 0.01923078, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 285
+      width: 26
+      height: 43
+    spriteID: de76300b875600441842ce7fa562c447
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 285}
+  - name: yeti_Frame_5
+    originalName: 
+    pivot: {x: 0.12962961, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 451
+      width: 27
+      height: 43
+    spriteID: a31e547c551eaed44941902643291a0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 451}
+  - name: yeti_Frame_6
+    originalName: 
+    pivot: {x: 0.16666667, y: -0.023809522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 235
+      width: 27
+      height: 42
+    spriteID: 6cd5f435124ab904c86a3e6e34154ebe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 235}
+  - name: yeti_Frame_7
+    originalName: 
+    pivot: {x: 0.17741938, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 345
+      width: 31
+      height: 44
+    spriteID: a217b3bdf9979164dab86d1e4af11fc9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 345}
+  - name: yeti_Frame_8
+    originalName: 
+    pivot: {x: 0.19696967, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 192
+      width: 33
+      height: 43
+    spriteID: 87290945bee66f34e88c7f378d7c1876
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 192}
+  - name: yeti_Frame_9
+    originalName: 
+    pivot: {x: -0.023809433, y: -0.023809522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 336
+      width: 21
+      height: 42
+    spriteID: 3b2e7c0ef4a2a8548a1c1bfa2e647032
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 336}
+  - name: yeti_Frame_10
+    originalName: 
+    pivot: {x: 0.35526317, y: -0.021739129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 214
+      width: 38
+      height: 46
+    spriteID: 3c1e5ad7a9b2a5944ae4810719381762
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 214}
+  - name: yeti_Frame_11
+    originalName: 
+    pivot: {x: 0.27941176, y: -0.021739129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 316
+      width: 34
+      height: 46
+    spriteID: 9bdc374a232fe2540bd57b99d2cca930
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 316}
+  - name: yeti_Frame_12
+    originalName: 
+    pivot: {x: 0.15517242, y: -0.021739129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 397
+      width: 29
+      height: 46
+    spriteID: d40f6e92220a5a74ca605ec39bdc8d5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 397}
+  - name: yeti_Frame_13
+    originalName: 
+    pivot: {x: 0.48958334, y: -0.029411767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 4
+      width: 48
+      height: 34
+    spriteID: c94f488a32a1ffb43b1c6eb7702f137d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 4}
+  - name: yeti_Frame_14
+    originalName: 
+    pivot: {x: 0.4166667, y: -0.028571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 106
+      width: 42
+      height: 35
+    spriteID: 0ce3350cc8f45be4cb4625c353cd894d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 106}
+  - name: yeti_Frame_15
+    originalName: 
+    pivot: {x: 0.37179485, y: -0.027027028}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 470
+      width: 39
+      height: 37
+    spriteID: cb7ef3e0eb99f1b498572e7895a5784e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 470}
+  - name: yeti_Frame_16
+    originalName: 
+    pivot: {x: 0.2027027, y: -0.018181818}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 37
+      height: 55
+    spriteID: e72ad9a3f311e394cb0ad90b04655a12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: yeti_Frame_17
+    originalName: 
+    pivot: {x: 0.14864866, y: -0.018518519}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 67
+      width: 37
+      height: 54
+    spriteID: c46bf464bd5b0944ca7973f0ded0a0ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 67}
+  - name: yeti_Frame_18
+    originalName: 
+    pivot: {x: 0.04054056, y: -0.018518519}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 129
+      width: 37
+      height: 54
+    spriteID: 1d3f10d7e4e0c734fbd5c780d07866b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 129}
+  - name: yeti_Frame_19
+    originalName: 
+    pivot: {x: 0.4431818, y: -0.032258064}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 46
+      width: 44
+      height: 31
+    spriteID: 827fd5b808ca49d419d5790a200cbc77
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 46}
+  - name: yeti_Frame_20
+    originalName: 
+    pivot: {x: 0.45555556, y: -0.03448276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 123
+      width: 45
+      height: 29
+    spriteID: d44fc87f1a5bb414eaa406919cb86ebf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 123}
+  - name: yeti_Frame_21
+    originalName: 
+    pivot: {x: 0.45555556, y: -0.03333333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 85
+      width: 45
+      height: 30
+    spriteID: a027982d52143cf4facb46036bd3cb2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 85}
+  - name: yeti_Frame_22
+    originalName: 
+    pivot: {x: 0.40243903, y: -0.028571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 149
+      width: 41
+      height: 35
+    spriteID: 574efbe5ed0dfa8419d6ce916ed48992
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 149}
+  - name: yeti_Frame_23
+    originalName: 
+    pivot: {x: 0.24285716, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 422
+      width: 35
+      height: 43
+    spriteID: 7aace5f8ca097a14081219699b853cfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 422}
+  - name: yeti_Frame_24
+    originalName: 
+    pivot: {x: 0.046875026, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 243
+      width: 32
+      height: 43
+    spriteID: 4e9ac27767762934fba9eb9c629d062d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 243}
+  - name: yeti_Frame_25
+    originalName: 
+    pivot: {x: 0.04411767, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 418
+      width: 34
+      height: 44
+    spriteID: 6341e02e7d707dc498d1d68895bb8a55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 418}
+  - name: yeti_Frame_26
+    originalName: 
+    pivot: {x: 0.24285716, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 316
+      width: 35
+      height: 43
+    spriteID: cd2d353ae730b5b4c947091c7dff99e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 316}
+  - name: yeti_Frame_27
+    originalName: 
+    pivot: {x: 0.046875026, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 294
+      width: 32
+      height: 43
+    spriteID: cc08e42a5db5bf342bb95c255441611f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 294}
+  - name: yeti_Frame_28
+    originalName: 
+    pivot: {x: 0.04411767, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 54
+      width: 34
+      height: 44
+    spriteID: 0bca2498fcfbdec4fbdede61ccaf75b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 54}
+  - name: yeti_Frame_29
+    originalName: 
+    pivot: {x: 0.33783785, y: -0.028571429}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 473
+      width: 37
+      height: 35
+    spriteID: 70dd4fa3cfc89cc40b590426bfbbb6b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 473}
+  - name: yeti_Frame_30
+    originalName: 
+    pivot: {x: 0.33783785, y: -0.032258064}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 196
+      width: 37
+      height: 31
+    spriteID: 4332147af2229d84bb6deb0f1a3b5a32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 196}
+  - name: yeti_Frame_31
+    originalName: 
+    pivot: {x: 0.40243903, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 160
+      width: 41
+      height: 28
+    spriteID: 88d870f27fcd6d247b3863090e94fb9d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 160}
+  - name: yeti_Frame_32
+    originalName: 
+    pivot: {x: 0.58196723, y: -0.06666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 4
+      width: 61
+      height: 15
+    spriteID: 38759da9759affa4bab9772df3676ab9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 4}
+  - name: yeti_Frame_33
+    originalName: 
+    pivot: {x: 0.58196723, y: -0.06666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 273
+      y: 4
+      width: 61
+      height: 15
+    spriteID: 901c02e92da3e0f429dba75d10429fbb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 273, y: 4}
+  - name: yeti_Frame_34
+    originalName: 
+    pivot: {x: 0.58196723, y: -0.06666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 342
+      y: 4
+      width: 61
+      height: 15
+    spriteID: 27c33246411d31d43ba2a2692e0197fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 342, y: 4}
+  - name: yeti_Frame_35
+    originalName: 
+    pivot: {x: 0.22619049, y: -0.023809522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 42
+      height: 42
+    spriteID: dbf7c9b10004cfd47836063a8dd32e04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: yeti_Frame_36
+    originalName: 
+    pivot: {x: 0.23170733, y: -0.024999999}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 268
+      width: 41
+      height: 40
+    spriteID: 9938de6ed0b52514783f3fb15195132f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 268}
+  - name: yeti_Frame_37
+    originalName: 
+    pivot: {x: 0.18571426, y: -0.022727272}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 370
+      width: 35
+      height: 44
+    spriteID: 8453ed8202727cc4db5185affe3b2b26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 370}
+  - name: yeti_Frame_38
+    originalName: 
+    pivot: {x: 0.18571426, y: -0.023255814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 367
+      width: 35
+      height: 43
+    spriteID: 58555f2bd2ae0e54fbe2b1d0650f9cbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 367}
+  - name: yeti_Frame_39
+    originalName: 
+    pivot: {x: 0.15714288, y: -0.018518519}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 254
+      width: 35
+      height: 54
+    spriteID: 5026888ad68abfd448fdaacadd7b54b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 254}
+  - name: yeti_Frame_40
+    originalName: 
+    pivot: {x: 0.15714288, y: -0.018181818}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 191
+      width: 35
+      height: 55
+    spriteID: 76919b7277a260b489626c5bbab4b1bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 191}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 523097425
+    name: yeti
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: yeti_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 1
+        width: 40
+        height: 44
+      spriteId: 9f621a32e0a121d42bac6f46b5f5d960
+    - name: yeti_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 1
+        width: 40
+        height: 44
+      spriteId: 074e9386fb691cc4d8c0dd1d92ec6a04
+    - name: yeti_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 1
+        width: 41
+        height: 45
+      spriteId: 9a9e5159fbefacc44ac3ce5c2e3423dd
+    - name: yeti_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 1
+        width: 41
+        height: 45
+      spriteId: cfb04efcc9fb5534487cfad6c38fb5e9
+    - name: yeti_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 1
+        width: 26
+        height: 43
+      spriteId: de76300b875600441842ce7fa562c447
+    - name: yeti_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 1
+        width: 27
+        height: 43
+      spriteId: a31e547c551eaed44941902643291a0b
+    - name: yeti_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 1
+        width: 27
+        height: 42
+      spriteId: 6cd5f435124ab904c86a3e6e34154ebe
+    - name: yeti_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 1
+        width: 31
+        height: 44
+      spriteId: a217b3bdf9979164dab86d1e4af11fc9
+    - name: yeti_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 1
+        width: 33
+        height: 43
+      spriteId: 87290945bee66f34e88c7f378d7c1876
+    - name: yeti_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 37
+        y: 1
+        width: 21
+        height: 42
+      spriteId: 3b2e7c0ef4a2a8548a1c1bfa2e647032
+    - name: yeti_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 1
+        width: 38
+        height: 46
+      spriteId: 3c1e5ad7a9b2a5944ae4810719381762
+    - name: yeti_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 1
+        width: 34
+        height: 46
+      spriteId: 9bdc374a232fe2540bd57b99d2cca930
+    - name: yeti_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 1
+        width: 29
+        height: 46
+      spriteId: d40f6e92220a5a74ca605ec39bdc8d5c
+    - name: yeti_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 1
+        width: 48
+        height: 34
+      spriteId: c94f488a32a1ffb43b1c6eb7702f137d
+    - name: yeti_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 1
+        width: 42
+        height: 35
+      spriteId: 0ce3350cc8f45be4cb4625c353cd894d
+    - name: yeti_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 22
+        y: 1
+        width: 39
+        height: 37
+      spriteId: cb7ef3e0eb99f1b498572e7895a5784e
+    - name: yeti_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 29
+        y: 1
+        width: 37
+        height: 55
+      spriteId: e72ad9a3f311e394cb0ad90b04655a12
+    - name: yeti_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 1
+        width: 37
+        height: 54
+      spriteId: c46bf464bd5b0944ca7973f0ded0a0ef
+    - name: yeti_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 37
+        height: 54
+      spriteId: 1d3f10d7e4e0c734fbd5c780d07866b6
+    - name: yeti_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 1
+        width: 44
+        height: 31
+      spriteId: 827fd5b808ca49d419d5790a200cbc77
+    - name: yeti_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 1
+        width: 45
+        height: 29
+      spriteId: d44fc87f1a5bb414eaa406919cb86ebf
+    - name: yeti_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 1
+        width: 45
+        height: 30
+      spriteId: a027982d52143cf4facb46036bd3cb2a
+    - name: yeti_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 1
+        width: 41
+        height: 35
+      spriteId: 574efbe5ed0dfa8419d6ce916ed48992
+    - name: yeti_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 1
+        width: 35
+        height: 43
+      spriteId: 7aace5f8ca097a14081219699b853cfa
+    - name: yeti_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 32
+        height: 43
+      spriteId: 4e9ac27767762934fba9eb9c629d062d
+    - name: yeti_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 34
+        height: 44
+      spriteId: 6341e02e7d707dc498d1d68895bb8a55
+    - name: yeti_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 1
+        width: 35
+        height: 43
+      spriteId: cd2d353ae730b5b4c947091c7dff99e1
+    - name: yeti_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 32
+        height: 43
+      spriteId: cc08e42a5db5bf342bb95c255441611f
+    - name: yeti_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 1
+        width: 34
+        height: 44
+      spriteId: 0bca2498fcfbdec4fbdede61ccaf75b6
+    - name: yeti_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 1
+        width: 37
+        height: 35
+      spriteId: 70dd4fa3cfc89cc40b590426bfbbb6b3
+    - name: yeti_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 1
+        width: 37
+        height: 31
+      spriteId: 4332147af2229d84bb6deb0f1a3b5a32
+    - name: yeti_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 1
+        width: 41
+        height: 28
+      spriteId: 88d870f27fcd6d247b3863090e94fb9d
+    - name: yeti_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 1
+        width: 61
+        height: 15
+      spriteId: 38759da9759affa4bab9772df3676ab9
+    - name: yeti_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 1
+        width: 61
+        height: 15
+      spriteId: 901c02e92da3e0f429dba75d10429fbb
+    - name: yeti_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 1
+        width: 61
+        height: 15
+      spriteId: 27c33246411d31d43ba2a2692e0197fb
+    - name: yeti_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 1
+        width: 42
+        height: 42
+      spriteId: dbf7c9b10004cfd47836063a8dd32e04
+    - name: yeti_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 1
+        width: 41
+        height: 40
+      spriteId: 9938de6ed0b52514783f3fb15195132f
+    - name: yeti_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 1
+        width: 35
+        height: 44
+      spriteId: 8453ed8202727cc4db5185affe3b2b26
+    - name: yeti_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 1
+        width: 35
+        height: 43
+      spriteId: 58555f2bd2ae0e54fbe2b1d0650f9cbd
+    - name: yeti_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 1
+        width: 35
+        height: 54
+      spriteId: 5026888ad68abfd448fdaacadd7b54b4
+    - name: yeti_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 1
+        width: 35
+        height: 55
+      spriteId: 76919b7277a260b489626c5bbab4b1bf
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 73, y: 57}

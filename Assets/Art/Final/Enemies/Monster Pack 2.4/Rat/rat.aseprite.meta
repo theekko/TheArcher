@@ -1,0 +1,951 @@
+fileFormatVersion: 2
+guid: 2264a375386f8b146a5b4f80d586e60a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: rat_Frame_0
+    originalName: 
+    pivot: {x: 0.43749997, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 87
+      width: 32
+      height: 12
+    spriteID: 3f265fcf4307b2c4bbf33eeb4fb3cf90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 87}
+  - name: rat_Frame_1
+    originalName: 
+    pivot: {x: 0.42424238, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 46
+      width: 33
+      height: 12
+    spriteID: 86c9c647ee68f8241b303bf08b923808
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 46}
+  - name: rat_Frame_2
+    originalName: 
+    pivot: {x: 0.46666664, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 66
+      width: 30
+      height: 13
+    spriteID: a0c6f3032d7faaf47a4562c7eb4c28b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 66}
+  - name: rat_Frame_3
+    originalName: 
+    pivot: {x: 0.42424238, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 4
+      width: 33
+      height: 13
+    spriteID: 1367bb9886b243b43ae70a842ddf2e6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 4}
+  - name: rat_Frame_4
+    originalName: 
+    pivot: {x: 0.4848485, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 201
+      width: 33
+      height: 14
+    spriteID: 410487d87a233814b95f12683f6a044a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 201}
+  - name: rat_Frame_5
+    originalName: 
+    pivot: {x: 0.4516129, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 223
+      width: 31
+      height: 14
+    spriteID: 0e2edb173a7ad9e418bbfee4dcbede36
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 223}
+  - name: rat_Frame_6
+    originalName: 
+    pivot: {x: 0.4516129, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 132
+      width: 31
+      height: 15
+    spriteID: bd6514a310c215f47b0c3b1e781dc25e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 132}
+  - name: rat_Frame_7
+    originalName: 
+    pivot: {x: 0.43749997, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 25
+      width: 32
+      height: 13
+    spriteID: b8adbff65744d274aa7cdb5db1c3a216
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 25}
+  - name: rat_Frame_8
+    originalName: 
+    pivot: {x: 0.35714284, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 223
+      width: 28
+      height: 12
+    spriteID: 9b854527e7d9874498a8d654777e701a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 223}
+  - name: rat_Frame_9
+    originalName: 
+    pivot: {x: 0.32142854, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 4
+      width: 28
+      height: 12
+    spriteID: 8bcda61d1b18a1f48a05ddf3db76c526
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 4}
+  - name: rat_Frame_10
+    originalName: 
+    pivot: {x: 0.32142854, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 79
+      width: 28
+      height: 11
+    spriteID: 5dac978ee43fb214984fcaf18203aa52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 79}
+  - name: rat_Frame_11
+    originalName: 
+    pivot: {x: 0.4848485, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 109
+      width: 33
+      height: 15
+    spriteID: d1405626d8eccc44292dfecd4bdd8500
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 109}
+  - name: rat_Frame_12
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.05}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 33
+      height: 20
+    spriteID: 49afb69c066456946820ede1eeb0386b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: rat_Frame_13
+    originalName: 
+    pivot: {x: 0.5806452, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 85
+      width: 31
+      height: 16
+    spriteID: 6ed1a26e727a17c4596c14480995628b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 85}
+  - name: rat_Frame_14
+    originalName: 
+    pivot: {x: 0.38709676, y: -0.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 43
+      width: 31
+      height: 10
+    spriteID: 354781bdc2e32034aa0e63e2fed09d58
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 43}
+  - name: rat_Frame_15
+    originalName: 
+    pivot: {x: 0.40625, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 147
+      width: 32
+      height: 11
+    spriteID: 3cc89765c7aaf2d409d5e3c676e408aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 147}
+  - name: rat_Frame_16
+    originalName: 
+    pivot: {x: 0.38709676, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 107
+      width: 31
+      height: 12
+    spriteID: 54e2c8245323a2348ac7fd82f3c9e1fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 107}
+  - name: rat_Frame_17
+    originalName: 
+    pivot: {x: 0.38709676, y: -0.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 61
+      width: 31
+      height: 10
+    spriteID: 8106bf601b532d2478044d80b4bae1fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 61}
+  - name: rat_Frame_18
+    originalName: 
+    pivot: {x: 0.40625, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 166
+      width: 32
+      height: 11
+    spriteID: 0ea2a2d2a8ef86345916801935bc3b1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 166}
+  - name: rat_Frame_19
+    originalName: 
+    pivot: {x: 0.38709676, y: -0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 127
+      width: 31
+      height: 12
+    spriteID: 6ba4e9cff60aa3f48a9d472991d7befc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 127}
+  - name: rat_Frame_20
+    originalName: 
+    pivot: {x: 0.39999998, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 24
+      width: 30
+      height: 11
+    spriteID: 141219fb0f4b75c4aa7383aa4fd217de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 24}
+  - name: rat_Frame_21
+    originalName: 
+    pivot: {x: 0.37499997, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 243
+      width: 32
+      height: 9
+    spriteID: 595c23b274dec064fb0f20a56d64baf1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 243}
+  - name: rat_Frame_22
+    originalName: 
+    pivot: {x: 0.43749997, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 185
+      width: 32
+      height: 11
+    spriteID: 931de33cf5d67434d92e44c1c5c98e20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 185}
+  - name: rat_Frame_23
+    originalName: 
+    pivot: {x: 0.40625, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 204
+      width: 32
+      height: 11
+    spriteID: 16c48eada6176c04cbb15a6fede44e57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 204}
+  - name: rat_Frame_24
+    originalName: 
+    pivot: {x: 0.5161291, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 155
+      width: 31
+      height: 15
+    spriteID: 77a91d4e081bbed408a41e346bbea544
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 155}
+  - name: rat_Frame_25
+    originalName: 
+    pivot: {x: 0.5161291, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 178
+      width: 31
+      height: 15
+    spriteID: b1169fcb824bcee44b37c57579a585b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 178}
+  - name: rat_Frame_26
+    originalName: 
+    pivot: {x: 0.46666664, y: -0.10526316}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 32
+      width: 30
+      height: 19
+    spriteID: 70b62fbb21d982543ab62f973a153c98
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 32}
+  - name: rat_Frame_27
+    originalName: 
+    pivot: {x: 0.46666664, y: -0.11111111}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 59
+      width: 30
+      height: 18
+    spriteID: 01b4271465653d3449b349e677800b6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 59}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1445993131
+    name: rat
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: rat_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 32
+        height: 12
+      spriteId: 3f265fcf4307b2c4bbf33eeb4fb3cf90
+    - name: rat_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 33
+        height: 12
+      spriteId: 86c9c647ee68f8241b303bf08b923808
+    - name: rat_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 30
+        height: 13
+      spriteId: a0c6f3032d7faaf47a4562c7eb4c28b8
+    - name: rat_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 33
+        height: 13
+      spriteId: 1367bb9886b243b43ae70a842ddf2e6a
+    - name: rat_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 1
+        width: 33
+        height: 14
+      spriteId: 410487d87a233814b95f12683f6a044a
+    - name: rat_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 2
+        width: 31
+        height: 14
+      spriteId: 0e2edb173a7ad9e418bbfee4dcbede36
+    - name: rat_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 31
+        height: 15
+      spriteId: bd6514a310c215f47b0c3b1e781dc25e
+    - name: rat_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 32
+        height: 13
+      spriteId: b8adbff65744d274aa7cdb5db1c3a216
+    - name: rat_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 1
+        width: 28
+        height: 12
+      spriteId: 9b854527e7d9874498a8d654777e701a
+    - name: rat_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 1
+        width: 28
+        height: 12
+      spriteId: 8bcda61d1b18a1f48a05ddf3db76c526
+    - name: rat_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 1
+        width: 28
+        height: 11
+      spriteId: 5dac978ee43fb214984fcaf18203aa52
+    - name: rat_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 33
+        height: 15
+      spriteId: d1405626d8eccc44292dfecd4bdd8500
+    - name: rat_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 1
+        width: 33
+        height: 20
+      spriteId: 49afb69c066456946820ede1eeb0386b
+    - name: rat_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 1
+        width: 31
+        height: 16
+      spriteId: 6ed1a26e727a17c4596c14480995628b
+    - name: rat_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 31
+        height: 10
+      spriteId: 354781bdc2e32034aa0e63e2fed09d58
+    - name: rat_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 1
+        width: 32
+        height: 11
+      spriteId: 3cc89765c7aaf2d409d5e3c676e408aa
+    - name: rat_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 31
+        height: 12
+      spriteId: 54e2c8245323a2348ac7fd82f3c9e1fd
+    - name: rat_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 31
+        height: 10
+      spriteId: 8106bf601b532d2478044d80b4bae1fe
+    - name: rat_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 1
+        width: 32
+        height: 11
+      spriteId: 0ea2a2d2a8ef86345916801935bc3b1f
+    - name: rat_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 31
+        height: 12
+      spriteId: 6ba4e9cff60aa3f48a9d472991d7befc
+    - name: rat_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 30
+        height: 11
+      spriteId: 141219fb0f4b75c4aa7383aa4fd217de
+    - name: rat_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 1
+        width: 32
+        height: 9
+      spriteId: 595c23b274dec064fb0f20a56d64baf1
+    - name: rat_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 1
+        width: 32
+        height: 11
+      spriteId: 931de33cf5d67434d92e44c1c5c98e20
+    - name: rat_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 1
+        width: 32
+        height: 11
+      spriteId: 16c48eada6176c04cbb15a6fede44e57
+    - name: rat_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 1
+        width: 31
+        height: 15
+      spriteId: 77a91d4e081bbed408a41e346bbea544
+    - name: rat_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 1
+        width: 31
+        height: 15
+      spriteId: b1169fcb824bcee44b37c57579a585b1
+    - name: rat_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 2
+        width: 30
+        height: 19
+      spriteId: 70b62fbb21d982543ab62f973a153c98
+    - name: rat_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 2
+        width: 30
+        height: 18
+      spriteId: 01b4271465653d3449b349e677800b6a
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 42, y: 22}

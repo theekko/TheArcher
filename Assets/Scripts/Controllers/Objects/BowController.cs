@@ -39,6 +39,7 @@ public class BowController : MonoBehaviour {
     private bool _isDrawingTeleportArrow;
     private bool _drawSucceedArrow;
     private bool _drawSucceedTeleportArrow;
+    private bool _canFireTeleportArrow = true;
     private float linearTime;
     private float destroyTimer;
     private Collider2D closestEnemy;
@@ -111,6 +112,15 @@ public class BowController : MonoBehaviour {
         }
         private set { 
             _drawSucceedTeleportArrow = value;
+        }
+    }
+
+    public bool CanFireTeleportArrow {
+        get {
+            return _canFireTeleportArrow;
+        }
+        private set { 
+            _canFireTeleportArrow = value;
         }
     }
 
@@ -193,6 +203,9 @@ public class BowController : MonoBehaviour {
     }
 
     public void OnFireTeleportArrow(InputAction.CallbackContext context) {
+        if (!CanFireTeleportArrow) {
+            return;
+        }
         if (context.performed) {
             IsDrawing = true;
             IsDrawingTeleportArrow = true;
@@ -327,15 +340,29 @@ public class BowController : MonoBehaviour {
         return hit.collider != null; // Returns true if there's an obstacle in the way
     }
 
+    private void Wasp_capturedArrowEvent(object sender, EventArgs e) {
+        CanFireTeleportArrow = false;
+    }
+
+    private void Wasp_ArrowReleaseEvent(object sender, EventArgs e) {
+        CanFireTeleportArrow = true;
+    }
+
     private void Awake() {
         player = GetComponentInParent<Player>();
         player.teleportEvent += Player_teleportEvent;
         rb = GetComponentInParent<Rigidbody2D>();
-        damageable = GetComponentInParent<Damageable>();   
+        damageable = GetComponentInParent<Damageable>();
     }
 
+    private void OnEnable() {
+        Wasp.CapturedArrowEvent += Wasp_capturedArrowEvent;
+        Wasp.ArrowReleaseEvent += Wasp_ArrowReleaseEvent;
+    }
 
-
-
-
+    
+    private void OnDisable() {
+        Wasp.CapturedArrowEvent -= Wasp_capturedArrowEvent;
+        Wasp.ArrowReleaseEvent -= Wasp_ArrowReleaseEvent;
+    }
 }

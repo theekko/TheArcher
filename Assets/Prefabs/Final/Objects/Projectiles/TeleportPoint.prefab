@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6428584340728623360}
   - component: {fileID: -9174539175728988271}
   - component: {fileID: 4077091821473314167}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: TeleportPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53b1f31ecc170b49a77b03d764dbc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportOverlapOffset: 0.05
+  teleportOverlapOffset: 0.075
 --- !u!61 &4077091821473314167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7595498910057251480}
   - component: {fileID: 4441169947207683734}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: TeleportPointVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

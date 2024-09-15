@@ -6,10 +6,6 @@ public class TeleportPoint : MonoBehaviour {
     [SerializeField] private float teleportOverlapOffset = 0.3f;
     private BoxCollider2D teleportPoint;
 
-    private void Awake() {
-        teleportPoint = GetComponent<BoxCollider2D>();
-        CheckInitialOverlap();
-    }
 
     private void CheckInitialOverlap() {
         if (teleportPoint != null) {
@@ -76,4 +72,28 @@ public class TeleportPoint : MonoBehaviour {
     private Vector2 CalculateAdjustmentDirection(Collider2D hit) {
         return Vector2.up;  // Adjusts upwards by default
     }
+
+    private void Wasp_capturedArrowEvent(object sender, System.EventArgs e) {
+        Destroy(gameObject);
+    }
+
+
+    private void Awake() {
+        teleportPoint = GetComponent<BoxCollider2D>();
+        CheckInitialOverlap();
+    }
+
+
+    private void OnEnable() {
+        Wasp.CapturedArrowEvent += Wasp_capturedArrowEvent;
+    }
+
+
+
+    private void OnDisable() {
+        Wasp.CapturedArrowEvent -= Wasp_capturedArrowEvent;
+    }
+
+
+ 
 }

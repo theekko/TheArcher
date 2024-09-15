@@ -9,9 +9,11 @@ public class PlayerAnimator : MonoBehaviour {
     [SerializeField] Damageable damageable;
     [SerializeField] BowController bow;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake() {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player.jumpEvent += Player_jumpEvent;
         damageable.damageableHit += Damageable_damageableHit;
     }
@@ -28,6 +30,7 @@ public class PlayerAnimator : MonoBehaviour {
 
 
     private void Update() {
+        spriteRenderer.flipX = !player.IsFacingRight;
         animator.SetBool(AnimatorStrings.isGrounded, touchingDirections.IsGrounded);
         animator.SetBool(AnimatorStrings.isRunning, player.isRunning);
         animator.SetBool(AnimatorStrings.isOnWall, touchingDirections.IsOnWall);

@@ -9,10 +9,10 @@ public class Shield : MonoBehaviour {
     [SerializeField] private float shieldInvincibilityTime = 0.25f;
     [SerializeField] private int maxNumShields = 3;
     [SerializeField] private int numShields = 3;
-    [SerializeField] private float shieldRefreshCooldownMax = 10;
+    //[SerializeField] private float shieldRefreshCooldownMax = 10;
     [SerializeField] private bool _canShield = true;
     [SerializeField] private bool _isShielded = false;
-    private float timeShieldRefresh = 0;
+    //private float timeShieldRefresh = 0;
     private float timeSinceShield = 0;
     private Damageable damageable;
 
@@ -51,13 +51,13 @@ public class Shield : MonoBehaviour {
 
     private void Update() {
         //Shield Refresh
-        if (numShields < maxNumShields) { 
-            timeShieldRefresh += Time.deltaTime;
-            if (timeShieldRefresh >= shieldRefreshCooldownMax) {
-                numShields += 1;
-                timeShieldRefresh = 0;
-            }
-        }
+        //if (numShields < maxNumShields) { 
+        //    timeShieldRefresh += Time.deltaTime;
+        //    if (timeShieldRefresh >= shieldRefreshCooldownMax) {
+        //        numShields += 1;
+        //        timeShieldRefresh = 0;
+        //    }
+        //}
 
         //Shield Cooldown
         if (!CanShield) {

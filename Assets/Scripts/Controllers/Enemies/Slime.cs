@@ -87,7 +87,6 @@ public class Slime : MonoBehaviour {
             Jump();
         }
         distance = Vector2.Distance(transform.position, Player.Instance.transform.position);
-        Vector2 startingDirection = startingPosition - transform.position;
         Vector2 direction = Player.Instance.transform.position - transform.position;
         
         // Raycast to check if there's ground between Slime and Player
