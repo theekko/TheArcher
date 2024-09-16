@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Shield : MonoBehaviour {
     [SerializeField] private float shieldInvincibilityTime = 0.25f;
-    [SerializeField] private int maxNumShields = 3;
+    //[SerializeField] private int maxNumShields = 3;
     [SerializeField] private int numShields = 3;
     //[SerializeField] private float shieldRefreshCooldownMax = 10;
     [SerializeField] private bool _canShield = true;
