@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25aebc31475bf0748ab80f9b22867f57
+guid: f15662898d3c0a642b350c992f66fd6e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shade-Sheet_0
+      name: shade-Sheet_arms_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e0dc77df9ed95043a4e559e8daf1beb
-      internalID: 1393815106
+      spriteID: 059be51051ee59746bb19ee2660b4f7a
+      internalID: -1548982803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_1
+      name: shade-Sheet_arms_1
       rect:
         serializedVersion: 2
         x: 59
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a710887680e4d234cb3c0a3e03c9e28d
-      internalID: -282529082
+      spriteID: 213d5360a0704004884730d9f54e3c86
+      internalID: -554681449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_2
+      name: shade-Sheet_arms_2
       rect:
         serializedVersion: 2
         x: 118
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 586e09875473c054ea6fe2c0fa78fdce
-      internalID: -1319685507
+      spriteID: a28c13a46a13c7245b016399122b6e31
+      internalID: 546502572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_3
+      name: shade-Sheet_arms_3
       rect:
         serializedVersion: 2
         x: 177
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a9b0346708a874f88e1701963ca3e7
-      internalID: -1397940712
+      spriteID: 9c0175f08199a254289fe01895b265cd
+      internalID: 730759830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_4
+      name: shade-Sheet_arms_4
       rect:
         serializedVersion: 2
         x: 236
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63f3f33899912de48a3e3419847d5cb6
-      internalID: -231615361
+      spriteID: a1ceaa2ebcaaa9342a62c177bde5c7ae
+      internalID: -250840608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_5
+      name: shade-Sheet_arms_5
       rect:
         serializedVersion: 2
         x: 295
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f5da8a2580aa144a58dffc857f217f
-      internalID: -415077748
+      spriteID: de6daea477ca15b46aa73359f3c0f568
+      internalID: 692253567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_6
+      name: shade-Sheet_arms_6
       rect:
         serializedVersion: 2
         x: 0
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ce5c1c8daa56e41b5e0f1f07f3eb12
-      internalID: 2017770772
+      spriteID: 61e3ce6f13881f743900e3009cd242c7
+      internalID: -11388807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_7
+      name: shade-Sheet_arms_7
       rect:
         serializedVersion: 2
         x: 59
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb5c0f8e0037609419cff29634419718
-      internalID: -1913080263
+      spriteID: 0ed2883848f4f6a48ac82440e143a633
+      internalID: -547570414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_8
+      name: shade-Sheet_arms_8
       rect:
         serializedVersion: 2
         x: 118
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22f793dfab60ab349bb298e851a66ab8
-      internalID: 1915356912
+      spriteID: 42a3daf94fb8e854db9c22f5afa0dbae
+      internalID: -1441502205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_9
+      name: shade-Sheet_arms_9
       rect:
         serializedVersion: 2
         x: 177
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d3afab0056dd5941b96c44b22932dc8
-      internalID: -1831677356
+      spriteID: 5396908c31448e547b0fcbbc0fee36ba
+      internalID: 1493601753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_10
+      name: shade-Sheet_arms_10
       rect:
         serializedVersion: 2
         x: 236
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e01b91f29e7c940b5e64fde6553fdf
-      internalID: -1403456447
+      spriteID: 8f82ce98a511cb440be42642402793b3
+      internalID: -1557650074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_11
+      name: shade-Sheet_arms_11
       rect:
         serializedVersion: 2
         x: 295
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 026a220b806647d49801ff2c70f8226b
-      internalID: -706745974
+      spriteID: 1e7fa5a90328e614e907af5354cc5cb6
+      internalID: 1460198206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_12
+      name: shade-Sheet_arms_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e667016ef659c7745a1af078c1895d72
-      internalID: 1571070108
+      spriteID: 787bb99981274404d811b3ee51ab8bbc
+      internalID: 939760247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_13
+      name: shade-Sheet_arms_13
       rect:
         serializedVersion: 2
         x: 59
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bd2a87e3d4ca6845b1f4cab45561911
-      internalID: 1638210557
+      spriteID: 030b3b2d7b45bad499c4dc6e4046c773
+      internalID: -1474382562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_14
+      name: shade-Sheet_arms_14
       rect:
         serializedVersion: 2
         x: 118
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cd3fab54a3a6414b9ca3f3e355cfc8e
-      internalID: -1633715999
+      spriteID: 0d81fde8363d35b4fb9abad2045753ac
+      internalID: -362348536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_15
+      name: shade-Sheet_arms_15
       rect:
         serializedVersion: 2
         x: 177
@@ -439,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ed32e9a8a7330c4cbe8f892798f22b1
-      internalID: 623427687
+      spriteID: 366c1e409db104c4a860428715fbe104
+      internalID: -975901811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_16
+      name: shade-Sheet_arms_16
       rect:
         serializedVersion: 2
         x: 236
@@ -460,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b827883f9b39584398b4341c333deab
-      internalID: -396446871
+      spriteID: 476229bffa8226748be1b22788b0c37e
+      internalID: 550011267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_17
+      name: shade-Sheet_arms_17
       rect:
         serializedVersion: 2
         x: 295
@@ -481,14 +481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de2a80779b5ecc04a9bbf4dde353d3cd
-      internalID: -1672685860
+      spriteID: 9ae71104660441549bec0284eebc863f
+      internalID: 661445368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_18
+      name: shade-Sheet_arms_18
       rect:
         serializedVersion: 2
         x: 0
@@ -502,14 +502,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f7d9625f504de47bc2348a8528fb34
-      internalID: 1254730811
+      spriteID: 817bbb17aca7ce448917ade0760acfca
+      internalID: 623644109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_19
+      name: shade-Sheet_arms_19
       rect:
         serializedVersion: 2
         x: 59
@@ -523,14 +523,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47c0d6973c52c844aa70dcbc2a5db4cf
-      internalID: 119037119
+      spriteID: 296a20ec0476b5a41b1674efcfba6f68
+      internalID: 1884145419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_20
+      name: shade-Sheet_arms_20
       rect:
         serializedVersion: 2
         x: 118
@@ -544,14 +544,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 408018086ee37924a8cea5a844b6c82b
-      internalID: -1661436444
+      spriteID: fa0dfd3da65219e4f83d3a56d9b09157
+      internalID: -635800913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_21
+      name: shade-Sheet_arms_21
       rect:
         serializedVersion: 2
         x: 177
@@ -565,14 +565,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17ccf03f83d125c4f97f49dfbb2e98fc
-      internalID: -1992828547
+      spriteID: f48e602114ec1064a953ca1f30ed2cf1
+      internalID: 1719001667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_22
+      name: shade-Sheet_arms_22
       rect:
         serializedVersion: 2
         x: 236
@@ -586,14 +586,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b81d2a5ed098a124f8f057f257d90424
-      internalID: 143914212
+      spriteID: 5e0e5c89205ba2243b007d7a7352b13d
+      internalID: -1812448429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_23
+      name: shade-Sheet_arms_23
       rect:
         serializedVersion: 2
         x: 295
@@ -607,14 +607,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bd84846da5723f48bc9cb185297ecb6
-      internalID: 705818599
+      spriteID: 7d986239d94730d419ac3fdb1a7be665
+      internalID: 148248578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_24
+      name: shade-Sheet_arms_24
       rect:
         serializedVersion: 2
         x: 0
@@ -628,14 +628,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6201920e5b6ec1f45a2cd0de2a1732d5
-      internalID: 12918480
+      spriteID: e56b4af79f229b1489951500a305afd5
+      internalID: -1537308267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_25
+      name: shade-Sheet_arms_25
       rect:
         serializedVersion: 2
         x: 59
@@ -649,14 +649,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8f41ff08ca4ed64c825c0652f338acd
-      internalID: -457733500
+      spriteID: 05f0c5d749641ee4aa556f4bf5618ef0
+      internalID: 581473497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_26
+      name: shade-Sheet_arms_26
       rect:
         serializedVersion: 2
         x: 118
@@ -670,14 +670,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c7cb1dad976bc84baa65aca3d6d796e
-      internalID: 426575541
+      spriteID: e14ff606b18a0da4ab858e63aa0e4c5a
+      internalID: -1307465779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shade-Sheet_27
+      name: shade-Sheet_arms_27
       rect:
         serializedVersion: 2
         x: 177
@@ -691,8 +691,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe3fde7965abc049bad4cb6230a9ac2
-      internalID: 729686719
+      spriteID: a34771fcd8577f6409d848a1b5c80180
+      internalID: -1195832612
       vertices: []
       indices: 
       edges: []
@@ -708,34 +708,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shade-Sheet_0: 1393815106
-      shade-Sheet_1: -282529082
-      shade-Sheet_10: -1403456447
-      shade-Sheet_11: -706745974
-      shade-Sheet_12: 1571070108
-      shade-Sheet_13: 1638210557
-      shade-Sheet_14: -1633715999
-      shade-Sheet_15: 623427687
-      shade-Sheet_16: -396446871
-      shade-Sheet_17: -1672685860
-      shade-Sheet_18: 1254730811
-      shade-Sheet_19: 119037119
-      shade-Sheet_2: -1319685507
-      shade-Sheet_20: -1661436444
-      shade-Sheet_21: -1992828547
-      shade-Sheet_22: 143914212
-      shade-Sheet_23: 705818599
-      shade-Sheet_24: 12918480
-      shade-Sheet_25: -457733500
-      shade-Sheet_26: 426575541
-      shade-Sheet_27: 729686719
-      shade-Sheet_3: -1397940712
-      shade-Sheet_4: -231615361
-      shade-Sheet_5: -415077748
-      shade-Sheet_6: 2017770772
-      shade-Sheet_7: -1913080263
-      shade-Sheet_8: 1915356912
-      shade-Sheet_9: -1831677356
+      shade-Sheet_arms_0: -1548982803
+      shade-Sheet_arms_1: -554681449
+      shade-Sheet_arms_10: -1557650074
+      shade-Sheet_arms_11: 1460198206
+      shade-Sheet_arms_12: 939760247
+      shade-Sheet_arms_13: -1474382562
+      shade-Sheet_arms_14: -362348536
+      shade-Sheet_arms_15: -975901811
+      shade-Sheet_arms_16: 550011267
+      shade-Sheet_arms_17: 661445368
+      shade-Sheet_arms_18: 623644109
+      shade-Sheet_arms_19: 1884145419
+      shade-Sheet_arms_2: 546502572
+      shade-Sheet_arms_20: -635800913
+      shade-Sheet_arms_21: 1719001667
+      shade-Sheet_arms_22: -1812448429
+      shade-Sheet_arms_23: 148248578
+      shade-Sheet_arms_24: -1537308267
+      shade-Sheet_arms_25: 581473497
+      shade-Sheet_arms_26: -1307465779
+      shade-Sheet_arms_27: -1195832612
+      shade-Sheet_arms_3: 730759830
+      shade-Sheet_arms_4: -250840608
+      shade-Sheet_arms_5: 692253567
+      shade-Sheet_arms_6: -11388807
+      shade-Sheet_arms_7: -547570414
+      shade-Sheet_arms_8: -1441502205
+      shade-Sheet_arms_9: 1493601753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

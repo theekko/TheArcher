@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 28
       width: 15
       height: 17
-    spriteID: 3491ea9796a0e0348991f23686e14818
+    spriteID: 47166963de20e1242b053fc70e53cd29
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 4
       width: 17
       height: 16
-    spriteID: 748163c37bbfda944914bd288bb51163
+    spriteID: 17d601aae70547f44ac06f110fa5841b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 16
-    spriteID: ff337ddacf10c2546a9a5e97c5a60058
+    spriteID: a8a34c119f4eee048a3d788fff424902
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 28
       width: 15
       height: 14
-    spriteID: aa68ce32d535b4742a61cbd9ce171e20
+    spriteID: 547cbacf833077c449bb7e16d1f5031d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,7 +218,7 @@ ScriptedImporter:
         y: 1
         width: 15
         height: 17
-      spriteId: 3491ea9796a0e0348991f23686e14818
+      spriteId: 47166963de20e1242b053fc70e53cd29
     - name: shade-projectile_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -227,7 +227,7 @@ ScriptedImporter:
         y: 2
         width: 17
         height: 16
-      spriteId: 748163c37bbfda944914bd288bb51163
+      spriteId: 17d601aae70547f44ac06f110fa5841b
     - name: shade-projectile_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -236,7 +236,7 @@ ScriptedImporter:
         y: 2
         width: 20
         height: 16
-      spriteId: ff337ddacf10c2546a9a5e97c5a60058
+      spriteId: a8a34c119f4eee048a3d788fff424902
     - name: shade-projectile_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -245,7 +245,7 @@ ScriptedImporter:
         y: 2
         width: 15
         height: 14
-      spriteId: aa68ce32d535b4742a61cbd9ce171e20
+      spriteId: 547cbacf833077c449bb7e16d1f5031d
     linkedCells: []
     parentIndex: -1
   platformSettings: []
