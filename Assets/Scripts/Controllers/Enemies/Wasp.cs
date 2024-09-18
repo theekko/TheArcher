@@ -28,7 +28,7 @@ public class Wasp : MonoBehaviour {
 
     private Rigidbody2D rb;
     private TouchingDirections touchingDirections;
-    private Collider2D wasp;
+    private Collider2D waspCollider;
     private float attackTimer = 0f;
     private Vector3 startingPosition;
     private float distance;
@@ -40,10 +40,12 @@ public class Wasp : MonoBehaviour {
     private int waypointNum = 0;
     private bool _isfacingRight = false;
     private bool _isEnteringEscape = false;
+    private bool _isEscaping = false;
     private Coroutine navigateAwayCoroutine;
 
     public static event EventHandler CapturedArrowEvent;
     public static event EventHandler ArrowReleaseEvent;
+    public event EventHandler ArmoredCapturedArrowEvent;
 
 
     public bool TargetDetected {
@@ -99,6 +101,17 @@ public class Wasp : MonoBehaviour {
             _isEnteringEscape = value;
         }
     }
+
+    public bool IsEscaping {
+        get {
+            return _isEscaping;
+        }
+        private set {
+            _isEscaping = value;
+        }
+    }
+
+
 
 
 
@@ -214,6 +227,7 @@ public class Wasp : MonoBehaviour {
 
         if (IsEnteringEscape) {
             IsEnteringEscape = false;
+            IsEscaping = true;
 
             // Find the closest waypoint
             float closestDistance = float.MaxValue;
@@ -262,6 +276,7 @@ public class Wasp : MonoBehaviour {
         if (teleportPoint != null) {
             // Invoke the event if the TeleportPoint trigger is detected
             CapturedArrowEvent?.Invoke(this, EventArgs.Empty);
+            ArmoredCapturedArrowEvent?.Invoke(this, EventArgs.Empty);
             TargetDetected = false;
             ArrowCaptured = true;
         }
@@ -282,17 +297,12 @@ public class Wasp : MonoBehaviour {
                 ArrowReleaseEvent?.Invoke(this, EventArgs.Empty);
                 Instantiate(teleportPoint, transform.position, Quaternion.identity);
             }
-            wasp.enabled = false;
+            waspCollider.enabled = false;
+            return;
         }
         UpdateAttackDirection();
         if (rb.velocity.x != 0) {
             UpdateFacingDirection();
-        }
-
-
-        if (!damageable.IsAlive) {
-            rb.velocity = Vector2.zero;
-            return;
         }
 
         attackTimer += Time.deltaTime;
@@ -310,7 +320,6 @@ public class Wasp : MonoBehaviour {
             }
 
             if (attackTimer >= attackTime && !IsAttacking) {
-                Debug.Log("dashAttack");
                 StartCoroutine(DashAttack(distance));
             }
         } else if ((distance > targetDetectionDistance || hit.collider != null) && !ArrowCaptured) {
@@ -318,6 +327,9 @@ public class Wasp : MonoBehaviour {
             TargetDetected = false;
             NavigateBackToStartingPosition();
         } else {
+            if (!IsEscaping) { 
+                IsEnteringEscape = true;
+            }
             Escape();
         }
 
@@ -333,6 +345,6 @@ public class Wasp : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         damageable = GetComponent<Damageable>();
         touchingDirections = GetComponent<TouchingDirections>();
-        wasp = GetComponent<Collider2D>();
+        waspCollider = GetComponent<Collider2D>();
     }
 }

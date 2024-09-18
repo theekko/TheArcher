@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour {
+public class Fireball : MonoBehaviour {
     [SerializeField] private int damage = 1;
     [SerializeField] private Vector2 knockback = Vector2.zero;
     [SerializeField] private float destroyTimer = 2f;
@@ -25,6 +24,7 @@ public class Arrow : MonoBehaviour {
 
         // Calculate the angle in degrees for the rotation
         float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
+        angle += 180f;
 
         // Rotate the arrow to face the shoot direction
         transform.eulerAngles = new Vector3(0, 0, angle);
@@ -40,7 +40,7 @@ public class Arrow : MonoBehaviour {
         float distance = direction.magnitude;
 
         // Create a LayerMask that matches the collision matrix
-        int layerMask = LayerMask.GetMask(LayerStrings.Enemies, LayerStrings.Ground);
+        int layerMask = LayerMask.GetMask(LayerStrings.Player, LayerStrings.Ground);
 
         RaycastHit2D hit = Physics2D.Raycast(previousPosition, direction, distance, layerMask);
         if (hit.collider != null) {
@@ -51,14 +51,14 @@ public class Arrow : MonoBehaviour {
             rb.isKinematic = true; // Optional: make the Rigidbody kinematic to stop further physics interactions
 
             // Handle the collision if something was hit
-            ArrowHit(hit.collider);
+            FireballHit(hit.collider);
         }
 
         // Update the previous position for the next frame
         previousPosition = currentPosition;
     }
 
-    public void ArrowHit(Collider2D collision) {
+    public void FireballHit(Collider2D collision) {
         hasHit = true; // Ensure this only happens once
         Damageable damageable = collision.GetComponent<Damageable>();
 
@@ -69,10 +69,9 @@ public class Arrow : MonoBehaviour {
             bool gotHit = damageable.Hit(damage, deliveredKnockback);
 
             Destroy(gameObject, hitDestroyTimer);
-            
+
         } else {
             Destroy(gameObject, hitDestroyTimer);
         }
     }
 }
-

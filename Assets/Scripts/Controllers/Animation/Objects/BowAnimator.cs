@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BowAnimator : MonoBehaviour {
-    [SerializeField] BowController bow;
+    [SerializeField] private BowController bow;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 

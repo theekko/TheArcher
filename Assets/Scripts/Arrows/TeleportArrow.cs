@@ -26,7 +26,7 @@ public class TeleportArrow : MonoBehaviour {
 
     public void Setup(Vector3 shootDir, float destroyTimer) {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(shootDir.x, shootDir.y) * moveSpeed, ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(shootDir.x, shootDir.y).normalized * moveSpeed, ForceMode2D.Impulse);
 
         this.shootDir = shootDir;
         this.shootDir.z = 0;

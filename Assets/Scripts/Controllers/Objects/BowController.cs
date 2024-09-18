@@ -50,14 +50,14 @@ public class BowController : MonoBehaviour {
     public event EventHandler<OnFireSuccessEventArgs> OnFireEmpoweredSuccessEvent;
     public class OnFireSuccessEventArgs : EventArgs {
         public Vector3 bowEndpointPosition;
-        public Vector3 shootPosition;
+        public Vector3 shootDirection;
     }
 
 
     public event EventHandler<OnFireTeleportSuccessEventArgs> OnFireTeleportSuccessEvent;
     public class OnFireTeleportSuccessEventArgs : EventArgs {
         public Vector3 bowEndpointPosition;
-        public Vector3 shootPosition;
+        public Vector3 shootDirection;
         public float destroyTimer; // Pass the destroy timer
     }
 
@@ -187,13 +187,13 @@ public class BowController : MonoBehaviour {
                 if (IsEmpoweredShot) {
                     OnFireEmpoweredSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
                         bowEndpointPosition = bowEndpointPostion.position,
-                        shootPosition = direction
+                        shootDirection = direction
                     });
                     IsEmpoweredShot = false;
                 } else {
                     OnFireSuccessEvent?.Invoke(this, new OnFireSuccessEventArgs {
                         bowEndpointPosition = bowEndpointPostion.position,
-                        shootPosition = direction
+                        shootDirection = direction
                     });
                 }
 
@@ -222,7 +222,7 @@ public class BowController : MonoBehaviour {
 
                 OnFireTeleportSuccessEvent?.Invoke(this, new OnFireTeleportSuccessEventArgs {
                     bowEndpointPosition = bowEndpointPostion.position,
-                    shootPosition = direction,
+                    shootDirection = direction,
                     destroyTimer = destroyTimer
                 });
             }

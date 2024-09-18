@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyArmor : MonoBehaviour {
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool _isArmored = true;
+    [SerializeField] private Wasp wasp;
 
     private Collider2D armor;
     private Damageable damageable;
@@ -20,8 +20,6 @@ public class EnemyArmor : MonoBehaviour {
             _isArmored = value;
         }
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision) {
         EmpoweredArrow empoweredArrow = collision.gameObject.GetComponent<EmpoweredArrow>();
@@ -40,8 +38,19 @@ public class EnemyArmor : MonoBehaviour {
         }
     }
 
+    private void Wasp_ArmoredCapturedArrowEvent(object sender, EventArgs e) {
+        damageable.enabled = true;
+        armor.enabled = false;
+        IsArmored = false;
+    }
+
     private void Awake() {
         damageable = GetComponentInParent<Damageable>();
         armor = GetComponent<Collider2D>();
+        if (wasp != null) {
+            wasp.ArmoredCapturedArrowEvent += Wasp_ArmoredCapturedArrowEvent;
+        }
     }
+
+
 }
