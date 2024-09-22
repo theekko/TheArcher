@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prototype1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: 82904e0d1e10d9840aaa31adcd81d160
+  - enabled: 1
+    path: Assets/Scenes/IntroMovie.unity
+    guid: 4d59809765066244fa6686191a51e869
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 871f2a7fd8cbb4645926624a038ad52c
+  - enabled: 1
+    path: Assets/Scenes/LevelEndLoseMovie.unity
+    guid: 4821a5e906b484344a45589833ef53f1
+  - enabled: 1
+    path: Assets/Scenes/LevelEndWinMovie.unity
+    guid: 871642e7ab1b37541b43012ef57b241f
+  - enabled: 1
+    path: Assets/Scenes/LevelEndSecretWinMovie.unity
+    guid: 1666aa642d5810d4782f53a1b786a5b7
   m_configObjects: {}

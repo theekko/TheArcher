@@ -46,7 +46,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float maxTeleportFallReduction = 1f;
     [SerializeField] private float teleportOverlapOffset = 0.1f;
 
-    [SerializeField] private float delayBeforeReset = 3f;
+    //[SerializeField] private float delayBeforeReset = 3f;
 
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private PlayerInput playerInput;
@@ -256,14 +256,14 @@ public class Player : MonoBehaviour {
     }
 
 
-    public void OnDeath() {
-        StartCoroutine(ResetSceneAfterDelay());
-    }
+    //public void OnDeath() {
+    //    StartCoroutine(ResetSceneAfterDelay());
+    //}
 
-    private IEnumerator ResetSceneAfterDelay() {
-        yield return new WaitForSeconds(delayBeforeReset);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    //private IEnumerator ResetSceneAfterDelay() {
+    //    yield return new WaitForSeconds(delayBeforeReset);
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //}
 
     private void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
         IsSlowFall = false;
@@ -406,7 +406,7 @@ public class Player : MonoBehaviour {
     private void Update() {
         SetFacingDirection();
         if (!damageable.IsAlive) {
-            OnDeath();
+            //OnDeath();
             playerInput.enabled = false;
         } else { 
             playerInput.enabled = true;

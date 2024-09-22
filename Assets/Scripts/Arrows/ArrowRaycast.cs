@@ -10,7 +10,6 @@ public static class ArrowRaycast {
         if (raycastHit2D.collider != null) {
             Damageable damageable = raycastHit2D.collider.GetComponent<Damageable>();
             if (damageable != null) {
-                Debug.Log("Hit");
                 bool gotHit = damageable.Hit(1, Vector2.zero);
 
             }

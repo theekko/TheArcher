@@ -15,8 +15,8 @@ public class Damageable : MonoBehaviour {
     private float timeSinceHit = 0;
     private float timeSinceShield = 0;
     private float shieldInvincibilityTime;
-    
 
+    public static event EventHandler damageableEnemyDeath;
     public event EventHandler damageableDeath;
     public event EventHandler<OnHitEventArgs> damageableHit;
     public class OnHitEventArgs : EventArgs {
@@ -101,6 +101,10 @@ public class Damageable : MonoBehaviour {
 
             if (value == false) {
                 damageableDeath?.Invoke(this, EventArgs.Empty);
+                if (gameObject.layer == LayerMask.NameToLayer(LayerStrings.Enemies) || gameObject.layer == LayerMask.NameToLayer(LayerStrings.EnemySlime)) {
+                    damageableEnemyDeath?.Invoke(this, EventArgs.Empty);
+                }
+
             }
         }
     }

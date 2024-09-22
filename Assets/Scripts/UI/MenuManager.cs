@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
     [Header("Menu Objects")]
     [SerializeField] private GameObject mainMenuCanvas;
-    [SerializeField] private GameObject settingsCanvas;
 
     [Header("Player scripts to be deactivated during pause")]
     [SerializeField] private Player player;
@@ -21,7 +20,6 @@ public class MenuManager : MonoBehaviour {
 
     private void Start() { 
         mainMenuCanvas.SetActive(false);
-        settingsCanvas.SetActive(false);
     }
 
     private void Pause() {
@@ -42,14 +40,12 @@ public class MenuManager : MonoBehaviour {
 
     private void OpenMainMenu() { 
         mainMenuCanvas.SetActive(true);
-        settingsCanvas.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(mainMenuFirst);
     }
 
     private void CloseAllMenus() {
         mainMenuCanvas.SetActive(false);
-        settingsCanvas.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -66,7 +62,8 @@ public class MenuManager : MonoBehaviour {
     }
 
     public void OnQuitPress() {
-        Application.Quit();
+        SceneManager.LoadScene(SceneStrings.MainMenu);
+        Unpause();
     }
 
     #endregion

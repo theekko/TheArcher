@@ -250,7 +250,6 @@ public class BowController : MonoBehaviour {
         float closestDistance = Mathf.Infinity;
 
         foreach (Collider2D enemy in enemies) {
-            Debug.Log(enemy);
             Vector3 directionToEnemy = (enemy.transform.position - playerTransform.position).normalized;
             float angleToEnemy = Vector3.Angle(aimDirection, directionToEnemy);
             // Check if the enemy is within the cone and line of sight
