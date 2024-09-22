@@ -68,7 +68,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.3725882
+  m_Radius: 4.3274813
 --- !u!114 &5174546669443907091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.026999999, y: 0.026999999, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5684710922132970422}
@@ -533,9 +533,9 @@ Transform:
   m_GameObject: {fileID: 7987320717853077989}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9142007, y: -1.898101, z: -13.543794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.9142007, y: -1.898101, z: 0}
+  m_LocalScale: {x: 0.88, y: 0.88, z: 0.88}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5905217953172221475}
   - {fileID: 6943654108612842838}
@@ -601,7 +601,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000011920929}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -626,8 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d36bd341e9afdf4ca07d103c462ca05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
-  _health: 3
+  _maxHealth: 5
+  _health: 5
   _isAlive: 1
   _isHit: 0
   _isInvincible: 0
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isAttacking: 0
-  attackTime: 3
+  attackTime: 2
   targetDetectionDistance: 50
   _playerDetected: 0
   teleportThreshold: {fileID: 5174546669443907091}

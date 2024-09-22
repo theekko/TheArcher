@@ -40,7 +40,7 @@ public class Arrow : MonoBehaviour {
         float distance = direction.magnitude;
 
         // Create a LayerMask that matches the collision matrix
-        int layerMask = LayerMask.GetMask(LayerStrings.Enemies, LayerStrings.Ground);
+        int layerMask = LayerMask.GetMask(LayerStrings.Enemies, LayerStrings.EnemySlime, LayerStrings.Ground);
 
         RaycastHit2D hit = Physics2D.Raycast(previousPosition, direction, distance, layerMask);
         if (hit.collider != null) {

@@ -20,6 +20,7 @@ public class Slime : MonoBehaviour {
     [SerializeField] private float returnSpeed = 2f;
     [SerializeField] private bool _playerDetected = false;
     [SerializeField] private float horizontalMoveTolerance = 0.1f;
+    [SerializeField] private float platformDetectionRange = 0.05f; // Adjust this value as needed
 
     private Rigidbody2D rb;
     private float jumpTimer = 0f;
@@ -27,28 +28,25 @@ public class Slime : MonoBehaviour {
     private float distance;
     private TouchingDirections touchingDirections;
     private Damageable damageable;
+    private bool isNearWall = false; // Track if the slime is near a wall
 
     public event EventHandler jumpEvent;
     public event EventHandler fastFallEvent;
 
     public bool PlayerDetected {
-        get { 
+        get {
             return _playerDetected;
         }
-        private set { 
+        private set {
             _playerDetected = value;
         }
     }
-
-
 
     private void Jump() {
         rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         jumpTimer = 0;
         jumpEvent?.Invoke(this, EventArgs.Empty);
     }
-
-
 
     private void Start() {
         startingPosition = transform.position;
@@ -57,7 +55,7 @@ public class Slime : MonoBehaviour {
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
-        damageable = GetComponent<Damageable>(); 
+        damageable = GetComponent<Damageable>();
 
         // Use the slime's position and time since level load to generate a unique seed
         float uniqueSeed = transform.position.x + transform.position.y + Time.timeSinceLevelLoad;
@@ -67,10 +65,8 @@ public class Slime : MonoBehaviour {
         jumpTimer = UnityEngine.Random.Range(0, initialJumpDelayRange);
     }
 
-
-
     private void FixedUpdate() {
-        //accelerated fall time
+        // Accelerated fall time
         if (rb.velocity.y < 0 && PlayerDetected) {
             fastFallEvent?.Invoke(this, EventArgs.Empty);
             rb.velocity = new Vector2(0, rb.velocity.y * fallMultiplier);
@@ -82,26 +78,45 @@ public class Slime : MonoBehaviour {
             rb.velocity = Vector2.zero;
             return;
         }
+
         jumpTimer += Time.deltaTime;
+
         if (jumpTimer >= jumpTime) {
             Jump();
         }
+
         distance = Vector2.Distance(transform.position, Player.Instance.transform.position);
         Vector2 direction = Player.Instance.transform.position - transform.position;
-        
-        // Raycast to check if there's ground between Slime and Player
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, distance, LayerMask.GetMask(LayerStrings.Ground));
 
         float horizontalDistanceToPlayer = Mathf.Abs(Player.Instance.transform.position.x - transform.position.x);
 
-        if (distance < playerDetectionDistance && hit.collider == null && !touchingDirections.IsGrounded && rb.velocity.y >= 0) {
-            // Only move horizontally towards the player if beyond the tolerance range
+        // Raycast in the direction of movement to detect platform limits, limiting the range
+        RaycastHit2D platformLimitHit = Physics2D.Raycast(transform.position, Vector2.right * Mathf.Sign(direction.x), platformDetectionRange, LayerMask.GetMask(LayerStrings.PlatformLimits));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, distance, LayerMask.GetMask(LayerStrings.Ground));
+
+        // Check if near a platform limit
+        if (platformLimitHit.collider != null) {
+            isNearWall = true; // Mark the slime as being near a wall
+        } else {
+            isNearWall = false; // No wall detected nearby, allow normal movement
+        }
+
+        // If near a platform limit, only allow movement away from the wall
+        if (isNearWall) {
+            // Check if the slime is trying to move away from the platform limit
+            if (Mathf.Sign(direction.x) != Mathf.Sign(platformLimitHit.point.x - transform.position.x)) {
+                // Slime is trying to move away from the wall, allow it to move
+                Vector2 horizontalMovement = new Vector2(direction.x, 0).normalized * horizontalSpeed * Time.deltaTime;
+                transform.position = new Vector3(transform.position.x + horizontalMovement.x, transform.position.y, 0);
+            }
+            // If the slime is trying to move toward the wall, do not allow movement
+        } else if (distance < playerDetectionDistance && !touchingDirections.IsGrounded && rb.velocity.y >= 0 && hit.collider == null) {
             if (horizontalDistanceToPlayer > horizontalMoveTolerance) {
                 PlayerDetected = true;
                 Vector2 horizontalMovement = new Vector2(direction.x, 0).normalized * horizontalSpeed * Time.deltaTime;
                 transform.position = new Vector3(transform.position.x + horizontalMovement.x, transform.position.y, 0);
             }
-        } else if ((distance > playerDetectionDistance || hit.collider != null) && !touchingDirections.IsGrounded) {
+        } else if ((distance > playerDetectionDistance || platformLimitHit.collider != null || hit.collider != null) && !touchingDirections.IsGrounded) {
             PlayerDetected = false;
             if (Mathf.Abs(startingPosition.x - transform.position.x) > returnTolerance) {
                 // Move towards the starting position if not within the tolerance range
@@ -109,6 +124,5 @@ public class Slime : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(startingPosition.x, transform.position.y, 0), step);
             }
         }
-
     }
 }

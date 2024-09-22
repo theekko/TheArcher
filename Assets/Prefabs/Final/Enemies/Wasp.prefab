@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 4286957433173288465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1810993, y: -0.28115946, z: -0.05546394}
+  m_LocalPosition: {x: -1.1810993, y: -0.28115946, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -265,7 +265,7 @@ MonoBehaviour:
   attackTime: 0.5
   targetDetectionDistance: 8
   returnTolerance: 0.05
-  returnSpeed: 2
+  returnSpeed: 3
   _targetDetected: 0
   _isReturningHome: 0
   teleportPoint: {fileID: -9174539175728988271, guid: b3207582f0347014bbef072a05cb1e2f, type: 3}
@@ -278,10 +278,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   waypointReachedDistance: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  maxGroundOverlapTime: 1
 --- !u!1 &8358365283288599279
 GameObject:
   m_ObjectHideFlags: 0

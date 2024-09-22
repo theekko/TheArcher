@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2593121347377528553}
   - component: {fileID: 2332083828334870027}
   - component: {fileID: 9191560557964272337}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: SlimeVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1896656634515530161}
   - component: {fileID: 1952080147358601753}
   - component: {fileID: 4630907091137093816}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,12 +264,13 @@ MonoBehaviour:
   jumpImpulse: 6
   jumpTime: 2
   fallMultiplier: 2.5
-  horizontalSpeed: 7
-  playerDetectionDistance: 6
+  horizontalSpeed: 10
+  playerDetectionDistance: 8
   returnTolerance: 0.05
   returnSpeed: 2
   _playerDetected: 0
   horizontalMoveTolerance: 0.2
+  platformDetectionRange: 1
 --- !u!114 &4630907091137093816
 MonoBehaviour:
   m_ObjectHideFlags: 0

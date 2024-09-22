@@ -244,7 +244,7 @@ public class BowController : MonoBehaviour {
     }
 
     private Collider2D FindClosestEnemyInCone(Vector3 aimDirection, float coneAngle) {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(playerTransform.position, maxDistance, LayerMask.GetMask(LayerStrings.Enemies));
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(playerTransform.position, maxDistance, LayerMask.GetMask(LayerStrings.EnemySlime, LayerStrings.Enemies));
 
         Collider2D closestEnemy = null;
         float closestDistance = Mathf.Infinity;
