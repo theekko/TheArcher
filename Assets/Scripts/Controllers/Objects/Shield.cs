@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Shield : MonoBehaviour {
     [SerializeField] private float shieldInvincibilityTime = 0.25f;
-    //[SerializeField] private int maxNumShields = 3;
+    [SerializeField] private int maxNumShields = 3;
     [SerializeField] private int numShields = 3;
     //[SerializeField] private float shieldRefreshCooldownMax = 10;
     [SerializeField] private bool _canShield = true;
@@ -19,6 +19,8 @@ public class Shield : MonoBehaviour {
     public event EventHandler<OnShieldEventArgs> OnShieldEvent;
     public class OnShieldEventArgs : EventArgs {
         public float shieldInvincibilityTime;
+        public int numShields;
+        public int maxNumShields;
     }
 
     public bool CanShield {
@@ -37,6 +39,15 @@ public class Shield : MonoBehaviour {
         }
     }
 
+    public int MaxNumShields {
+        get {
+            return maxNumShields;
+        }
+        private set {
+            maxNumShields = value;
+        }
+    }
+
 
     public void OnShield(InputAction.CallbackContext context) {
         if (context.performed && numShields > 0 && CanShield) {
@@ -44,7 +55,9 @@ public class Shield : MonoBehaviour {
             CanShield = false;
             IsShielded = true;
             OnShieldEvent?.Invoke(this, new OnShieldEventArgs {
-                shieldInvincibilityTime = shieldInvincibilityTime
+                shieldInvincibilityTime = shieldInvincibilityTime,
+                numShields = numShields,
+                maxNumShields = maxNumShields
             });
         }
     }

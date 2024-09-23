@@ -355,13 +355,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d076146d9843a654090646bddabff485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialJumpDelayRange: 2
   jumpImpulse: 5
-  jumpMaxTime: 2.5
-  speed: 0.5
-  approachDistance: 3
+  jumpTime: 5
+  fallMultiplier: 2.5
+  horizontalSpeed: 5
+  playerDetectionDistance: 3
   returnTolerance: 0.05
   returnSpeed: 0.5
-  initialJumpDelayRange: 2
+  _playerDetected: 0
+  horizontalMoveTolerance: 0.1
+  platformDetectionRange: 0.05
 --- !u!1 &7247678099681822532
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +501,10 @@ PrefabInstance:
       propertyPath: healthBarPostion
       value: 
       objectReference: {fileID: 6297297026387678172}
+    - target: {fileID: 5983787828942860214, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7246060922658522926, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_Name
       value: FloatingHealthBar
