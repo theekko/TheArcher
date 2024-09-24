@@ -568,9 +568,9 @@ Transform:
   m_LocalScale: {x: 0.88, y: 0.88, z: 0.88}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1549874607546736384}
   - {fileID: 5905217953172221475}
   - {fileID: 6943654108612842838}
-  - {fileID: 3616270658422514061}
   - {fileID: 5684710922132970422}
   - {fileID: 7534069779091507851}
   m_Father: {fileID: 0}
@@ -721,7 +721,7 @@ MonoBehaviour:
   teleportPoints:
   - {fileID: 0}
   - {fileID: 0}
---- !u!1001 &3915544589312315828
+--- !u!1001 &1295663065771044665
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -799,11 +799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.009
+      value: -0.284
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.23
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -829,21 +829,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingHealthBar
       objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 115.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
---- !u!224 &3616270658422514061 stripped
+--- !u!224 &1549874607546736384 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-  m_PrefabInstance: {fileID: 3915544589312315828}
+  m_PrefabInstance: {fileID: 1295663065771044665}
   m_PrefabAsset: {fileID: 0}

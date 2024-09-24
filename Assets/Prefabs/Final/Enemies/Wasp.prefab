@@ -512,14 +512,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingHealthBar
       objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 115.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -568,7 +568,7 @@ Transform:
   m_LocalScale: {x: 0.88, y: 0.88, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 3748629077819440845}
+  - {fileID: 7650673607513720497}
   - {fileID: 8840559696089710990}
   - {fileID: 5905217953172221475}
   - {fileID: 6943654108612842838}
@@ -820,7 +820,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5445447910719459778, guid: 302cf74da8fa9114f974625fb8138641, type: 3}
   m_PrefabInstance: {fileID: 2549166280733887313}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3493828244455050996
+--- !u!1001 &7950536778741921416
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -898,11 +898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.009
+      value: -0.284
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.23
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -928,21 +928,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingHealthBar
       objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 115.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8579937931453422933, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
---- !u!224 &3748629077819440845 stripped
+--- !u!224 &7650673607513720497 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 322390072036487225, guid: fbda2dac558ade242b5cf98efdb9aa10, type: 3}
-  m_PrefabInstance: {fileID: 3493828244455050996}
+  m_PrefabInstance: {fileID: 7950536778741921416}
   m_PrefabAsset: {fileID: 0}
