@@ -65,7 +65,11 @@ public class Player : MonoBehaviour {
     private bool _isSlowFall = true;
     
 
-    public event EventHandler teleportEvent;
+    public event EventHandler<teleportEventArgs> teleportEvent;
+    public class teleportEventArgs : EventArgs {
+        public Vector2 initialPosition;
+    }
+
     public event EventHandler jumpEvent;
 
     public float CurrentMoveSpeed {
@@ -200,7 +204,9 @@ public class Player : MonoBehaviour {
             existingTeleportPoint.gameObject.SetActive(false);
             Destroy(existingTeleportPoint.gameObject);
             teleportFallReductionTimer = maxTeleportFallReduction;
-            teleportEvent?.Invoke(this, EventArgs.Empty);
+            teleportEvent?.Invoke(this, new teleportEventArgs { 
+                initialPosition = initialPosition
+            });
             IsSlowFall = true;
 
             // Check if the player is inside a collider after teleporting

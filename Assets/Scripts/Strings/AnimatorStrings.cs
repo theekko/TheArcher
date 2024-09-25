@@ -11,6 +11,8 @@ internal class AnimatorStrings {
     internal static string isDrawing = "isDrawing";
     internal static string isArmored = "isArmored";
     internal static string isReturningHome = "isReturningHome";
+    internal static string isEmpowered = "isEmpowered";
+    internal static string isTeleporting = "isTeleporting";
     internal static string playerDetected = "playerDetected";
     internal static string targetDetected = "targetDetected";
     internal static string arrowCaptured = "arrowCaptured";

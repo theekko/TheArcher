@@ -13098,6 +13098,14 @@ PrefabInstance:
       propertyPath: bowController
       value: 
       objectReference: {fileID: 1933925819}
+    - target: {fileID: 1327935618885324706, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 258321d33f1cbe14cbb61bf4c0dd0083, type: 3}
+    - target: {fileID: 1327935618885324706, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2221302830691150896, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
       propertyPath: bowController
       value: 
@@ -13113,10 +13121,6 @@ PrefabInstance:
     - target: {fileID: 3638151973900789735, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
       propertyPath: m_Name
       value: GameCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758291007040965544, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5821189762870120085, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
       propertyPath: m_Pivot.x
@@ -13197,6 +13201,34 @@ PrefabInstance:
     - target: {fileID: 5821189762870120085, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196623003767420023, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Speed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149478651530233109, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 258321d33f1cbe14cbb61bf4c0dd0083, type: 3}
+    - target: {fileID: 8149478651530233109, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149478651530233109, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149478651530233109, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149478651530233109, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958164760888852755, guid: 1d82470b6b7b4d64fa4cf299238ddfc8, type: 3}
+      propertyPath: m_Speed
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15051,6 +15083,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7627890630549829322, guid: c022193671f79b9489dda75597c491ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890468231225374437, guid: c022193671f79b9489dda75597c491ca, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

@@ -1,0 +1,3155 @@
+fileFormatVersion: 2
+guid: 295a4198c78ba364e97f97cbb09bbc43
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: vfx_electricity_purple_Frame_1
+    originalName: 
+    pivot: {x: 3.2499998, y: -7.3333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 303
+      y: 86
+      width: 8
+      height: 9
+    spriteID: 4bae7fadf76078d4695fdbd652f7489c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 303, y: 86}
+  - name: vfx_electricity_purple_Frame_2
+    originalName: 
+    pivot: {x: 1.1153846, y: -1.7241379}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 220
+      width: 26
+      height: 29
+    spriteID: 4739d66a9fb6c4a4ba5066fa9cbcde22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 205, y: 220}
+  - name: vfx_electricity_purple_Frame_3
+    originalName: 
+    pivot: {x: 0.72499996, y: -0.73333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 944
+      width: 40
+      height: 45
+    spriteID: fe77836c5a98f024e9a3f64c744d3664
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 944}
+  - name: vfx_electricity_purple_Frame_4
+    originalName: 
+    pivot: {x: 0.53571427, y: -0.4181818}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 201
+      width: 56
+      height: 55
+    spriteID: bf93bef94395a9346a1f85be31c39430
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 201}
+  - name: vfx_electricity_purple_Frame_5
+    originalName: 
+    pivot: {x: 0.53571427, y: -0.36842105}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 136
+      width: 56
+      height: 57
+    spriteID: d6710ecdcb931c145879f8e12b1b92ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 136}
+  - name: vfx_electricity_purple_Frame_6
+    originalName: 
+    pivot: {x: 0.5272727, y: -0.32203388}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 69
+      width: 55
+      height: 59
+    spriteID: 0bf13b983f0342a4d942dd51920c1e89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 69}
+  - name: vfx_electricity_purple_Frame_7
+    originalName: 
+    pivot: {x: 0.50909096, y: -0.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 264
+      width: 55
+      height: 56
+    spriteID: 07cc804fb3003154da6ee985bbfcecdd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 264}
+  - name: vfx_electricity_purple_Frame_8
+    originalName: 
+    pivot: {x: 0.41379312, y: -0.45652175}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 525
+      width: 58
+      height: 46
+    spriteID: b43280bcf6813ca4380e1211458101ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 525}
+  - name: vfx_electricity_purple_Frame_9
+    originalName: 
+    pivot: {x: 0.39999998, y: -0.4347826}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 659
+      width: 55
+      height: 46
+    spriteID: c5e2cb2ec182e324588ad7422a8d08b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 659}
+  - name: vfx_electricity_purple_Frame_10
+    originalName: 
+    pivot: {x: 0.3469388, y: -0.4651163}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 417
+      width: 49
+      height: 43
+    spriteID: 3656a55703cfaf548a83b37f225d9f5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 417}
+  - name: vfx_electricity_purple_Frame_11
+    originalName: 
+    pivot: {x: -0.125, y: -1.2631578}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 287
+      y: 111
+      width: 24
+      height: 19
+    spriteID: 82dad06591f3e714683940609b01665b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 287, y: 111}
+  - name: vfx_electricity_purple_Frame_12
+    originalName: 
+    pivot: {x: 0.50000006, y: -2.1578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 893
+      width: 16
+      height: 19
+    spriteID: 48c3cb4215954f0439edcf6570b7eee0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 893}
+  - name: vfx_electricity_purple_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -1.7272729}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 206
+      y: 457
+      width: 24
+      height: 22
+    spriteID: 686911ef3fc041248b73a50b80e28289
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 206, y: 457}
+  - name: vfx_electricity_purple_Frame_14
+    originalName: 
+    pivot: {x: 0.76470584, y: -1.9473683}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 300
+      y: 59
+      width: 17
+      height: 19
+    spriteID: 3a64425ed08b1c34fb8cbec89d1812b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 300, y: 59}
+  - name: vfx_electricity_purple_Frame_15
+    originalName: 
+    pivot: {x: 0.3333333, y: -1.8095239}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 210
+      y: 342
+      width: 21
+      height: 21
+    spriteID: 56a0d14d3b005514cb7917e978b32af6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 210, y: 342}
+  - name: vfx_electricity_purple_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: -1.9000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 211
+      width: 36
+      height: 20
+    spriteID: fef142767e43b2e42b3d68d6cb228c96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 211}
+  - name: vfx_electricity_purple_Frame_17
+    originalName: 
+    pivot: {x: 0.5227273, y: -2.2222223}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 167
+      width: 44
+      height: 18
+    spriteID: cbc540f87a8726148abc4a53d011a009
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 167}
+  - name: vfx_electricity_purple_Frame_18
+    originalName: 
+    pivot: {x: 0.509434, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 429
+      width: 53
+      height: 20
+    spriteID: 8ea122b1cdfe87b489b2d2a24d291cc0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 429}
+  - name: vfx_electricity_purple_Frame_19
+    originalName: 
+    pivot: {x: 0.45098042, y: -2.105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 59
+      width: 51
+      height: 19
+    spriteID: 4bf245f445424b849807c306c7901de9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 59}
+  - name: vfx_electricity_purple_Frame_20
+    originalName: 
+    pivot: {x: 0.537037, y: -2.4705882}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 86
+      width: 54
+      height: 17
+    spriteID: b4a29fc681ec6c740a3993d7e78b0cd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 86}
+  - name: vfx_electricity_purple_Frame_21
+    originalName: 
+    pivot: {x: 0.52380955, y: -2.277778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 403
+      width: 63
+      height: 18
+    spriteID: b1948cceb25db2a40a8a06767e8e9159
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 403}
+  - name: vfx_electricity_purple_Frame_22
+    originalName: 
+    pivot: {x: 0.52238804, y: -2.4705882}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 378
+      width: 67
+      height: 17
+    spriteID: a8ffad00d88a4804594951f7ebda7804
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 378}
+  - name: vfx_electricity_purple_Frame_23
+    originalName: 
+    pivot: {x: 0.47297293, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 97
+      width: 74
+      height: 36
+    spriteID: 06e13826cf611ee438ba076b1e2bf026
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 97}
+  - name: vfx_electricity_purple_Frame_24
+    originalName: 
+    pivot: {x: 0.4736842, y: -0.5833334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 53
+      width: 76
+      height: 36
+    spriteID: ccbc7f9f46a93a44a883c0717dc1b66c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 53}
+  - name: vfx_electricity_purple_Frame_25
+    originalName: 
+    pivot: {x: 0.48051944, y: -1.9000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 4
+      width: 77
+      height: 20
+    spriteID: dd45d7758e03e8748a2b2427e2dc492e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 4}
+  - name: vfx_electricity_purple_Frame_26
+    originalName: 
+    pivot: {x: 0.4861111, y: -1.4583334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 4
+      width: 72
+      height: 24
+    spriteID: 0513f49c8fa28744496cede09f155811
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 4}
+  - name: vfx_electricity_purple_Frame_27
+    originalName: 
+    pivot: {x: 0.48648646, y: -2.105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 32
+      width: 74
+      height: 19
+    spriteID: 65a864e5b026e8647abba981f5e87111
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 32}
+  - name: vfx_electricity_purple_Frame_28
+    originalName: 
+    pivot: {x: 0.48051944, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 258
+      width: 77
+      height: 30
+    spriteID: 26fc6c014b720884ea73ae04f089d06e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 258}
+  - name: vfx_electricity_purple_Frame_30
+    originalName: 
+    pivot: {x: 0.47887325, y: -1.4285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 564
+      width: 71
+      height: 28
+    spriteID: e099d26e0d39ab9409f9cc9c193a3f59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 564}
+  - name: vfx_electricity_purple_Frame_31
+    originalName: 
+    pivot: {x: 0.479452, y: -4.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 193
+      width: 73
+      height: 10
+    spriteID: 827c84880d92f434d83466fc358d3246
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 193}
+  - name: vfx_electricity_purple_Frame_32
+    originalName: 
+    pivot: {x: 0.5064935, y: -1.0243902}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 4
+      width: 77
+      height: 41
+    spriteID: 1c05445c8aeb4a14297256c13e45f269
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 4}
+  - name: vfx_electricity_purple_Frame_33
+    originalName: 
+    pivot: {x: 0.462963, y: -2.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 143
+      width: 54
+      height: 16
+    spriteID: f0456ff7b89b3324eae42b70f3fa3920
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 143}
+  - name: vfx_electricity_purple_Frame_34
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.34042555}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 840
+      width: 51
+      height: 47
+    spriteID: 3329f978343081f4caa88a09c5f96a5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 840}
+  - name: vfx_electricity_purple_Frame_35
+    originalName: 
+    pivot: {x: 0.48, y: -0.7}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 516
+      width: 50
+      height: 40
+    spriteID: 1cceb6d1d5db909438e17c409b939674
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 516}
+  - name: vfx_electricity_purple_Frame_36
+    originalName: 
+    pivot: {x: 0.5510204, y: -0.5625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 141
+      width: 49
+      height: 48
+    spriteID: ee6252e256923e14cbf14b4eeca4c08a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 141}
+  - name: vfx_electricity_purple_Frame_38
+    originalName: 
+    pivot: {x: 0.09090909, y: -0.69047624}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 778
+      width: 33
+      height: 42
+    spriteID: b22b49fcee652ec4e976ae39e2279294
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 778}
+  - name: vfx_electricity_purple_Frame_39
+    originalName: 
+    pivot: {x: 0.48437503, y: -0.42105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 64
+      height: 57
+    spriteID: f1ccbcb9929e68445917c9dc393b38a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: vfx_electricity_purple_Frame_40
+    originalName: 
+    pivot: {x: 0.5263158, y: -0.50980395}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 328
+      width: 57
+      height: 51
+    spriteID: b518e4d902bd3664a83f2a31f16d8b16
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 328}
+  - name: vfx_electricity_purple_Frame_41
+    originalName: 
+    pivot: {x: 0.5081968, y: -0.6521739}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 387
+      width: 61
+      height: 46
+    spriteID: 870c5c33613f4df4fb8f54577476c12d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 387}
+  - name: vfx_electricity_purple_Frame_42
+    originalName: 
+    pivot: {x: 0.53191495, y: -0.5306123}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 296
+      width: 47
+      height: 49
+    spriteID: 3889ef677784b1c4fafcbd0b841099f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 296}
+  - name: vfx_electricity_purple_Frame_43
+    originalName: 
+    pivot: {x: 0.48076928, y: -0.87500006}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 468
+      width: 52
+      height: 40
+    spriteID: 11749deaa6013f14f93c7059563a050d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 468}
+  - name: vfx_electricity_purple_Frame_44
+    originalName: 
+    pivot: {x: 0.39473683, y: -0.58}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 664
+      width: 38
+      height: 50
+    spriteID: 15d0477f4507d5e41b6f0de4e1893a09
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 664}
+  - name: vfx_electricity_purple_Frame_45
+    originalName: 
+    pivot: {x: 0.47727275, y: -0.3584906}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 197
+      width: 44
+      height: 53
+    spriteID: 7a48909b2a8921049a67c371e5658956
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 197}
+  - name: vfx_electricity_purple_Frame_47
+    originalName: 
+    pivot: {x: 0.5833334, y: -0.49019605}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 778
+      width: 36
+      height: 51
+    spriteID: 643500360dfe16a4c9ec6a697ded4ed3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 778}
+  - name: vfx_electricity_purple_Frame_48
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.32142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 600
+      width: 34
+      height: 56
+    spriteID: 848e6e1f873626f45a7678b2c1bc9340
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 600}
+  - name: vfx_electricity_purple_Frame_49
+    originalName: 
+    pivot: {x: 0.5263158, y: -0.41071427}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 353
+      width: 38
+      height: 56
+    spriteID: 2b438f4915b45904388d94e12c9e77ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 353}
+  - name: vfx_electricity_purple_Frame_50
+    originalName: 
+    pivot: {x: 0.48571432, y: -0.509434}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 600
+      width: 35
+      height: 53
+    spriteID: 58e5eaa4109e84f43bd90555d40a7fcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 118, y: 600}
+  - name: vfx_electricity_purple_Frame_52
+    originalName: 
+    pivot: {x: 0.5263158, y: -0.47916666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 837
+      width: 38
+      height: 48
+    spriteID: 36dd9e2e0389611449289ffac8925b5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 837}
+  - name: vfx_electricity_purple_Frame_53
+    originalName: 
+    pivot: {x: 0.51282054, y: -0.5833333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 722
+      width: 39
+      height: 48
+    spriteID: 0a89f160d856c2d4c8ae27d285148039
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 722}
+  - name: vfx_electricity_purple_Frame_54
+    originalName: 
+    pivot: {x: 0.5, y: -0.7111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 36
+      width: 36
+      height: 45
+    spriteID: 03af5812c9fbd7f4795491f8318171e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 36}
+  - name: vfx_electricity_purple_Frame_55
+    originalName: 
+    pivot: {x: 0.48837212, y: -0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 307
+      width: 43
+      height: 27
+    spriteID: 1f44277cbb34c214f9d192a205eab54d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 307}
+  - name: vfx_electricity_purple_Frame_56
+    originalName: 
+    pivot: {x: 0.38235292, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 239
+      width: 34
+      height: 18
+    spriteID: d95fc7f0013c0684288bdf71ca91d360
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 239}
+  - name: vfx_electricity_purple_Frame_57
+    originalName: 
+    pivot: {x: 0.51351345, y: -0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 457
+      width: 37
+      height: 28
+    spriteID: 1b19bb179e4fb604292f969ec8b56e37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 457}
+  - name: vfx_electricity_purple_Frame_58
+    originalName: 
+    pivot: {x: 0.53846157, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 265
+      width: 39
+      height: 15
+    spriteID: 39cf272d1aa616f489ee290a92a4355f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 265}
+  - name: vfx_electricity_purple_Frame_59
+    originalName: 
+    pivot: {x: 0.46341458, y: -0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 342
+      width: 41
+      height: 28
+    spriteID: 08fd3ea60fd06fd4283a98337bb2491a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 342}
+  - name: vfx_electricity_purple_Frame_60
+    originalName: 
+    pivot: {x: 0.6060606, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 285
+      y: 211
+      width: 33
+      height: 13
+    spriteID: 61cde9677a056b14db16e4ace297124a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 285, y: 211}
+  - name: vfx_electricity_purple_Frame_61
+    originalName: 
+    pivot: {x: -1.1428568, y: -6.4000006}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 287
+      y: 288
+      width: 7
+      height: 5
+    spriteID: e3436cf6abc87e44f9f15f58c73d516b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 287, y: 288}
+  - name: vfx_electricity_purple_Frame_62
+    originalName: 
+    pivot: {x: 0.42105258, y: -1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 288
+      width: 38
+      height: 15
+    spriteID: e0882e8dca9828843b9007aa44e8c8ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 288}
+  - name: vfx_electricity_purple_Frame_63
+    originalName: 
+    pivot: {x: 0.55263156, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 111
+      width: 38
+      height: 24
+    spriteID: 97f3ce38927e381469c79d6ddbdc777c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 111}
+  - name: vfx_electricity_purple_Frame_64
+    originalName: 
+    pivot: {x: 0.25000006, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 920
+      width: 20
+      height: 15
+    spriteID: a603287548610bb4f9b63f7fcad8be9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 920}
+  - name: vfx_electricity_purple_Frame_65
+    originalName: 
+    pivot: {x: 0.41025642, y: -0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 493
+      width: 39
+      height: 26
+    spriteID: 231bdd9538c095c41903ddb285a36153
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 493}
+  - name: vfx_electricity_purple_Frame_66
+    originalName: 
+    pivot: {x: 0.42857143, y: -2.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 303
+      y: 143
+      width: 14
+      height: 6
+    spriteID: 925c2ed8700b89b48812ee485dd87254
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 303, y: 143}
+  - name: vfx_electricity_purple_Frame_67
+    originalName: 
+    pivot: {x: 0.40000007, y: -1.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 265
+      width: 20
+      height: 12
+    spriteID: 7ebfcf65c6f7b1d49b8c35ace9c4652d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 288, y: 265}
+  - name: vfx_electricity_purple_Frame_68
+    originalName: 
+    pivot: {x: 0.50000006, y: -1.0555556}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 293
+      y: 167
+      width: 22
+      height: 18
+    spriteID: 0ba0aaefe33a18148b0cf126a289f8a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 293, y: 167}
+  - name: vfx_electricity_purple_Frame_69
+    originalName: 
+    pivot: {x: 0.5263157, y: -0.6923077}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 212
+      y: 307
+      width: 19
+      height: 26
+    spriteID: 902d9141c72e84247a723654b3630995
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 212, y: 307}
+  - name: vfx_electricity_purple_Frame_70
+    originalName: 
+    pivot: {x: 0.5294118, y: -0.4857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 136
+      y: 468
+      width: 17
+      height: 35
+    spriteID: 2d4427a4e1719694bb3fd446b12faed0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 136, y: 468}
+  - name: vfx_electricity_purple_Frame_71
+    originalName: 
+    pivot: {x: 0.45000002, y: -0.5833334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 128
+      width: 20
+      height: 36
+    spriteID: 9791598d76fe4464a8895958ecb4b060
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 208, y: 128}
+  - name: vfx_electricity_purple_Frame_72
+    originalName: 
+    pivot: {x: 0.45000002, y: -0.3617021}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 133
+      y: 141
+      width: 20
+      height: 47
+    spriteID: df62d53fabb7f0d4c90b04e9876bc085
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 133, y: 141}
+  - name: vfx_electricity_purple_Frame_73
+    originalName: 
+    pivot: {x: 0.35714293, y: -0.3018868}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 197
+      width: 14
+      height: 53
+    spriteID: 9d0cc95fafe702d43ba2b4905aabc9a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 128, y: 197}
+  - name: vfx_electricity_purple_Frame_74
+    originalName: 
+    pivot: {x: 0.41176465, y: -0.28070176}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 183
+      y: 527
+      width: 17
+      height: 57
+    spriteID: eccd0760876ad8644a0a94389914172b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 183, y: 527}
+  - name: vfx_electricity_purple_Frame_75
+    originalName: 
+    pivot: {x: 0.41176465, y: -0.35714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 122
+      y: 353
+      width: 17
+      height: 56
+    spriteID: ff93c6e490a938547b0fac3708629055
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 353}
+  - name: vfx_electricity_purple_Frame_76
+    originalName: 
+    pivot: {x: 0.42857143, y: -0.65957445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 296
+      width: 14
+      height: 47
+    spriteID: be2691dab123a8445aca032057b7e292
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 131, y: 296}
+  - name: vfx_electricity_purple_Frame_77
+    originalName: 
+    pivot: {x: 0.5, y: -2.4}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 302
+      y: 288
+      width: 6
+      height: 5
+    spriteID: c82120675cd22504f8c1922aaf055b39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 288}
+  - name: vfx_electricity_purple_Frame_78
+    originalName: 
+    pivot: {x: 0.8846154, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 264
+      width: 26
+      height: 32
+    spriteID: 0c33f13c813f8934fad3ffd0a822f5c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 264}
+  - name: vfx_electricity_purple_Frame_79
+    originalName: 
+    pivot: {x: 1, y: -0.35135135}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 123
+      y: 722
+      width: 30
+      height: 37
+    spriteID: 1155000003fa2d245a9f6a1391474b56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 722}
+  - name: vfx_electricity_purple_Frame_80
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.3023256}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 893
+      width: 42
+      height: 43
+    spriteID: c376de2ae6af1324193d26e73d7b201e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 893}
+  - name: vfx_electricity_purple_Frame_81
+    originalName: 
+    pivot: {x: 0.46153846, y: -0.61290324}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 89
+      width: 52
+      height: 31
+    spriteID: 93cad0ce555fad8499ccddbb513af83f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 89}
+  - name: vfx_electricity_purple_Frame_82
+    originalName: 
+    pivot: {x: 0.4423077, y: -0.37209305}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 977
+      width: 52
+      height: 43
+    spriteID: f3b4602ce3567ff44baab36fe108b409
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 977}
+  - name: vfx_electricity_purple_Frame_83
+    originalName: 
+    pivot: {x: 0.43103454, y: -0.45238099}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 713
+      width: 58
+      height: 42
+    spriteID: cc189b27a247c9d4987c31da553782b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 713}
+  - name: vfx_electricity_purple_Frame_84
+    originalName: 
+    pivot: {x: 0.7142858, y: -0.6052631}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 174
+      width: 35
+      height: 38
+    spriteID: 9371b621c0b973f4fa8942e32bfe8713
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 174}
+  - name: vfx_electricity_purple_Frame_85
+    originalName: 
+    pivot: {x: 0.12500003, y: -1.3043478}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 997
+      width: 40
+      height: 23
+    spriteID: 5e21265185736dd46bb512f4a9fcbfa1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 997}
+  - name: vfx_electricity_purple_Frame_86
+    originalName: 
+    pivot: {x: 0.027027, y: -2.6000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 241
+      y: 311
+      width: 37
+      height: 15
+    spriteID: d023af5b12b387347b65b5b8e919f382
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 241, y: 311}
+  - name: vfx_electricity_purple_Frame_87
+    originalName: 
+    pivot: {x: -0.028571485, y: -3.3076923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 283
+      y: 239
+      width: 35
+      height: 13
+    spriteID: 0d5588d2d0e76d74e96dab5908e61ce5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 283, y: 239}
+  - name: vfx_electricity_purple_Frame_88
+    originalName: 
+    pivot: {x: 1, y: -1.4285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 893
+      width: 3
+      height: 7
+    spriteID: a316d44f6f2024a4baa28c0b48186326
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 893}
+  - name: vfx_electricity_purple_Frame_89
+    originalName: 
+    pivot: {x: 0.4444445, y: -0.16129032}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 579
+      width: 18
+      height: 62
+    spriteID: e54d9c134ab12294fb4b90a0877f8f68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 579}
+  - name: vfx_electricity_purple_Frame_90
+    originalName: 
+    pivot: {x: 0.49999994, y: -0.15492958}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 527
+      width: 14
+      height: 71
+    spriteID: 3148b3fa7735ec040ba9986ff09112ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 527}
+  - name: vfx_electricity_purple_Frame_91
+    originalName: 
+    pivot: {x: 0.3, y: -0.16176471}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 895
+      width: 20
+      height: 68
+    spriteID: 1416bd76a73c7f8499b9ab286110e95f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 895}
+  - name: vfx_electricity_purple_Frame_92
+    originalName: 
+    pivot: {x: 0.5217391, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 944
+      width: 23
+      height: 75
+    spriteID: 6393cc74c12198a40807761237efb08d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 944}
+  - name: vfx_electricity_purple_Frame_93
+    originalName: 
+    pivot: {x: 0.2380953, y: -0.24637681}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 47
+      y: 763
+      width: 21
+      height: 69
+    spriteID: 729d2f920c089c443b6e5a792f5fd9a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 47, y: 763}
+  - name: vfx_electricity_purple_Frame_94
+    originalName: 
+    pivot: {x: 0.3636364, y: -3.1538463}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 198
+      width: 22
+      height: 13
+    spriteID: bda777945a99b3948829dff796665fee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 198}
+  - name: vfx_electricity_purple_Frame_95
+    originalName: 
+    pivot: {x: 0, y: -1.2432432}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 221
+      y: 36
+      width: 8
+      height: 37
+    spriteID: 65d7f81a44573144dafff6efa26e909f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 221, y: 36}
+  - name: vfx_electricity_purple_Frame_96
+    originalName: 
+    pivot: {x: 0.055555504, y: -1.3611112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 516
+      width: 18
+      height: 36
+    spriteID: 964b43a81e3b2f340b18207030bc07d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 134, y: 516}
+  - name: vfx_electricity_purple_Frame_97
+    originalName: 
+    pivot: {x: 0.39130434, y: -4.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 174
+      width: 23
+      height: 16
+    spriteID: 6b9e14030a98f6643af2bc57691b1685
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 174}
+  - name: vfx_electricity_purple_Frame_98
+    originalName: 
+    pivot: {x: 0.11111101, y: -5.142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 222
+      y: 429
+      width: 9
+      height: 14
+    spriteID: da8128ae81f811d4f87068cd9c0523c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 222, y: 429}
+  - name: vfx_electricity_purple_Frame_99
+    originalName: 
+    pivot: {x: 1.0833333, y: -1.3421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 133
+      y: 417
+      width: 12
+      height: 38
+    spriteID: bcaaa8e34e19a8f4888e95ec360e05fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 133, y: 417}
+  - name: vfx_electricity_purple_Frame_100
+    originalName: 
+    pivot: {x: 0.45945945, y: -0.1388889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 579
+      width: 37
+      height: 72
+    spriteID: c18b511e77c8f0742a4369f0d981bb1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 579}
+  - name: vfx_electricity_purple_Frame_101
+    originalName: 
+    pivot: {x: 0.40000004, y: -0.057971016}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 763
+      width: 35
+      height: 69
+    spriteID: 8e8aad18e73afac42b13aeb519148e68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 763}
+  - name: vfx_electricity_purple_Frame_102
+    originalName: 
+    pivot: {x: 0.4166667, y: -0.039473683}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 441
+      width: 36
+      height: 76
+    spriteID: 78f5fa6b3eeeade4a93c4409536781dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 441}
+  - name: vfx_electricity_purple_Frame_103
+    originalName: 
+    pivot: {x: 0.25, y: -0.44444448}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 220
+      width: 36
+      height: 36
+    spriteID: 6a05d247b6b763e4686580455b9bd215
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 220}
+  - name: vfx_electricity_purple_Frame_104
+    originalName: 
+    pivot: {x: 0.28125, y: -0.1081081}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 895
+      width: 32
+      height: 74
+    spriteID: 68333ee313eb5f14ca4aefdfbbd9f312
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 895}
+  - name: vfx_electricity_purple_Frame_105
+    originalName: 
+    pivot: {x: -0.1875, y: -0.12328767}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 441
+      width: 16
+      height: 73
+    spriteID: c397bd2a43568be4ca190f86f84a404e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 441}
+  - name: vfx_electricity_purple_Frame_107
+    originalName: 
+    pivot: {x: 0.28571427, y: -0.22857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 264
+      width: 35
+      height: 35
+    spriteID: 4c598f8bd2eb1c04d95e8361250ce4cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 264}
+  - name: vfx_electricity_purple_Frame_108
+    originalName: 
+    pivot: {x: 0.49999988, y: -0.7105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 36
+      width: 8
+      height: 38
+    spriteID: b5a602e42d6d1fb4baeeca2133ad4bac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 205, y: 36}
+  - name: vfx_electricity_purple_Frame_109
+    originalName: 
+    pivot: {x: 0.30769232, y: -0.26315787}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 161
+      y: 128
+      width: 39
+      height: 38
+    spriteID: 38ec2a08eca1a1a44a049c53a143aed1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 128}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -2135854095
+    name: vfx_electricity_purple
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: vfx_electricity_purple_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 22
+        y: 66
+        width: 8
+        height: 9
+      spriteId: 4bae7fadf76078d4695fdbd652f7489c
+    - name: vfx_electricity_purple_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 50
+        width: 26
+        height: 29
+      spriteId: 4739d66a9fb6c4a4ba5066fa9cbcde22
+    - name: vfx_electricity_purple_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 33
+        width: 40
+        height: 45
+      spriteId: fe77836c5a98f024e9a3f64c744d3664
+    - name: vfx_electricity_purple_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 23
+        width: 56
+        height: 55
+      spriteId: bf93bef94395a9346a1f85be31c39430
+    - name: vfx_electricity_purple_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 21
+        width: 56
+        height: 57
+      spriteId: d6710ecdcb931c145879f8e12b1b92ce
+    - name: vfx_electricity_purple_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 19
+        width: 55
+        height: 59
+      spriteId: 0bf13b983f0342a4d942dd51920c1e89
+    - name: vfx_electricity_purple_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 21
+        width: 55
+        height: 56
+      spriteId: 07cc804fb3003154da6ee985bbfcecdd
+    - name: vfx_electricity_purple_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 21
+        width: 58
+        height: 46
+      spriteId: b43280bcf6813ca4380e1211458101ae
+    - name: vfx_electricity_purple_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 26
+        y: 20
+        width: 55
+        height: 46
+      spriteId: c5e2cb2ec182e324588ad7422a8d08b8
+    - name: vfx_electricity_purple_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 20
+        width: 49
+        height: 43
+      spriteId: 3656a55703cfaf548a83b37f225d9f5d
+    - name: vfx_electricity_purple_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 24
+        width: 24
+        height: 19
+      spriteId: 82dad06591f3e714683940609b01665b
+    - name: vfx_electricity_purple_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 41
+        width: 16
+        height: 19
+      spriteId: 48c3cb4215954f0439edcf6570b7eee0
+    - name: vfx_electricity_purple_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 38
+        width: 24
+        height: 22
+      spriteId: 686911ef3fc041248b73a50b80e28289
+    - name: vfx_electricity_purple_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 37
+        width: 17
+        height: 19
+      spriteId: 3a64425ed08b1c34fb8cbec89d1812b2
+    - name: vfx_electricity_purple_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 38
+        width: 21
+        height: 21
+      spriteId: 56a0d14d3b005514cb7917e978b32af6
+    - name: vfx_electricity_purple_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 38
+        width: 36
+        height: 20
+      spriteId: fef142767e43b2e42b3d68d6cb228c96
+    - name: vfx_electricity_purple_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 25
+        y: 40
+        width: 44
+        height: 18
+      spriteId: cbc540f87a8726148abc4a53d011a009
+    - name: vfx_electricity_purple_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 40
+        width: 53
+        height: 20
+      spriteId: 8ea122b1cdfe87b489b2d2a24d291cc0
+    - name: vfx_electricity_purple_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 25
+        y: 40
+        width: 51
+        height: 19
+      spriteId: 4bf245f445424b849807c306c7901de9
+    - name: vfx_electricity_purple_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 42
+        width: 54
+        height: 17
+      spriteId: b4a29fc681ec6c740a3993d7e78b0cd4
+    - name: vfx_electricity_purple_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 41
+        width: 63
+        height: 18
+      spriteId: b1948cceb25db2a40a8a06767e8e9159
+    - name: vfx_electricity_purple_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 42
+        width: 67
+        height: 17
+      spriteId: a8ffad00d88a4804594951f7ebda7804
+    - name: vfx_electricity_purple_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 24
+        width: 74
+        height: 36
+      spriteId: 06e13826cf611ee438ba076b1e2bf026
+    - name: vfx_electricity_purple_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 21
+        width: 76
+        height: 36
+      spriteId: ccbc7f9f46a93a44a883c0717dc1b66c
+    - name: vfx_electricity_purple_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 38
+        width: 77
+        height: 20
+      spriteId: dd45d7758e03e8748a2b2427e2dc492e
+    - name: vfx_electricity_purple_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 35
+        width: 72
+        height: 24
+      spriteId: 0513f49c8fa28744496cede09f155811
+    - name: vfx_electricity_purple_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 40
+        width: 74
+        height: 19
+      spriteId: 65a864e5b026e8647abba981f5e87111
+    - name: vfx_electricity_purple_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 40
+        width: 77
+        height: 30
+      spriteId: 26fc6c014b720884ea73ae04f089d06e
+    - name: vfx_electricity_purple_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 40
+        width: 71
+        height: 28
+      spriteId: e099d26e0d39ab9409f9cc9c193a3f59
+    - name: vfx_electricity_purple_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 43
+        width: 73
+        height: 10
+      spriteId: 827c84880d92f434d83466fc358d3246
+    - name: vfx_electricity_purple_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 42
+        width: 77
+        height: 41
+      spriteId: 1c05445c8aeb4a14297256c13e45f269
+    - name: vfx_electricity_purple_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 38
+        width: 54
+        height: 16
+      spriteId: f0456ff7b89b3324eae42b70f3fa3920
+    - name: vfx_electricity_purple_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 16
+        width: 51
+        height: 47
+      spriteId: 3329f978343081f4caa88a09c5f96a5a
+    - name: vfx_electricity_purple_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 28
+        width: 50
+        height: 40
+      spriteId: 1cceb6d1d5db909438e17c409b939674
+    - name: vfx_electricity_purple_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 27
+        width: 49
+        height: 48
+      spriteId: ee6252e256923e14cbf14b4eeca4c08a
+    - name: vfx_electricity_purple_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 45
+        y: 29
+        width: 33
+        height: 42
+      spriteId: b22b49fcee652ec4e976ae39e2279294
+    - name: vfx_electricity_purple_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 24
+        width: 64
+        height: 57
+      spriteId: f1ccbcb9929e68445917c9dc393b38a0
+    - name: vfx_electricity_purple_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 26
+        width: 57
+        height: 51
+      spriteId: b518e4d902bd3664a83f2a31f16d8b16
+    - name: vfx_electricity_purple_Frame_41
+      frameIndex: 41
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 30
+        width: 61
+        height: 46
+      spriteId: 870c5c33613f4df4fb8f54577476c12d
+    - name: vfx_electricity_purple_Frame_42
+      frameIndex: 42
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 26
+        width: 47
+        height: 49
+      spriteId: 3889ef677784b1c4fafcbd0b841099f4
+    - name: vfx_electricity_purple_Frame_43
+      frameIndex: 43
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 35
+        width: 52
+        height: 40
+      spriteId: 11749deaa6013f14f93c7059563a050d
+    - name: vfx_electricity_purple_Frame_44
+      frameIndex: 44
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 29
+        width: 38
+        height: 50
+      spriteId: 15d0477f4507d5e41b6f0de4e1893a09
+    - name: vfx_electricity_purple_Frame_45
+      frameIndex: 45
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 19
+        width: 44
+        height: 53
+      spriteId: 7a48909b2a8921049a67c371e5658956
+    - name: vfx_electricity_purple_Frame_47
+      frameIndex: 47
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 25
+        width: 36
+        height: 51
+      spriteId: 643500360dfe16a4c9ec6a697ded4ed3
+    - name: vfx_electricity_purple_Frame_48
+      frameIndex: 48
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 18
+        width: 34
+        height: 56
+      spriteId: 848e6e1f873626f45a7678b2c1bc9340
+    - name: vfx_electricity_purple_Frame_49
+      frameIndex: 49
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 23
+        width: 38
+        height: 56
+      spriteId: 2b438f4915b45904388d94e12c9e77ac
+    - name: vfx_electricity_purple_Frame_50
+      frameIndex: 50
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 27
+        width: 35
+        height: 53
+      spriteId: 58e5eaa4109e84f43bd90555d40a7fcf
+    - name: vfx_electricity_purple_Frame_52
+      frameIndex: 52
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 23
+        width: 38
+        height: 48
+      spriteId: 36dd9e2e0389611449289ffac8925b5b
+    - name: vfx_electricity_purple_Frame_53
+      frameIndex: 53
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 28
+        width: 39
+        height: 48
+      spriteId: 0a89f160d856c2d4c8ae27d285148039
+    - name: vfx_electricity_purple_Frame_54
+      frameIndex: 54
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 32
+        width: 36
+        height: 45
+      spriteId: 03af5812c9fbd7f4795491f8318171e1
+    - name: vfx_electricity_purple_Frame_55
+      frameIndex: 55
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 16
+        width: 43
+        height: 27
+      spriteId: 1f44277cbb34c214f9d192a205eab54d
+    - name: vfx_electricity_purple_Frame_56
+      frameIndex: 56
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 24
+        width: 34
+        height: 18
+      spriteId: d95fc7f0013c0684288bdf71ca91d360
+    - name: vfx_electricity_purple_Frame_57
+      frameIndex: 57
+      additiveSortOrder: 0
+      cellRect:
+        x: 29
+        y: 16
+        width: 37
+        height: 28
+      spriteId: 1b19bb179e4fb604292f969ec8b56e37
+    - name: vfx_electricity_purple_Frame_58
+      frameIndex: 58
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 20
+        width: 39
+        height: 15
+      spriteId: 39cf272d1aa616f489ee290a92a4355f
+    - name: vfx_electricity_purple_Frame_59
+      frameIndex: 59
+      additiveSortOrder: 0
+      cellRect:
+        x: 29
+        y: 16
+        width: 41
+        height: 28
+      spriteId: 08fd3ea60fd06fd4283a98337bb2491a
+    - name: vfx_electricity_purple_Frame_60
+      frameIndex: 60
+      additiveSortOrder: 0
+      cellRect:
+        x: 28
+        y: 16
+        width: 33
+        height: 13
+      spriteId: 61cde9677a056b14db16e4ace297124a
+    - name: vfx_electricity_purple_Frame_61
+      frameIndex: 61
+      additiveSortOrder: 0
+      cellRect:
+        x: 56
+        y: 32
+        width: 7
+        height: 5
+      spriteId: e3436cf6abc87e44f9f15f58c73d516b
+    - name: vfx_electricity_purple_Frame_62
+      frameIndex: 62
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 16
+        width: 38
+        height: 15
+      spriteId: e0882e8dca9828843b9007aa44e8c8ef
+    - name: vfx_electricity_purple_Frame_63
+      frameIndex: 63
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 16
+        width: 38
+        height: 24
+      spriteId: 97f3ce38927e381469c79d6ddbdc777c
+    - name: vfx_electricity_purple_Frame_64
+      frameIndex: 64
+      additiveSortOrder: 0
+      cellRect:
+        x: 43
+        y: 20
+        width: 20
+        height: 15
+      spriteId: a603287548610bb4f9b63f7fcad8be9f
+    - name: vfx_electricity_purple_Frame_65
+      frameIndex: 65
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 16
+        width: 39
+        height: 26
+      spriteId: 231bdd9538c095c41903ddb285a36153
+    - name: vfx_electricity_purple_Frame_66
+      frameIndex: 66
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 15
+        width: 14
+        height: 6
+      spriteId: 925c2ed8700b89b48812ee485dd87254
+    - name: vfx_electricity_purple_Frame_67
+      frameIndex: 67
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 15
+        width: 20
+        height: 12
+      spriteId: 7ebfcf65c6f7b1d49b8c35ace9c4652d
+    - name: vfx_electricity_purple_Frame_68
+      frameIndex: 68
+      additiveSortOrder: 0
+      cellRect:
+        x: 37
+        y: 19
+        width: 22
+        height: 18
+      spriteId: 0ba0aaefe33a18148b0cf126a289f8a2
+    - name: vfx_electricity_purple_Frame_69
+      frameIndex: 69
+      additiveSortOrder: 0
+      cellRect:
+        x: 38
+        y: 18
+        width: 19
+        height: 26
+      spriteId: 902d9141c72e84247a723654b3630995
+    - name: vfx_electricity_purple_Frame_70
+      frameIndex: 70
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 17
+        width: 17
+        height: 35
+      spriteId: 2d4427a4e1719694bb3fd446b12faed0
+    - name: vfx_electricity_purple_Frame_71
+      frameIndex: 71
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 21
+        width: 20
+        height: 36
+      spriteId: 9791598d76fe4464a8895958ecb4b060
+    - name: vfx_electricity_purple_Frame_72
+      frameIndex: 72
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 17
+        width: 20
+        height: 47
+      spriteId: df62d53fabb7f0d4c90b04e9876bc085
+    - name: vfx_electricity_purple_Frame_73
+      frameIndex: 73
+      additiveSortOrder: 0
+      cellRect:
+        x: 43
+        y: 16
+        width: 14
+        height: 53
+      spriteId: 9d0cc95fafe702d43ba2b4905aabc9a0
+    - name: vfx_electricity_purple_Frame_74
+      frameIndex: 74
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 16
+        width: 17
+        height: 57
+      spriteId: eccd0760876ad8644a0a94389914172b
+    - name: vfx_electricity_purple_Frame_75
+      frameIndex: 75
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 20
+        width: 17
+        height: 56
+      spriteId: ff93c6e490a938547b0fac3708629055
+    - name: vfx_electricity_purple_Frame_76
+      frameIndex: 76
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 31
+        width: 14
+        height: 47
+      spriteId: be2691dab123a8445aca032057b7e292
+    - name: vfx_electricity_purple_Frame_77
+      frameIndex: 77
+      additiveSortOrder: 0
+      cellRect:
+        x: 45
+        y: 12
+        width: 6
+        height: 5
+      spriteId: c82120675cd22504f8c1922aaf055b39
+    - name: vfx_electricity_purple_Frame_78
+      frameIndex: 78
+      additiveSortOrder: 0
+      cellRect:
+        x: 25
+        y: 14
+        width: 26
+        height: 32
+      spriteId: 0c33f13c813f8934fad3ffd0a822f5c3
+    - name: vfx_electricity_purple_Frame_79
+      frameIndex: 79
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 13
+        width: 30
+        height: 37
+      spriteId: 1155000003fa2d245a9f6a1391474b56
+    - name: vfx_electricity_purple_Frame_80
+      frameIndex: 80
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 13
+        width: 42
+        height: 43
+      spriteId: c376de2ae6af1324193d26e73d7b201e
+    - name: vfx_electricity_purple_Frame_81
+      frameIndex: 81
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 19
+        width: 52
+        height: 31
+      spriteId: 93cad0ce555fad8499ccddbb513af83f
+    - name: vfx_electricity_purple_Frame_82
+      frameIndex: 82
+      additiveSortOrder: 0
+      cellRect:
+        x: 25
+        y: 16
+        width: 52
+        height: 43
+      spriteId: f3b4602ce3567ff44baab36fe108b409
+    - name: vfx_electricity_purple_Frame_83
+      frameIndex: 83
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 19
+        width: 58
+        height: 42
+      spriteId: cc189b27a247c9d4987c31da553782b2
+    - name: vfx_electricity_purple_Frame_84
+      frameIndex: 84
+      additiveSortOrder: 0
+      cellRect:
+        x: 23
+        y: 23
+        width: 35
+        height: 38
+      spriteId: 9371b621c0b973f4fa8942e32bfe8713
+    - name: vfx_electricity_purple_Frame_85
+      frameIndex: 85
+      additiveSortOrder: 0
+      cellRect:
+        x: 43
+        y: 30
+        width: 40
+        height: 23
+      spriteId: 5e21265185736dd46bb512f4a9fcbfa1
+    - name: vfx_electricity_purple_Frame_86
+      frameIndex: 86
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 39
+        width: 37
+        height: 15
+      spriteId: d023af5b12b387347b65b5b8e919f382
+    - name: vfx_electricity_purple_Frame_87
+      frameIndex: 87
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 43
+        width: 35
+        height: 13
+      spriteId: 0d5588d2d0e76d74e96dab5908e61ce5
+    - name: vfx_electricity_purple_Frame_88
+      frameIndex: 88
+      additiveSortOrder: 0
+      cellRect:
+        x: 45
+        y: 10
+        width: 3
+        height: 7
+      spriteId: a316d44f6f2024a4baa28c0b48186326
+    - name: vfx_electricity_purple_Frame_89
+      frameIndex: 89
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 10
+        width: 18
+        height: 62
+      spriteId: e54d9c134ab12294fb4b90a0877f8f68
+    - name: vfx_electricity_purple_Frame_90
+      frameIndex: 90
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 11
+        width: 14
+        height: 71
+      spriteId: 3148b3fa7735ec040ba9986ff09112ca
+    - name: vfx_electricity_purple_Frame_91
+      frameIndex: 91
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 11
+        width: 20
+        height: 68
+      spriteId: 1416bd76a73c7f8499b9ab286110e95f
+    - name: vfx_electricity_purple_Frame_92
+      frameIndex: 92
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 12
+        width: 23
+        height: 75
+      spriteId: 6393cc74c12198a40807761237efb08d
+    - name: vfx_electricity_purple_Frame_93
+      frameIndex: 93
+      additiveSortOrder: 0
+      cellRect:
+        x: 43
+        y: 17
+        width: 21
+        height: 69
+      spriteId: 729d2f920c089c443b6e5a792f5fd9a2
+    - name: vfx_electricity_purple_Frame_94
+      frameIndex: 94
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 41
+        width: 22
+        height: 13
+      spriteId: bda777945a99b3948829dff796665fee
+    - name: vfx_electricity_purple_Frame_95
+      frameIndex: 95
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 46
+        width: 8
+        height: 37
+      spriteId: 65d7f81a44573144dafff6efa26e909f
+    - name: vfx_electricity_purple_Frame_96
+      frameIndex: 96
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 49
+        width: 18
+        height: 36
+      spriteId: 964b43a81e3b2f340b18207030bc07d6
+    - name: vfx_electricity_purple_Frame_97
+      frameIndex: 97
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 65
+        width: 23
+        height: 16
+      spriteId: 6b9e14030a98f6643af2bc57691b1685
+    - name: vfx_electricity_purple_Frame_98
+      frameIndex: 98
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 72
+        width: 9
+        height: 14
+      spriteId: da8128ae81f811d4f87068cd9c0523c1
+    - name: vfx_electricity_purple_Frame_99
+      frameIndex: 99
+      additiveSortOrder: 0
+      cellRect:
+        x: 35
+        y: 51
+        width: 12
+        height: 38
+      spriteId: bcaaa8e34e19a8f4888e95ec360e05fc
+    - name: vfx_electricity_purple_Frame_100
+      frameIndex: 100
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 10
+        width: 37
+        height: 72
+      spriteId: c18b511e77c8f0742a4369f0d981bb1a
+    - name: vfx_electricity_purple_Frame_101
+      frameIndex: 101
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 4
+        width: 35
+        height: 69
+      spriteId: 8e8aad18e73afac42b13aeb519148e68
+    - name: vfx_electricity_purple_Frame_102
+      frameIndex: 102
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 3
+        width: 36
+        height: 76
+      spriteId: 78f5fa6b3eeeade4a93c4409536781dc
+    - name: vfx_electricity_purple_Frame_103
+      frameIndex: 103
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 16
+        width: 36
+        height: 36
+      spriteId: 6a05d247b6b763e4686580455b9bd215
+    - name: vfx_electricity_purple_Frame_104
+      frameIndex: 104
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 8
+        width: 32
+        height: 74
+      spriteId: 68333ee313eb5f14ca4aefdfbbd9f312
+    - name: vfx_electricity_purple_Frame_105
+      frameIndex: 105
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 9
+        width: 16
+        height: 73
+      spriteId: c397bd2a43568be4ca190f86f84a404e
+    - name: vfx_electricity_purple_Frame_107
+      frameIndex: 107
+      additiveSortOrder: 0
+      cellRect:
+        x: 38
+        y: 8
+        width: 35
+        height: 35
+      spriteId: 4c598f8bd2eb1c04d95e8361250ce4cb
+    - name: vfx_electricity_purple_Frame_108
+      frameIndex: 108
+      additiveSortOrder: 0
+      cellRect:
+        x: 44
+        y: 27
+        width: 8
+        height: 38
+      spriteId: b5a602e42d6d1fb4baeeca2133ad4bac
+    - name: vfx_electricity_purple_Frame_109
+      frameIndex: 109
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 10
+        width: 39
+        height: 38
+      spriteId: 38ec2a08eca1a1a44a049c53a143aed1
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 96, y: 96}
