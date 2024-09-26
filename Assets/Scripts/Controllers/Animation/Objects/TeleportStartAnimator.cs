@@ -10,14 +10,12 @@ public class TeleportStartAnimator : MonoBehaviour {
     [SerializeField] private Canvas canvas; // Reference to your canvas
     private Vector2 startPosition;
     Coroutine m_CorotineAnim;
-    bool IsDone;
 
     private void Awake() {
         m_Image.enabled = false;
     }
 
     public void PlayStartAnimation(Vector2 position) {
-        IsDone = false;
         startPosition = position;
         m_Image.enabled = true;  // Turn on the Image
 
@@ -56,7 +54,6 @@ public class TeleportStartAnimator : MonoBehaviour {
 
 
     private void StopAnimation() {
-        IsDone = true;
         if (m_CorotineAnim != null) {
             StopCoroutine(m_CorotineAnim);
         }

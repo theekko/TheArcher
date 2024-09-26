@@ -12,14 +12,12 @@ public class TeleportEndAnimator : MonoBehaviour {
     [SerializeField] private float delayBeforeStart = 1f;  // Delay before the second animation starts
     private Vector2 endPosition;
     Coroutine m_CorotineAnim;
-    bool IsDone;
 
     private void Awake() {
         m_Image.enabled = false;
     }
 
     public void PlayEndAnimation(Vector2 position) {
-        IsDone = false;
         endPosition = position;
 
         // Immediately update the UI position before starting the animation
@@ -63,7 +61,6 @@ public class TeleportEndAnimator : MonoBehaviour {
 
 
     private void StopAnimation() {
-        IsDone = true;
         if (m_CorotineAnim != null) {
             StopCoroutine(m_CorotineAnim);
         }
