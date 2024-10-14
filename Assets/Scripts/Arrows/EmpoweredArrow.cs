@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,10 @@ public class EmpoweredArrow : MonoBehaviour {
     private Rigidbody2D rb;
     private bool hasHit = false;
 
+    static public event EventHandler objectHitEvent;
+    static public event EventHandler groundHitEvent;
+    static public event EventHandler empoweredArrowMissEvent;
+
     public void Setup(Vector3 shootDir) {
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(shootDir.x, shootDir.y) * moveSpeed, ForceMode2D.Impulse);
@@ -27,7 +32,20 @@ public class EmpoweredArrow : MonoBehaviour {
 
         // Rotate the arrow to face the shoot direction
         transform.eulerAngles = new Vector3(0, 0, angle);
-        Destroy(gameObject, destroyTimer);
+        StartCoroutine(DestroyAfterTime());
+    }
+
+    private IEnumerator DestroyAfterTime() {
+        // Wait for the destroy timer duration
+        yield return new WaitForSeconds(destroyTimer);
+
+        // If the arrow hasn't hit anything, trigger the miss event
+        if (!hasHit) {
+            empoweredArrowMissEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        // Destroy the arrow
+        Destroy(gameObject);
     }
 
     private void FixedUpdate() {
@@ -60,7 +78,11 @@ public class EmpoweredArrow : MonoBehaviour {
     public void ArrowHit(Collider2D collision) {
         hasHit = true; // Ensure this only happens once
         Damageable damageable = collision.GetComponent<Damageable>();
-
+        if (collision.gameObject.layer != LayerMask.NameToLayer(LayerStrings.Ground)) {
+            objectHitEvent?.Invoke(this, EventArgs.Empty);
+        } else {
+            groundHitEvent?.Invoke(this, EventArgs.Empty);
+        }
         if (damageable != null) {
 
             Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);

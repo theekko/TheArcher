@@ -9,7 +9,12 @@ public class PlayerHealthBar : MonoBehaviour {
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
     [SerializeField] private float animationDuration = 0.5f;
+    [SerializeField] private float heartIncreaseInterval = 5f; // Interval in seconds
     private Damageable damageable;
+    private float heartTimer = 0f;
+    private bool playerMadeInput = false;
+    private int maxHearts = 10;
+    private int startingMaxHealth;
 
     private void Start() {
         if (damageable == null) {
@@ -21,11 +26,36 @@ public class PlayerHealthBar : MonoBehaviour {
 
         if (damageable != null) {
             damageable.healthChanged += Damageable_healthChanged;
+
         } else {
             Debug.LogWarning("Damageable component not found on Player.");
         }
+        startingMaxHealth = damageable.MaxHealth;
         MaxHealth(damageable);
+
+        AddHeart();
+        heartTimer = 0f;
     }
+
+    private void Update() {
+        // Detect player input or movement
+        if (Input.anyKeyDown || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
+            Debug.Log("player input");
+            damageable.MaxHealth = startingMaxHealth;
+            playerMadeInput = true;
+            ResetToMaxHealth();
+        }
+
+        if (!playerMadeInput) {
+            heartTimer += Time.deltaTime;
+
+            if (heartTimer >= heartIncreaseInterval && damageable.MaxHealth < maxHearts) {
+                AddHeart();
+                heartTimer = 0f; // Reset timer after adding a heart
+            }
+        }
+    }
+
 
     private void Damageable_healthChanged(object sender, Damageable.OnHealthChangedEventArgs e) {
         for (int i = 0; i < hearts.Length; i++) {
@@ -81,6 +111,42 @@ public class PlayerHealthBar : MonoBehaviour {
         }
     }
 
-    private void Update() {
+    private void AddHeart() {
+        damageable.MaxHealth++;
+        MaxHealth(damageable);
+
+        if (damageable.MaxHealth <= hearts.Length) {
+            Image newHeart = hearts[damageable.MaxHealth - 1]; // Get the new heart
+            StartCoroutine(FadeInHeart(newHeart));
+        }
+    }
+
+    private IEnumerator FadeInHeart(Image heart) {
+        float elapsedTime = 0f;
+        Color heartColor = heart.color;
+
+        // Set opacity to 0
+        heartColor.a = 0;
+        heart.color = heartColor;
+
+        while (elapsedTime < heartIncreaseInterval) {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / heartIncreaseInterval);
+            heartColor.a = alpha;
+            heart.color = heartColor;
+            yield return null;
+        }
+    }
+
+    private void ResetToMaxHealth() {
+        Debug.Log("reset");
+        for (int i = 0; i < hearts.Length; i++) {
+            if (i < startingMaxHealth) {
+                hearts[i].enabled = true;
+            } else {
+                Debug.Log("i: " + i);
+                hearts[i].enabled = false;
+            }
+        }
     }
 }

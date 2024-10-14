@@ -280,7 +280,7 @@ MonoBehaviour:
   _isAlive: 1
   _isHit: 0
   _isInvincible: 0
-  hitInvincibilityTime: 0.25
+  hitInvincibilityTime: 0
   _isShielded: 0
 --- !u!114 &1952080147358601753
 MonoBehaviour:
@@ -301,7 +301,7 @@ MonoBehaviour:
   horizontalSpeed: 10
   playerDetectionDistance: 8
   returnTolerance: 0.05
-  returnSpeed: 2
+  returnSpeed: 4
   _playerDetected: 0
   horizontalMoveTolerance: 0.2
   platformDetectionRange: 1

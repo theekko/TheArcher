@@ -400,7 +400,7 @@ MonoBehaviour:
   _isAlive: 1
   _isHit: 0
   _isInvincible: 0
-  hitInvincibilityTime: 0.25
+  hitInvincibilityTime: 0
   _isShielded: 0
 --- !u!114 &5769415144800736787
 MonoBehaviour:
@@ -415,10 +415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 10
-  chargeTime: 0.25
+  chargeTime: 0.55
   _isAttacking: 0
   attackTime: 0.5
-  targetDetectionDistance: 8
+  targetDetectionDistance: 10
   returnTolerance: 0.05
   returnSpeed: 2
   _targetDetected: 0

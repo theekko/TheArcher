@@ -16,6 +16,7 @@ public class BowController : MonoBehaviour {
     [SerializeField] private float bowDistance = 1.5f;
     [SerializeField] private float minDrawTime = 0.5f;
     [SerializeField] private float minDrawTimeTeleportArrow = 0f;
+    [SerializeField] private float empoweredArrowDrawTime = 0.3f;
     [SerializeField] private float maxDrawTime = 3f;
     [SerializeField] private float minDestroyTimer = 0.1f; 
     [SerializeField] private float maxDestroyTimer = 0.3f; 
@@ -266,9 +267,7 @@ public class BowController : MonoBehaviour {
         return closestEnemy;
     }
 
-    private void Player_teleportEvent(object sender, EventArgs e) {
-        IsEmpoweredShot = true;
-    }
+
 
 
     private void Update() {
@@ -278,6 +277,9 @@ public class BowController : MonoBehaviour {
                 DrawSucceedTeleportArrow = true;
             } else if (drawTime >= minDrawTime && IsDrawingArrow) {
                 DrawSucceedArrow = true;
+            }
+            if (drawTime >= empoweredArrowDrawTime) { 
+                IsEmpoweredShot = true;
             }
         }
 
@@ -349,7 +351,6 @@ public class BowController : MonoBehaviour {
 
     private void Awake() {
         player = GetComponentInParent<Player>();
-        player.teleportEvent += Player_teleportEvent;
         rb = GetComponentInParent<Rigidbody2D>();
         damageable = GetComponentInParent<Damageable>();
     }

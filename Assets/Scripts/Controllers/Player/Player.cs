@@ -45,6 +45,13 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float maxTeleportFallReduction = 1f;
     [SerializeField] private float teleportOverlapOffset = 0.1f;
+    [SerializeField] private float teleportDistance = 5f;
+    [SerializeField] private bool _canTeleport = true;
+    [SerializeField] private bool _hasTeleportedInAir = false;
+    [SerializeField] private float groundCheckDelay = 0.1f;
+    private float groundCheckTimer = 0f;
+
+
 
     //[SerializeField] private float delayBeforeReset = 3f;
 
@@ -63,7 +70,8 @@ public class Player : MonoBehaviour {
     private float originalGravityScale;
     private bool _isKnockedBack = false;
     private bool _isSlowFall = true;
-    
+    private bool _isTeleporting = false;
+
 
     public event EventHandler<teleportEventArgs> teleportEvent;
     public class teleportEventArgs : EventArgs {
@@ -96,7 +104,7 @@ public class Player : MonoBehaviour {
         get {
             return _isRunning;
         }
-        private set { 
+        private set {
             _isRunning = value;
         }
     }
@@ -155,8 +163,48 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public bool IsTeleporting {
+        get {
+            return _isTeleporting;
+        }
+        private set {
+            _isTeleporting = value;
+        }
+    }
 
-    
+    public bool CanTeleport {
+        get {
+            return _canTeleport;
+        }
+        private set {
+            _canTeleport = value;
+        }
+    }
+
+    public bool HasTeleportedInAir {
+        get {
+            return _hasTeleportedInAir;
+        }
+        private set { 
+            _hasTeleportedInAir = value;
+        }
+
+    }
+
+    public float TeleportDistance {
+        get {
+            return teleportDistance;
+        }
+    }
+
+    public float TeleportOverlapOffset {
+        get {
+            return teleportOverlapOffset;
+        }
+    }
+
+
+
 
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
@@ -190,50 +238,130 @@ public class Player : MonoBehaviour {
         }
     }
 
+
+
     public void OnDash(InputAction.CallbackContext context) {
         if (context.started && canDash && !bow.IsDrawing) {
             StartCoroutine(Dash());
         }
     }
 
+    //public void OnTeleport(InputAction.CallbackContext context) {
+    //    TeleportPoint existingTeleportPoint = FindObjectOfType<TeleportPoint>();
+    //    if (existingTeleportPoint != null) {
+    //        Vector3 initialPosition = transform.position; // Save the initial position before teleporting
+    //        transform.position = existingTeleportPoint.transform.position;
+    //        existingTeleportPoint.gameObject.SetActive(false);
+    //        Destroy(existingTeleportPoint.gameObject);
+    //        teleportFallReductionTimer = maxTeleportFallReduction;
+    //        teleportEvent?.Invoke(this, new teleportEventArgs { 
+    //            initialPosition = initialPosition
+    //        });
+    //        IsSlowFall = true;
+
+    //        // Check if the player is inside a collider after teleporting
+    //        Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground));
+    //        if (overlapCollider != null) {
+    //            Vector2 directionToMove = Vector2.zero;
+    //            Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+
+    //            foreach (var direction in directions) {
+    //                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground));
+    //                if (hit.collider != null && hit.collider == overlapCollider) {
+    //                    directionToMove = hit.normal;
+    //                    break;
+    //                }
+    //            }
+
+    //            if (directionToMove == Vector2.zero) {
+    //                directionToMove = Vector2.up;
+    //            }
+
+    //            // Move the player out of the collider
+    //            transform.position += (Vector3)directionToMove.normalized * teleportOverlapOffset;
+
+    //            // Additional check to ensure correct side
+    //            if (IsOnWrongSideOfWall(initialPosition, transform.position, overlapCollider)) {
+    //                // Reverse the direction to move the player to the correct side
+    //                transform.position -= (Vector3)directionToMove.normalized * 1.0f;
+    //            }
+    //        }
+    //    }
+    //}
+
     public void OnTeleport(InputAction.CallbackContext context) {
-        TeleportPoint existingTeleportPoint = FindObjectOfType<TeleportPoint>();
-        if (existingTeleportPoint != null) {
-            Vector3 initialPosition = transform.position; // Save the initial position before teleporting
-            transform.position = existingTeleportPoint.transform.position;
-            existingTeleportPoint.gameObject.SetActive(false);
-            Destroy(existingTeleportPoint.gameObject);
-            teleportFallReductionTimer = maxTeleportFallReduction;
-            teleportEvent?.Invoke(this, new teleportEventArgs { 
-                initialPosition = initialPosition
-            });
-            IsSlowFall = true;
+        if (CanTeleport) {
+            if (context.performed) {
+                IsTeleporting = true;
+            }
 
-            // Check if the player is inside a collider after teleporting
-            Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground));
-            if (overlapCollider != null) {
-                Vector2 directionToMove = Vector2.zero;
-                Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+            if (context.canceled) {
+                IsTeleporting = false;
+                Vector3 initialPosition = transform.position; // Save the initial position before teleporting
+                Vector3 teleportDirection = new Vector3(moveInput.x, moveInput.y, 0).normalized;
+                float raycastDistance = teleportDistance; // Set the max teleport distance
 
-                foreach (var direction in directions) {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground));
-                    if (hit.collider != null && hit.collider == overlapCollider) {
-                        directionToMove = hit.normal;
-                        break;
+                // Add a small offset to ensure the raycast starts above the ground
+                Vector3 raycastStartPosition = transform.position + Vector3.up * 0.1f;
+
+                // Perform a raycast in the teleport direction from the offset position
+                RaycastHit2D hit = Physics2D.Raycast(raycastStartPosition, teleportDirection, raycastDistance, LayerMask.GetMask(LayerStrings.Ground));
+                if (hit.collider != null) {
+                    // Calculate the hit normal offset
+                    Vector3 hitNormalOffset = -(Vector3)hit.normal * teleportOverlapOffset;
+                    transform.position = (Vector3)hit.point + hitNormalOffset;
+                } else {
+                    // If no ground was hit, teleport the full distance in the direction of moveInput
+                    transform.position += teleportDirection * teleportDistance;
+                }
+                rb.velocity = Vector2.zero;
+                // Disable ground check for a short delay after teleporting
+                groundCheckTimer = groundCheckDelay;
+
+                // Check if the player was grounded before teleporting
+                if (touchingDirections.IsGrounded) {
+                    // If the player teleports while grounded, prevent teleporting again until they jump
+                    CanTeleport = false;
+                    HasTeleportedInAir = false; // Reset the air teleport flag
+                } else if (!HasTeleportedInAir) {
+                    // If the player teleports while airborne, allow only one teleport
+                    HasTeleportedInAir = true;
+                    CanTeleport = false;
+                }
+
+                // Teleport event and fall reduction timer logic
+                teleportFallReductionTimer = maxTeleportFallReduction;
+                teleportEvent?.Invoke(this, new teleportEventArgs {
+                    initialPosition = initialPosition
+                });
+
+                IsSlowFall = true;
+                // Additional check to ensure the player is not inside a collider after teleporting
+                Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground));
+                if (overlapCollider != null) {
+                    Vector2 directionToMove = Vector2.zero;
+                    Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+
+                    foreach (var direction in directions) {
+                        RaycastHit2D hitCheck = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground));
+                        if (hitCheck.collider != null && hitCheck.collider == overlapCollider) {
+                            directionToMove = hitCheck.normal;
+                            break;
+                        }
                     }
-                }
 
-                if (directionToMove == Vector2.zero) {
-                    directionToMove = Vector2.up;
-                }
+                    if (directionToMove == Vector2.zero) {
+                        directionToMove = Vector2.up;
+                    }
 
-                // Move the player out of the collider
-                transform.position += (Vector3)directionToMove.normalized * teleportOverlapOffset;
+                    // Move the player out of the collider
+                    transform.position += (Vector3)directionToMove.normalized * teleportOverlapOffset;
 
-                // Additional check to ensure correct side
-                if (IsOnWrongSideOfWall(initialPosition, transform.position, overlapCollider)) {
-                    // Reverse the direction to move the player to the correct side
-                    transform.position -= (Vector3)directionToMove.normalized * 1.0f;
+                    // Additional check to ensure correct side of the wall
+                    if (IsOnWrongSideOfWall(initialPosition, transform.position, overlapCollider)) {
+                        // Reverse the direction to move the player to the correct side
+                        transform.position -= (Vector3)directionToMove.normalized * 1.0f;
+                    }
                 }
             }
         }
@@ -256,9 +384,9 @@ public class Player : MonoBehaviour {
     }
 
     public void OnHit(object sender, Damageable.OnHitEventArgs e) {
-        //if (!IsKnockedBack) {
-        //    StartCoroutine(ApplyKnockback(e.knockback));
-        //}
+        if (!IsKnockedBack) {
+            StartCoroutine(ApplyKnockback(e.knockback));
+        }
     }
 
 
@@ -376,10 +504,25 @@ public class Player : MonoBehaviour {
         damageable.damageableHit += OnHit;
         bow.OnFireSuccessEvent += Bow_OnFireSuccessEvent;
         bow.OnFireFailEvent += Bow_OnFireFailEvent;
+        Arrow.objectHitEvent += Arrow_objectHitEvent;
+        EmpoweredArrow.objectHitEvent += EmpoweredArrow_objectHitEvent;
+        EnemyArmor.empoweredArrowHitEvent += EnemyArmor_empoweredArrowHitEvent;
+    }
+
+    private void EnemyArmor_empoweredArrowHitEvent(object sender, EventArgs e) {
+        CanTeleport = true;
+    }
+
+    private void EmpoweredArrow_objectHitEvent(object sender, EventArgs e) {
+        CanTeleport = true;
+    }
+
+    private void Arrow_objectHitEvent(object sender, EventArgs e) {
+        CanTeleport = true;
     }
 
     private void FixedUpdate() {
-        if (!damageable.IsAlive) { 
+        if (!damageable.IsAlive) {
             rb.velocity = Vector2.zero;
             return;
         }
@@ -389,17 +532,16 @@ public class Player : MonoBehaviour {
 
 
         if (teleportFallReductionTimer > 0) {
-            //rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed * Time.deltaTime, rb.velocity.y / 2);
-            rb.velocity = Vector2.zero;
-            rb.gravityScale = 0;
+            
+            rb.gravityScale = 1;
             teleportFallReductionTimer -= Time.deltaTime;
-            return;
         } else {
             rb.gravityScale = originalGravityScale;
             teleportFallReductionTimer = 0;
         }
 
-        if (bow.IsDrawing && IsSlowFall) {
+
+        if ((bow.IsDrawing || IsTeleporting) && IsSlowFall) {
             rb.velocity = new Vector2(0, rb.velocity.y / 2);
             return;
         }
@@ -419,6 +561,17 @@ public class Player : MonoBehaviour {
         }
         if (IsDashing) {
             return;
+        }
+
+        // Check the ground only if the buffer timer has elapsed
+        if (groundCheckTimer <= 0) {
+            if (touchingDirections.IsGrounded && !IsTeleporting) {
+                CanTeleport = true;
+                HasTeleportedInAir = false;
+                teleportFallReductionTimer = 0;
+            }
+        } else {
+            groundCheckTimer -= Time.deltaTime;
         }
 
         if (touchingDirections.IsGrounded || touchingDirections.IsOnWall) {

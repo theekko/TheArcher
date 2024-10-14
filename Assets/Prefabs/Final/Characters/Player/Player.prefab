@@ -413,6 +413,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359a8cd33522cf84c8113c9859d8f42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Image: {fileID: 0}
+  m_SpriteArray: []
+  m_Speed: 0.02
+  canvas: {fileID: 0}
 --- !u!1 &2488190967267500830
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,36 +916,8 @@ MonoBehaviour:
     m_ActionId: 2a2d033d-2853-46c0-9c64-adbd801852d4
     m_ActionName: Player/New action
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3417893380766952455}
-        m_TargetAssemblyTypeName: Shield, Assembly-CSharp
-        m_MethodName: OnShield
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 9e3812e3-c18d-481f-8474-62d9f8935cad
-    m_ActionName: Player/New action
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3861547070025646025}
-        m_TargetAssemblyTypeName: BowController, Assembly-CSharp
-        m_MethodName: OnFireTeleportArrow
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 80fd31ea-b89e-4e2d-9d29-d65b659b59de
     m_ActionName: Player/New action
   - m_PersistentCalls:
       m_Calls:
@@ -975,6 +951,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a5065e78-6dc2-4471-b05c-cff06b0cfc11
     m_ActionName: Player/MenuOpenClose[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e494d3d-28f5-4bd8-ba85-ab736c7d6c94
+    m_ActionName: Player/Shield2
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1014,6 +994,10 @@ MonoBehaviour:
   dashingCooldown: 0.5
   maxTeleportFallReduction: 0.15
   teleportOverlapOffset: 0.05
+  teleportDistance: 5
+  _canTeleport: 1
+  _hasTeleportedInAir: 1
+  groundCheckDelay: 0.1
   playerSprite: {fileID: 9220363338788516630}
   playerInput: {fileID: 5207305356777524914}
   bow: {fileID: 3861547070025646025}
@@ -1087,7 +1071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8333029434416385864
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1414,7 +1398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7428353635469323620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db67037c77dd02246b59398841dcf740, type: 3}
   m_Name: 
@@ -1428,7 +1412,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7428353635469323620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92c48ab3eb67cc0428400f768bc5f01d, type: 3}
   m_Name: 
@@ -1455,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7848612712122887161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1666,7 +1650,7 @@ RectTransform:
   m_Father: {fileID: 7350415691945253273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1723,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8733440200237619373
 Transform:
   m_ObjectHideFlags: 0

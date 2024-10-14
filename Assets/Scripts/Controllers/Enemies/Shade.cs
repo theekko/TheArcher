@@ -17,13 +17,18 @@ public class Shade : MonoBehaviour {
 
     [Header("Teleportation")]
     [SerializeField] private TeleportThreshold teleportThreshold;
-    [SerializeField] private List<Transform> teleportPoints;
+    [SerializeField] private List<TeleportLight> teleportPoints;
+    [SerializeField] private float teleportTime = 3f;
     private int nextTeleportPointIndex = 1;
+
+
+
 
 
     private Rigidbody2D rb;
     private TouchingDirections touchingDirections;
     private float attackTimer = 0f;
+    private float teleportTimer = 0f;
     private float distance;
     private Damageable damageable;
     private Vector2 direction;
@@ -33,6 +38,10 @@ public class Shade : MonoBehaviour {
     public event EventHandler<OnAttackEventArgs> OnAttackEvent;
     public class OnAttackEventArgs : EventArgs {
         public Vector3 direction;
+    }
+    public event EventHandler<teleportEventArgs> teleportEvent;
+    public class teleportEventArgs : EventArgs {
+        public Vector2 initialPosition;
     }
 
     public bool PlayerDetected {
@@ -79,12 +88,31 @@ public class Shade : MonoBehaviour {
 
     private void TeleportThreshold_OnThresholdCross(object sender, EventArgs e) {
         if (damageable.IsAlive) {
-            transform.position = teleportPoints[nextTeleportPointIndex].position;
+            transform.position = teleportPoints[nextTeleportPointIndex].transform.position;
             nextTeleportPointIndex++;
             if (nextTeleportPointIndex >= teleportPoints.Count) {
                 nextTeleportPointIndex = 0;
             }
         }
+    }
+
+
+    private void Teleport() {
+        Vector3 initialPosition = transform.position;
+        if (damageable.IsAlive) {
+
+            transform.position = teleportPoints[nextTeleportPointIndex].transform.position;
+            nextTeleportPointIndex++;
+            if (nextTeleportPointIndex >= teleportPoints.Count) {
+                nextTeleportPointIndex = 0;
+            }
+        }
+        TeleportLight nextTeleportPoint = teleportPoints[nextTeleportPointIndex];
+        nextTeleportPoint.TriggerLightEffect(teleportTime);
+        teleportEvent?.Invoke(this, new teleportEventArgs {
+            initialPosition = initialPosition
+        });
+        teleportTimer = 0f; 
     }
 
 
@@ -97,6 +125,7 @@ public class Shade : MonoBehaviour {
         UpdateAttackDirection();
 
         attackTimer += Time.deltaTime;
+        teleportTimer += Time.deltaTime;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, LayerMask.GetMask(LayerStrings.Ground));
 
@@ -104,6 +133,10 @@ public class Shade : MonoBehaviour {
             IsFacingRight = true;
         } else if (direction.x < 0) {
             IsFacingRight = false;
+        }
+
+        if (teleportTimer >= teleportTime && !IsAttacking) {
+            Teleport();
         }
 
         if (distance < targetDetectionDistance && hit.collider == null) {
@@ -123,6 +156,11 @@ public class Shade : MonoBehaviour {
         damageable = GetComponent<Damageable>();
         touchingDirections = GetComponent<TouchingDirections>();
         teleportThreshold.OnThresholdCross += TeleportThreshold_OnThresholdCross;
+    }
+
+    private void Start() {
+        TeleportLight nextTeleportPoint = teleportPoints[nextTeleportPointIndex];
+        nextTeleportPoint.TriggerLightEffect(teleportTime);
     }
 
 

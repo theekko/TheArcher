@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using System;
 
 public class MainLevelLoader : MonoBehaviour {
     [SerializeField] private Animator transition;
     [SerializeField] private float transitionTime = 1f;
+    [SerializeField] private float timeForTimer = 3f;
     [SerializeField] private Damageable playerDamageable;
     [SerializeField] private Timer timer;
     private int numEnemiesLeft = 0;
     private bool _timerRunout = false;
     private int totalEnemies = 0;
+
+    public event EventHandler gameOverEvent;
 
     public bool TimerRunout {
         get {
@@ -19,7 +25,7 @@ public class MainLevelLoader : MonoBehaviour {
             _timerRunout = value;
         }
     }
-
+    
 
     private void Start() {
         EnemyCount();
@@ -36,7 +42,6 @@ public class MainLevelLoader : MonoBehaviour {
 
     private void Damageable_damageableEnemyDeath(object sender, System.EventArgs e) {
         numEnemiesLeft--;
-        Debug.Log(numEnemiesLeft);
         if (numEnemiesLeft == 0) {
             StartCoroutine(LoadWinScene());
         } 
@@ -72,20 +77,23 @@ public class MainLevelLoader : MonoBehaviour {
     }
 
     IEnumerator LoadWinScene() {
-        yield return new WaitForSeconds(transitionTime);
+        gameOverEvent?.Invoke(this, EventArgs.Empty);
+        yield return new WaitForSeconds(timeForTimer);
         transition.SetTrigger(AnimatorStrings.levelEnd);
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(SceneStrings.LevelEndWinMovie);
     }
 
     IEnumerator LoadSecretWinScene() {
-        yield return new WaitForSeconds(transitionTime);
+        gameOverEvent?.Invoke(this, EventArgs.Empty);
+        yield return new WaitForSeconds(timeForTimer);
         transition.SetTrigger(AnimatorStrings.levelEnd);
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(SceneStrings.LevelEndSecretWinMovie);
     }
 
     IEnumerator LoadLoseScene() {
+        yield return new WaitForSeconds(transitionTime);
         transition.SetTrigger(AnimatorStrings.levelEnd);
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(SceneStrings.LevelEndLoseMovie);

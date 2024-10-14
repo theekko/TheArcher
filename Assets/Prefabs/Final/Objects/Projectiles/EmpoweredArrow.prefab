@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   knockback: {x: 0, y: 0}
-  destroyTimer: 0.3
+  destroyTimer: 0.2
   moveSpeed: 35
   hitDestroyTimer: 0
 --- !u!1 &6852855584615573771

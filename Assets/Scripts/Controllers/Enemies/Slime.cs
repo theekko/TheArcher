@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -29,6 +32,7 @@ public class Slime : MonoBehaviour {
     private TouchingDirections touchingDirections;
     private Damageable damageable;
     private bool isNearWall = false; // Track if the slime is near a wall
+    private Vector2 cachedHorizontalMovement; // Cache the movement direction
 
     public event EventHandler jumpEvent;
     public event EventHandler fastFallEvent;
@@ -46,6 +50,7 @@ public class Slime : MonoBehaviour {
         rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         jumpTimer = 0;
         jumpEvent?.Invoke(this, EventArgs.Empty);
+        cachedHorizontalMovement = Vector2.zero; // Reset cached movement after a jump
     }
 
     private void Start() {
@@ -103,26 +108,33 @@ public class Slime : MonoBehaviour {
 
         // If near a platform limit, only allow movement away from the wall
         if (isNearWall) {
-            // Check if the slime is trying to move away from the platform limit
             if (Mathf.Sign(direction.x) != Mathf.Sign(platformLimitHit.point.x - transform.position.x)) {
-                // Slime is trying to move away from the wall, allow it to move
                 Vector2 horizontalMovement = new Vector2(direction.x, 0).normalized * horizontalSpeed * Time.deltaTime;
+                cachedHorizontalMovement = horizontalMovement; // Cache the movement before jumping
                 transform.position = new Vector3(transform.position.x + horizontalMovement.x, transform.position.y, 0);
             }
-            // If the slime is trying to move toward the wall, do not allow movement
         } else if (distance < playerDetectionDistance && !touchingDirections.IsGrounded && rb.velocity.y >= 0 && hit.collider == null) {
             if (horizontalDistanceToPlayer > horizontalMoveTolerance) {
                 PlayerDetected = true;
-                Vector2 horizontalMovement = new Vector2(direction.x, 0).normalized * horizontalSpeed * Time.deltaTime;
-                transform.position = new Vector3(transform.position.x + horizontalMovement.x, transform.position.y, 0);
+
+                if (cachedHorizontalMovement == Vector2.zero) {
+                    // Cache the movement direction the first time the slime jumps towards the player
+                    cachedHorizontalMovement = new Vector2(direction.x, 0).normalized * horizontalSpeed * Time.deltaTime;
+                }
+
+                // Apply the cached movement direction mid-air, so it doesn't change
+                transform.position = new Vector3(transform.position.x + cachedHorizontalMovement.x, transform.position.y, 0);
             }
-        } else if ((distance > playerDetectionDistance || platformLimitHit.collider != null || hit.collider != null) && !touchingDirections.IsGrounded) {
+        }
+
+        if ((distance > playerDetectionDistance || platformLimitHit.collider != null || hit.collider != null) && !touchingDirections.IsGrounded) {
             PlayerDetected = false;
             if (Mathf.Abs(startingPosition.x - transform.position.x) > returnTolerance) {
-                // Move towards the starting position if not within the tolerance range
                 float step = returnSpeed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(startingPosition.x, transform.position.y, 0), step);
             }
         }
     }
 }
+
+

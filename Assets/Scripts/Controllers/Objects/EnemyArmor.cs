@@ -11,7 +11,7 @@ public class EnemyArmor : MonoBehaviour {
     private Damageable damageable;
 
     public event EventHandler armorHitEvent;
-
+    static public event EventHandler empoweredArrowHitEvent;
     public bool IsArmored {
         get {
             return _isArmored;
@@ -30,6 +30,7 @@ public class EnemyArmor : MonoBehaviour {
             damageable.enabled = true;
             armor.enabled = false;
             IsArmored = false;
+            empoweredArrowHitEvent?.Invoke(this, EventArgs.Empty);
         }
         if (arrow != null) {
             // Look i know this isnt great but it works for stopping the arrow

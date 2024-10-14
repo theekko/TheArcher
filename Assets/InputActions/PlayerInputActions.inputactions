@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "FireTeleportArrow",
-                    "type": "Button",
-                    "id": "80fd31ea-b89e-4e2d-9d29-d65b659b59de",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Teleport",
                     "type": "Button",
                     "id": "d6a7104b-bfea-4094-9e58-fe242d99bf61",
@@ -72,6 +63,15 @@
                     "name": "MenuOpenClose",
                     "type": "Button",
                     "id": "a5065e78-6dc2-4471-b05c-cff06b0cfc11",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Shield2",
+                    "type": "Button",
+                    "id": "3e494d3d-28f5-4bd8-ba85-ab736c7d6c94",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -279,17 +279,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4deb2bb3-92ee-406c-9c09-58fba318f722",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shield",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2d1aa9e3-593f-4a68-a0e5-baf0b7dc02af",
                     "path": "<Mouse>/forwardButton",
                     "interactions": "",
@@ -312,23 +301,12 @@
                 },
                 {
                     "name": "",
-                    "id": "cebf0e73-dfd3-4628-8e13-80dd75e9a89e",
-                    "path": "<Mouse>/rightButton",
+                    "id": "59f1f416-94cf-4fe7-ae0b-9749e5b13291",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "FireTeleportArrow",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1eaec706-ebeb-4393-9f89-26a06b5164af",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "FireTeleportArrow",
+                    "action": "Shield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -346,7 +324,7 @@
                 {
                     "name": "",
                     "id": "f552b78d-2dd1-4aa6-a897-d4e58ecdeaa9",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -384,6 +362,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "MenuOpenClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0eaff6e3-7fd8-49d6-ad13-7d03a2b7bfc2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shield2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
