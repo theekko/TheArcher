@@ -17,22 +17,9 @@ public class FireArrow : MonoBehaviour {
 
 
     private void FireArrow_OnFireEvent(object sender, BowController.OnFireSuccessEventArgs e) {
-
-        // Phyics shot
         Transform arrowTransform = Instantiate(arrow, new Vector3(e.bowEndpointPosition.x, e.bowEndpointPosition.y, 0), Quaternion.identity);
         Vector3 shootDir = e.shootDirection;
         arrowTransform.GetComponent<Arrow>().Setup(shootDir);
-
-
-        // Transform Shot
-        //Transform arrowTransform = Instantiate(arrowTransform, e.bowEndpointPosition, Quaternion.identity);
-        //Vector3 shootDir = e.shootPosition;
-        //arrowTransform.GetComponent<ArrowTransform>().Setup(shootDir);
-
-        // Raycast Shot
-        //Debug.DrawLine(e.bowEndpointPosition, e.shootPosition, Color.white, .1f);
-        //Vector3 shootDir = e.shootPosition;
-        //ArrowRaycast.Fire(e.bowEndpointPosition, shootDir);
     }
 
     private void FireArrow_OnFireEmpoweredSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {

@@ -43,7 +43,7 @@ public class TeleportArrow : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (hasHit) return; // Stop any further updates if the arrow has hit something
+        if (hasHit) return; 
 
         // Perform a raycast from the previous position to the current position
         Vector3 currentPosition = transform.position;
@@ -66,10 +66,8 @@ public class TeleportArrow : MonoBehaviour {
     }
 
     private void HandleGroundCollision(RaycastHit2D hit, Vector3 previousPosition) {
-        // Set the hitWall flag to true since this method handles ground collisions
         hitWall = true;
 
-        // Calculate and store the normal to the surface at the point of contact
         Vector2 collisionNormal = hit.normal;
 
         // Ensure the normal is facing towards the player (opposite to the arrow's direction)
@@ -99,7 +97,7 @@ public class TeleportArrow : MonoBehaviour {
 
 
     public void ArrowHit(Collider2D collision) {
-        hasHit = true; // Ensure this only happens once
+        hasHit = true; 
         Damageable damageable = collision.GetComponent<Damageable>();
 
         if (damageable != null) {
@@ -134,29 +132,4 @@ public class TeleportArrow : MonoBehaviour {
         // Destroy the arrow
         Destroy(gameObject, hitDestroyTimer);
     }
-
-
-    //private void HandleEnemyCollision(RaycastHit2D hit) {
-    //    // Ensure hitWall is false when hitting an enemy
-    //    hitWall = false;
-
-    //    // Handle the enemy hit
-    //    ArrowHit(hit.collider);
-    //}
-
-    //private void HandleGroundAfterEnemyHit() {
-    //    Vector3 direction = transform.position - previousPosition;
-    //    float remainingDistance = direction.magnitude;
-
-    //    // Check for ground collision along the arrow's path after the enemy hit
-    //    RaycastHit2D groundHit = Physics2D.CircleCast(transform.position, arrowCollisionOffset, direction, Mathf.Infinity, LayerMask.GetMask(LayerStrings.Ground));
-
-    //    if (groundHit.collider != null) {
-    //        // Move the arrow directly to the future ground impact point
-    //        transform.position = groundHit.point;
-
-    //        // Call HandleGroundCollision to handle the normal alignment and further processing
-    //        HandleGroundCollision(groundHit, previousPosition);
-    //    }
-    //}
 }

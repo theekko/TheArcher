@@ -182,7 +182,6 @@ public class Wasp : MonoBehaviour {
             // Obstacle detected, choose an alternative path
             Vector2 adjustedDirection = GetAdjustedDirection(directionToStartingPosition);
 
-            // Move using the Rigidbody2D
             targetVelocity = adjustedDirection * returnSpeed;
         } else {
             // No obstacle detected, move directly to the starting position
@@ -195,7 +194,6 @@ public class Wasp : MonoBehaviour {
             }
         }
 
-        // Set the Rigidbody velocity to move the Wasp
         rb.velocity = targetVelocity;
 
 
@@ -219,7 +217,7 @@ public class Wasp : MonoBehaviour {
             return adjustedDirectionDown.normalized;
         }
 
-        // If neither up nor down works, continue in the original direction (should try more complex logic)
+        // If neither up nor down works, continue in the original direction 
         return originalDirection;
     }
 

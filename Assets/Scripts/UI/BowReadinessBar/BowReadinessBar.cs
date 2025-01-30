@@ -42,7 +42,7 @@ public class BowReadinessBar : MonoBehaviour {
             drawTime += Time.deltaTime;
 
             // Calculate linear time based on the full range of draw time
-            float linearTime = Mathf.Clamp01((drawTime - bowcontroller.MinDrawTimeTeleportArrow) / (bowcontroller.MaxDrawTime - bowcontroller.MinDrawTimeTeleportArrow)); ; // Scale within 0 to maxDrawTime
+            float linearTime = Mathf.Clamp01((drawTime - bowcontroller.MinDrawTimeTeleportArrow) / (bowcontroller.MaxDrawTime - bowcontroller.MinDrawTimeTeleportArrow)); ; 
             float destroyTimer = Mathf.Lerp(bowcontroller.MinDestroyTimer, bowcontroller.MaxDestroyTimer, linearTime);
             // Set the slider value based on linearTime
             slider.value = destroyTimer/bowcontroller.MaxDestroyTimer;

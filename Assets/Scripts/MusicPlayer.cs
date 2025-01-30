@@ -4,10 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
-    [SerializeField] private AudioSource introSource; // First track (played across all scenes)
-    [SerializeField] private AudioSource level1Source; // Second track (played in "Level1" after input)
-    [SerializeField] private float fadeDuration = 2.0f; // Duration of the audio fade
-    [SerializeField] private float level1SourceStartTime = 0f; // The starting point in seconds for level1Source
+    [SerializeField] private AudioSource introSource; 
+    [SerializeField] private AudioSource level1Source; 
+    [SerializeField] private float fadeDuration = 2.0f; 
+    [SerializeField] private float level1SourceStartTime = 0f; 
     [SerializeField] private float volume = 0.5f;
 
     private string[] scenesToKeepMusic = { SceneStrings.MainMenu, SceneStrings.IntroMovie, SceneStrings.Level1, SceneStrings.LevelEndWinMovie, SceneStrings.LevelEndLoseMovie, SceneStrings.LevelEndSecretWinMovie };
@@ -89,17 +89,6 @@ public class MusicPlayer : MonoBehaviour {
         float toVolume = volume;
         Debug.Log("fromVolume: " + fromVolume);
         Debug.Log("toVolume: " + toVolume);
-        //// Save the current time of the first track if transitioning out from introSource
-        //if (resumeIntro) {
-        //    introSourceSavedTime = fromAudio.time; // Save the time to resume from
-        //}
-
-        //// Set the starting time of the new audio track (use startTime for level1Source or resume time for introSource)
-        //if (resumeIntro) {
-        //    toAudio.time = introSourceSavedTime;
-        //} else {
-        //    toAudio.time = startTime; // Set level1Source to start at the specified time
-        //}
         // Set the loop property for the level1Source when switching to it
         if (toAudio == level1Source) {
             toAudio.loop = true; // Enable looping for level1Source
@@ -117,11 +106,6 @@ public class MusicPlayer : MonoBehaviour {
             yield return null;
         }
 
-        //// Ensure that introSource resumes after Level1
-        //if (resumeIntro) {
-        //    introSource.time = introSourceSavedTime;
-        //    introSource.Play();
-        //}
 
         fromAudio.Stop(); // Stop the old track completely after fading out
         isFading = false;

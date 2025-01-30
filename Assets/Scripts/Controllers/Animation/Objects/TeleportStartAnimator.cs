@@ -17,7 +17,7 @@ public class TeleportStartAnimator : MonoBehaviour {
 
     public void PlayStartAnimation(Vector2 position) {
         startPosition = position;
-        m_Image.enabled = true;  // Turn on the Image
+        m_Image.enabled = true; 
 
         // Immediately update the UI position before starting the animation
         UpdateUIPosition(startPosition);
@@ -28,7 +28,6 @@ public class TeleportStartAnimator : MonoBehaviour {
 
     // Update the UI position method to set the RectTransform position
     private void UpdateUIPosition(Vector2 position) {
-        // Convert the world position to UI position
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(position);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
@@ -42,7 +41,6 @@ public class TeleportStartAnimator : MonoBehaviour {
     }
 
     IEnumerator PlayAnimation() {
-        // Play the animation
         for (int i = 0; i < m_SpriteArray.Length; i++) {
             yield return new WaitForSeconds(m_Speed);
             m_Image.sprite = m_SpriteArray[i];
@@ -57,6 +55,6 @@ public class TeleportStartAnimator : MonoBehaviour {
         if (m_CorotineAnim != null) {
             StopCoroutine(m_CorotineAnim);
         }
-        m_Image.enabled = false; // Ensure the image is turned off if stopped
+        m_Image.enabled = false; 
     }
 }

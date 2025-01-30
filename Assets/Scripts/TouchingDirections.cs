@@ -73,7 +73,6 @@ public class TouchingDirections : MonoBehaviour
         touchingCol = GetComponent<Collider2D>();
     }
 
-    // Because this is a phyics function you want to use FixedUpdate instead of Update
     private void FixedUpdate() {
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
         if (!objectSprite.flipX) {

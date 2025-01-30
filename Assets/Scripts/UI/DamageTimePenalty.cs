@@ -8,14 +8,14 @@ public class DamageTimePenalty : MonoBehaviour {
     [SerializeField] private Damageable damageable;
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float moveDistance = 50f;
-    [SerializeField] private Vector2 moveDirection = new Vector2(-1, -1); // Move down and to the left
+    [SerializeField] private Vector2 moveDirection = new Vector2(-1, -1); 
     [SerializeField] private string subtractionTime = "-1 sec";
 
-    private Vector2 initialPosition; // To store the initial position
+    private Vector2 initialPosition;
 
     private void Awake() {
-        initialPosition = timeChangeText.rectTransform.anchoredPosition; // Store the starting position
-        timeChangeText.enabled = false; // Ensure the text is disabled at the start
+        initialPosition = timeChangeText.rectTransform.anchoredPosition; 
+        timeChangeText.enabled = false; 
         damageable.damageableHit += Damageable_damageableHit;
     }
 
@@ -30,7 +30,6 @@ public class DamageTimePenalty : MonoBehaviour {
             Debug.LogWarning("timeChangeText is null!");
             return;
         }
-        // Reset the position to the initial position
         timeChangeText.rectTransform.anchoredPosition = initialPosition;
 
         timeChangeText.text = message;
@@ -40,18 +39,17 @@ public class DamageTimePenalty : MonoBehaviour {
     }
 
     private IEnumerator FadeAndMoveText() {
-        // Make sure the text still exists before starting the coroutine
         if (timeChangeText == null) yield break;
 
-        Vector2 startPos = initialPosition; // Start from the initial position each time
+        Vector2 startPos = initialPosition; 
         Vector2 targetPos = startPos + moveDirection * moveDistance;
         float elapsedTime = 0f;
 
         Color startColor = timeChangeText.color;
-        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0); // Fade to transparent
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0); 
 
         while (elapsedTime < fadeDuration) {
-            if (timeChangeText == null) yield break;  // Ensure the text exists during the coroutine
+            if (timeChangeText == null) yield break; 
 
             // Lerp position
             timeChangeText.rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, elapsedTime / fadeDuration);
@@ -64,7 +62,7 @@ public class DamageTimePenalty : MonoBehaviour {
         // Ensure it's fully faded and moved at the end
         timeChangeText.rectTransform.anchoredPosition = targetPos;
         timeChangeText.color = targetColor;
-        timeChangeText.enabled = false; // Hide the text after the effect
+        timeChangeText.enabled = false; 
     }
 
     private void Damageable_damageableHit(object sender, Damageable.OnHitEventArgs e) {

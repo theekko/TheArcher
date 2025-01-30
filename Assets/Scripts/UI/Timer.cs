@@ -75,14 +75,13 @@ public class Timer : MonoBehaviour {
 
 
     IEnumerator AnimateTimerToCenter() {
-        timerText.color = Color.red; // Ensure it's visible
-        timerText.fontSize = startFontSize; // Start with a larger font size (adjust as needed)
+        timerText.color = Color.red; 
+        timerText.fontSize = startFontSize; 
 
-        // Get the rectTransform of the timer to animate its position and scale
+
         RectTransform timerRect = timerText.rectTransform;
-
         Vector3 originalPosition = timerRect.localPosition;
-        Vector3 targetPosition = Vector3.zero; // Center of the screen
+        Vector3 targetPosition = Vector3.zero;
 
         float animationDuration = 1f;
         float elapsedTime = 0f;
@@ -93,16 +92,14 @@ public class Timer : MonoBehaviour {
 
             // Lerp the position and font size
             timerRect.localPosition = Vector3.Lerp(originalPosition, targetPosition, t);
-            timerText.fontSize = Mathf.Lerp(startFontSize, finalFontSize, t); // Animate font size to 100 (adjust as needed)
+            timerText.fontSize = Mathf.Lerp(startFontSize, finalFontSize, t); 
 
             yield return null;
         }
 
-        // Ensure the timer ends at the center with the final font size
         timerRect.localPosition = targetPosition;
         timerText.fontSize = finalFontSize;
 
-        // After the animation, load the next scene (handled by MainLevelLoader)
         yield break;
     }
 }

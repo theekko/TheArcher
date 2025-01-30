@@ -25,7 +25,6 @@ public class EnemyArmor : MonoBehaviour {
         EmpoweredArrow empoweredArrow = collision.gameObject.GetComponent<EmpoweredArrow>();
         Arrow arrow = collision.gameObject.GetComponent<Arrow>();
         if (empoweredArrow != null) {
-            // Look i know this isnt great but it works for stopping the arrow
             Destroy(empoweredArrow.gameObject);
             damageable.enabled = true;
             armor.enabled = false;
@@ -33,7 +32,6 @@ public class EnemyArmor : MonoBehaviour {
             empoweredArrowHitEvent?.Invoke(this, EventArgs.Empty);
         }
         if (arrow != null) {
-            // Look i know this isnt great but it works for stopping the arrow
             Destroy(arrow.gameObject);
             armorHitEvent?.Invoke(this, EventArgs.Empty);
         }

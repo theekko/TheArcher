@@ -9,13 +9,13 @@ public class ScoreChangeDisplay : MonoBehaviour {
     [SerializeField] private Damageable damageable;
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private float moveDistance = 50f;
-    [SerializeField] private Vector2 moveDirection = new Vector2(-1, -1); // Move down and to the left
+    [SerializeField] private Vector2 moveDirection = new Vector2(-1, -1); 
 
-    private Vector2 initialPosition; // To store the initial position
+    private Vector2 initialPosition; 
 
     private void Awake() {
-        initialPosition = scoreChangeText.rectTransform.anchoredPosition; // Store the starting position
-        scoreChangeText.enabled = false; // Ensure the text is disabled at the start
+        initialPosition = scoreChangeText.rectTransform.anchoredPosition; 
+        scoreChangeText.enabled = false; 
 
         Arrow.objectHitEvent += Arrow_objectHitEvent;
         Arrow.groundHitEvent += Arrow_groundHitEvent;
@@ -29,7 +29,6 @@ public class ScoreChangeDisplay : MonoBehaviour {
     
 
     private void OnDestroy() {
-        // Unsubscribe from events to avoid memory leaks
         Arrow.objectHitEvent -= Arrow_objectHitEvent;
         Arrow.groundHitEvent -= Arrow_groundHitEvent;
         Arrow.arrowMissEvent -= Arrow_arrowMissEvent;
@@ -44,7 +43,6 @@ public class ScoreChangeDisplay : MonoBehaviour {
             Debug.LogWarning("scoreChangeText is null!");
             return;
         }
-        // Reset the position to the initial position
         scoreChangeText.rectTransform.anchoredPosition = initialPosition;
 
         scoreChangeText.text = message;
@@ -54,18 +52,17 @@ public class ScoreChangeDisplay : MonoBehaviour {
     }
 
     private IEnumerator FadeAndMoveText() {
-        // Make sure the text still exists before starting the coroutine
         if (scoreChangeText == null) yield break;
 
-        Vector2 startPos = initialPosition; // Start from the initial position each time
+        Vector2 startPos = initialPosition; 
         Vector2 targetPos = startPos + moveDirection * moveDistance;
         float elapsedTime = 0f;
 
         Color startColor = scoreChangeText.color;
-        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0); // Fade to transparent
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0);
 
         while (elapsedTime < fadeDuration) {
-            if (scoreChangeText == null) yield break;  // Ensure the text exists during the coroutine
+            if (scoreChangeText == null) yield break; 
 
             // Lerp position
             scoreChangeText.rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, elapsedTime / fadeDuration);
@@ -78,7 +75,7 @@ public class ScoreChangeDisplay : MonoBehaviour {
         // Ensure it's fully faded and moved at the end
         scoreChangeText.rectTransform.anchoredPosition = targetPos;
         scoreChangeText.color = targetColor;
-        scoreChangeText.enabled = false; // Hide the text after the effect
+        scoreChangeText.enabled = false;
     }
 
 

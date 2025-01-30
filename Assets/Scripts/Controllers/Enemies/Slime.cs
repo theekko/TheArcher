@@ -101,9 +101,9 @@ public class Slime : MonoBehaviour {
 
         // Check if near a platform limit
         if (platformLimitHit.collider != null) {
-            isNearWall = true; // Mark the slime as being near a wall
+            isNearWall = true; 
         } else {
-            isNearWall = false; // No wall detected nearby, allow normal movement
+            isNearWall = false;
         }
 
         // If near a platform limit, only allow movement away from the wall

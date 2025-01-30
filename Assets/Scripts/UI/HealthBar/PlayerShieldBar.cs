@@ -21,7 +21,7 @@ public class PlayerShieldBar : MonoBehaviour {
                 shieldImage[i].sprite = fullShield;
             } else {
                 if (i == e.numShields) {
-                    // If this is the heart transitioning from full to empty, animate it
+                    // If this is the shield transitioning from full to empty, animate it
                     StartCoroutine(AnimateShield(shieldImage[i]));
                 } else {
                     shieldImage[i].sprite = emptyShield;
@@ -32,7 +32,7 @@ public class PlayerShieldBar : MonoBehaviour {
 
 
     private IEnumerator AnimateShield(Image shield) {
-        float duration = animationDuration; // Duration of the animation
+        float duration = animationDuration; 
         float elapsedTime = 0f;
         Vector3 originalScale = shield.rectTransform.localScale;
         Quaternion originalRotation = shield.rectTransform.localRotation;
@@ -40,11 +40,11 @@ public class PlayerShieldBar : MonoBehaviour {
         while (elapsedTime < duration) {
             float progress = elapsedTime / duration;
 
-            // Scale the heart up and down
+            // Scale the shield up and down
             float scale = Mathf.Lerp(1f, 1.5f, Mathf.PingPong(progress * 2f, 1f));
             shield.rectTransform.localScale = originalScale * scale;
 
-            // Rotate the heart back and forth
+            // Rotate the shield back and forth
             float rotationAngle = Mathf.Sin(progress * Mathf.PI * 4f) * 20f; // Oscillating rotation
             shield.rectTransform.localRotation = originalRotation * Quaternion.Euler(0f, 0f, rotationAngle);
 
@@ -52,11 +52,11 @@ public class PlayerShieldBar : MonoBehaviour {
             yield return null;
         }
 
-        // Reset the heart to its original scale and rotation
+        // Reset the shield to its original scale and rotation
         shield.rectTransform.localScale = originalScale;
         shield.rectTransform.localRotation = originalRotation;
 
-        // Set the heart to empty after the animation
+        // Set the shield to empty after the animation
         shield.sprite = emptyShield;
     }
 

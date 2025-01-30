@@ -26,13 +26,8 @@ public class FloatingHealthBar : MonoBehaviour {
     }
 
     private void Damageable_healthChanged(object sender, Damageable.OnHealthChangedEventArgs e) {
-        // Calculate health percentage
         float healthPercentage = (float)e.health / (float)e.maxHealth;
-
-        // Clamp value between 0 and 1 to ensure it doesn't exceed this range
         slider.value = Mathf.Clamp01(healthPercentage);
-
-        // Enable the canvas and reset the health bar timer
         canvas.enabled = true;
         healthBarTimer = healthBarTimerMax;
     }

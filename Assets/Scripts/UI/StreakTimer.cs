@@ -74,10 +74,10 @@ public class StreakTimer : MonoBehaviour {
         }
 
         // Convert the remaining time into seconds and milliseconds
-        int seconds = Mathf.FloorToInt(Mathf.Max(remainingTime, 0)); // Get whole seconds
-        int milliseconds = Mathf.FloorToInt((Mathf.Max(remainingTime, 0) * 1000) % 1000); // Get milliseconds
+        int seconds = Mathf.FloorToInt(Mathf.Max(remainingTime, 0)); 
+        int milliseconds = Mathf.FloorToInt((Mathf.Max(remainingTime, 0) * 1000) % 1000); 
 
-        // Display the time in seconds and milliseconds format (e.g., 12.345)
+       
         timerText.text = string.Format("{0:00}.{1:000}", seconds, milliseconds);
     }
 

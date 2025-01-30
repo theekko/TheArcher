@@ -49,7 +49,7 @@ public class EmpoweredArrow : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (hasHit) return; // Stop any further updates if arrow has hit something
+        if (hasHit) return;
 
         // Perform a raycast from the previous position to the current position
         Vector3 currentPosition = transform.position;
@@ -61,22 +61,17 @@ public class EmpoweredArrow : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(previousPosition, direction, distance, layerMask);
         if (hit.collider != null) {
-            // Set arrow position to the exact point of impact
             transform.position = hit.point;
-            // Stop arrow's movement
             rb.velocity = Vector2.zero;
-            rb.isKinematic = true; // Optional: make the Rigidbody kinematic to stop further physics interactions
-
-            // Handle the collision if something was hit
+            rb.isKinematic = true; 
             ArrowHit(hit.collider);
         }
 
-        // Update the previous position for the next frame
         previousPosition = currentPosition;
     }
 
     public void ArrowHit(Collider2D collision) {
-        hasHit = true; // Ensure this only happens once
+        hasHit = true;
         Damageable damageable = collision.GetComponent<Damageable>();
         if (collision.gameObject.layer != LayerMask.NameToLayer(LayerStrings.Ground)) {
             objectHitEvent?.Invoke(this, EventArgs.Empty);

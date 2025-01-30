@@ -10,7 +10,6 @@ public class TeleportLight : MonoBehaviour {
     [SerializeField] private float maxOuterRadius = 5f;
 
     private void Awake() {
-        // Assuming the light is a child of the teleport point
         teleportLight = GetComponentInChildren<Light2D>();
 
         // Ensure the light is initially off

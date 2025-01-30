@@ -18,7 +18,6 @@ public class PlayerHealthBar : MonoBehaviour {
 
     private void Start() {
         if (damageable == null) {
-            // Assuming Player is a singleton
             if (Player.Instance != null) {
                 damageable = Player.Instance.GetComponent<Damageable>();
             }
@@ -73,7 +72,7 @@ public class PlayerHealthBar : MonoBehaviour {
     }
 
     private IEnumerator AnimateHeart(Image heart) {
-        float duration = animationDuration; // Duration of the animation
+        float duration = animationDuration; 
         float elapsedTime = 0f;
         Vector3 originalScale = heart.rectTransform.localScale;
         Quaternion originalRotation = heart.rectTransform.localRotation;
@@ -116,7 +115,7 @@ public class PlayerHealthBar : MonoBehaviour {
         MaxHealth(damageable);
 
         if (damageable.MaxHealth <= hearts.Length) {
-            Image newHeart = hearts[damageable.MaxHealth - 1]; // Get the new heart
+            Image newHeart = hearts[damageable.MaxHealth - 1]; 
             StartCoroutine(FadeInHeart(newHeart));
         }
     }
@@ -125,7 +124,7 @@ public class PlayerHealthBar : MonoBehaviour {
         float elapsedTime = 0f;
         Color heartColor = heart.color;
 
-        // Set opacity to 0
+
         heartColor.a = 0;
         heart.color = heartColor;
 

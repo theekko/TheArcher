@@ -24,7 +24,7 @@ public class TeleportPoint : MonoBehaviour {
         Vector2 closestNormal = Vector2.up;
 
         foreach (var hit in hits) {
-            if (hit != teleportPoint) {  // Make sure not to handle the teleport point's own collider
+            if (hit != teleportPoint) { 
                 Vector2 directionToPlayer = (Player.Instance.transform.position - transform.position).normalized;
                 Vector2 hitNormal = GetHitNormal(hit);
 
@@ -48,11 +48,9 @@ public class TeleportPoint : MonoBehaviour {
     }
 
     private Vector2 GetHitNormal(Collider2D hit) {
-        // This assumes that the normal can be directly derived from the hit. Adjust as necessary.
-        // For a more accurate normal, you might need additional logic or collision detection details.
         if (hit is BoxCollider2D) {
             // Placeholder logic for BoxCollider2D
-            return -Vector2.up;  // Default normal if you cannot calculate it dynamically
+            return -Vector2.up; 
         }
 
         return Vector2.up;
@@ -70,7 +68,7 @@ public class TeleportPoint : MonoBehaviour {
     }
 
     private Vector2 CalculateAdjustmentDirection(Collider2D hit) {
-        return Vector2.up;  // Adjusts upwards by default
+        return Vector2.up;  
     }
 
     private void Wasp_capturedArrowEvent(object sender, System.EventArgs e) {

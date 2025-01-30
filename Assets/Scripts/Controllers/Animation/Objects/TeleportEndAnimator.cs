@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TeleportEndAnimator : MonoBehaviour {
-    [SerializeField] private Image m_Image;  // Image for second animation
+    [SerializeField] private Image m_Image;  
     [SerializeField] private Sprite[] m_SpriteArray;
     [SerializeField] private float m_Speed = .02f;
-    [SerializeField] private Canvas canvas; // Reference to your canvas
-    [SerializeField] private float delayBeforeStart = 1f;  // Delay before the second animation starts
+    [SerializeField] private Canvas canvas; 
+    [SerializeField] private float delayBeforeStart = 1f; 
     private Vector2 endPosition;
     Coroutine m_CorotineAnim;
 
@@ -46,7 +46,6 @@ public class TeleportEndAnimator : MonoBehaviour {
         // Wait before starting the second animation
         yield return new WaitForSeconds(delayBeforeStart);
 
-        // Ensure the image is visible before the animation starts
         m_Image.enabled = true;
 
         // Play the animation
@@ -54,8 +53,6 @@ public class TeleportEndAnimator : MonoBehaviour {
             yield return new WaitForSeconds(m_Speed);
             m_Image.sprite = m_SpriteArray[i];
         }
-
-        // Turn off the Image after the animation ends
         m_Image.enabled = false;
     }
 
@@ -64,6 +61,6 @@ public class TeleportEndAnimator : MonoBehaviour {
         if (m_CorotineAnim != null) {
             StopCoroutine(m_CorotineAnim);
         }
-        m_Image.enabled = false; // Ensure the image is turned off if stopped
+        m_Image.enabled = false;
     }
 }

@@ -53,7 +53,6 @@ public class Player : MonoBehaviour {
 
 
 
-    //[SerializeField] private float delayBeforeReset = 3f;
 
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private PlayerInput playerInput;
@@ -83,11 +82,6 @@ public class Player : MonoBehaviour {
     public float CurrentMoveSpeed {
         get {
             return moveSpeed;
-            //if (!touchingDirections.IsOnWallFront || IsWallSliding || IsWallJumping) {
-            //    return moveSpeed;
-            //} else {
-            //    return 0;
-            //}
         }
     }
 
@@ -209,7 +203,6 @@ public class Player : MonoBehaviour {
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
         isRunning = moveInput != Vector2.zero;
-        //SetFacingDirection(moveInput);
     }
 
     public void OnJump(InputAction.CallbackContext context) {
@@ -246,48 +239,7 @@ public class Player : MonoBehaviour {
         }
     }
 
-    //public void OnTeleport(InputAction.CallbackContext context) {
-    //    TeleportPoint existingTeleportPoint = FindObjectOfType<TeleportPoint>();
-    //    if (existingTeleportPoint != null) {
-    //        Vector3 initialPosition = transform.position; // Save the initial position before teleporting
-    //        transform.position = existingTeleportPoint.transform.position;
-    //        existingTeleportPoint.gameObject.SetActive(false);
-    //        Destroy(existingTeleportPoint.gameObject);
-    //        teleportFallReductionTimer = maxTeleportFallReduction;
-    //        teleportEvent?.Invoke(this, new teleportEventArgs { 
-    //            initialPosition = initialPosition
-    //        });
-    //        IsSlowFall = true;
-
-    //        // Check if the player is inside a collider after teleporting
-    //        Collider2D overlapCollider = Physics2D.OverlapCircle(transform.position, 0.1f, LayerMask.GetMask(LayerStrings.Ground));
-    //        if (overlapCollider != null) {
-    //            Vector2 directionToMove = Vector2.zero;
-    //            Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
-
-    //            foreach (var direction in directions) {
-    //                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, LayerMask.GetMask(LayerStrings.Ground));
-    //                if (hit.collider != null && hit.collider == overlapCollider) {
-    //                    directionToMove = hit.normal;
-    //                    break;
-    //                }
-    //            }
-
-    //            if (directionToMove == Vector2.zero) {
-    //                directionToMove = Vector2.up;
-    //            }
-
-    //            // Move the player out of the collider
-    //            transform.position += (Vector3)directionToMove.normalized * teleportOverlapOffset;
-
-    //            // Additional check to ensure correct side
-    //            if (IsOnWrongSideOfWall(initialPosition, transform.position, overlapCollider)) {
-    //                // Reverse the direction to move the player to the correct side
-    //                transform.position -= (Vector3)directionToMove.normalized * 1.0f;
-    //            }
-    //        }
-    //    }
-    //}
+    
 
     public void OnTeleport(InputAction.CallbackContext context) {
         if (CanTeleport) {
@@ -390,14 +342,6 @@ public class Player : MonoBehaviour {
     }
 
 
-    //public void OnDeath() {
-    //    StartCoroutine(ResetSceneAfterDelay());
-    //}
-
-    //private IEnumerator ResetSceneAfterDelay() {
-    //    yield return new WaitForSeconds(delayBeforeReset);
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //}
 
     private void Bow_OnFireSuccessEvent(object sender, BowController.OnFireSuccessEventArgs e) {
         IsSlowFall = false;
@@ -409,19 +353,16 @@ public class Player : MonoBehaviour {
     private void SetFacingDirection() {
         if (Gamepad.current != null) {
             if (LeftStickInput.x > 0 && !IsFacingRight) {
-                // face right
                 IsFacingRight = true;
             } else if (LeftStickInput.x < 0 && IsFacingRight) {
-                // face left
+
                 IsFacingRight = false;
             }
         } else {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (mousePos.x > transform.position.x && !IsFacingRight) {
-                // face right
                 IsFacingRight = true;
             } else if (mousePos.x < transform.position.x && IsFacingRight) {
-                // face left
                 IsFacingRight = false;
             }
         }

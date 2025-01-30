@@ -40,11 +40,10 @@ public class DamageOverlay : MonoBehaviour {
             yield return null;
         }
 
-        // Ensure the alpha is set to 0 at the end
         SetImageAlpha(0);
     }
 
-    // Helper method to set the image's alpha
+
     private void SetImageAlpha(float alpha) {
         Color color = image.color;
         color.a = alpha;

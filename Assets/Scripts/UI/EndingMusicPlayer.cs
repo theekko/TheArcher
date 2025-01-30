@@ -7,8 +7,6 @@ public class EndingMusicPlayer : MonoBehaviour {
     [SerializeField] private double delay;
 
     private void Start() {
-        // Play the intro audio
         introSource.Play();
-
     }
 }
